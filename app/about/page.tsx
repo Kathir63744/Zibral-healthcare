@@ -331,61 +331,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Core Values Section - Green Theme */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="text-center mb-16">
-            <span className="inline-flex px-4 py-2 rounded-full bg-green-100 text-green-700 text-sm font-semibold">
-              ✦ Our Foundation ✦
-            </span>
-
-            <h2 className="mt-5 text-4xl md:text-5xl font-bold bg-gradient-to-r from-green-700 to-emerald-600 bg-clip-text text-transparent">
-              Core Values
-            </h2>
-
-            <div className="flex justify-center mt-3">
-              <div className="w-16 h-0.5 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full" />
-            </div>
-
-            <p className="mt-4 max-w-2xl mx-auto text-gray-600">
-              The principles that guide our commitment to quality healthcare,
-              innovation, and patient well-being.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {coreValues.map((item, index) => (
-              <div
-                key={item.title}
-                className="group relative transition-all duration-300 hover:-translate-y-1"
-              >
-                <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-green-500/30 to-emerald-600/30 blur-md opacity-0 group-hover:opacity-100 transition duration-300" />
-                
-                <div className="relative bg-white border border-green-100 rounded-2xl p-6 transition-all duration-300 group-hover:border-green-300 h-full flex flex-col shadow-sm hover:shadow-md">
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="text-xs font-semibold text-green-600 bg-green-50 px-2 py-0.5 rounded-full">
-                      0{index + 1}
-                    </div>
-                    <span className="text-2xl">{item.icon}</span>
-                  </div>
-
-                  <h3 className="text-lg font-bold text-gray-800">
-                    {item.title}
-                  </h3>
-
-                  <p className="mt-3 text-sm text-gray-600 leading-relaxed">
-                    {item.desc}
-                  </p>
-
-                  <div className="mt-4 h-[2px] w-8 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full group-hover:w-12 transition-all duration-300"></div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
 
 <footer className="relative overflow-hidden bg-[#013220] border-t border-emerald-800/30">
   
