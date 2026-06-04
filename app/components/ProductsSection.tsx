@@ -11,7 +11,7 @@ const products = [
     generic: "Azithromycin Tablets IP 500 mg",
     category: "Antibiotic",
     composition: "Azithromycin 500 mg",
-    image: "/2.png",
+    image: "/Azibral-500.png",
     uses: ["Tonsillitis", "Sinusitis", "Pharyngitis"],
     dosage: "5-day therapy as per ICMR–IDSA guidelines",
     benefits: [
@@ -71,7 +71,7 @@ const products = [
     generic: "Aceclofenac + Paracetamol",
     category: "Pain Relief",
     composition: "Aceclofenac 100 mg + Paracetamol 325 mg",
-    image: "/Zerobral-P.png",
+    image: "/ZEROBRAL-P - 1.png",
     uses: ["Pain", "Fever", "Inflammation"],
     benefits: [
       "Fast pain relief",
