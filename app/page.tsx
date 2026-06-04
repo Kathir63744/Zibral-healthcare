@@ -64,72 +64,101 @@ export default function Home() {
       <HeroBanner />
       <section className="py-16 px-6">
   <div className="max-w-6xl mx-auto">
-    <div className="relative overflow-hidden rounded-[40px] border border-blue-100 bg-gradient-to-br from-white via-blue-50/60 to-sky-50 shadow-[0_20px_60px_rgba(59,130,246,0.08)]">
+      {/* Glass morphism card with lite green tint */}
+      <div className="relative overflow-hidden rounded-[40px] backdrop-blur-xl bg-white/30 bg-gradient-to-br from-green-50/40 via-emerald-50/30 to-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.08)] border border-white/50 transition-all duration-300 hover:shadow-[0_20px_45px_-12px_rgba(34,139,34,0.2)]">
+        
+        {/* Subtle green glass overlay - adds depth without losing transparency */}
+        <div className="absolute inset-0 bg-gradient-to-br from-green-400/5 via-emerald-300/5 to-transparent pointer-events-none"></div>
+        
+        {/* Soft glow effect - light green ambient */}
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-green-300/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-emerald-300/20 rounded-full blur-3xl pointer-events-none"></div>
+        
+        {/* Light reflection / glass shine */}
+        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/60 to-transparent"></div>
+        
+        {/* Content Container */}
+        <div className="relative z-10 grid lg:grid-cols-[220px_1fr] gap-10 items-center p-10 lg:p-14">
+          
+          {/* Left Side - Stats & Badge */}
+          <div className="flex flex-col items-center lg:items-start">
+            <span className="text-emerald-700 uppercase tracking-[4px] text-sm font-semibold bg-white/50 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm border border-white/40">
+              About Zibral Healthcare
+            </span>
+            
+            <div className="w-16 h-[3px] bg-gradient-to-r from-emerald-500 to-green-400 rounded-full mt-4 shadow-sm"></div>
+            
+            <h3 className="mt-6 text-5xl lg:text-6xl font-bold text-emerald-800 drop-shadow-sm">
+              5+
+            </h3>
+            
+            <p className="text-emerald-700 mt-2 font-medium">
+              Years of Healthcare Excellence
+            </p>
+            
+            {/* Decorative glass accent */}
+            <div className="mt-5 hidden lg:block opacity-40">
+              <svg width="40" height="30" viewBox="0 0 40 30" fill="none">
+                <path d="M8 24 L16 8 L24 24 M28 20 L34 6 L40 20" stroke="#2D6A4F" strokeWidth="1.2" strokeLinecap="round" strokeDasharray="2 3"/>
+              </svg>
+            </div>
+          </div>
+          
+          {/* Right Side - Main Content */}
+          <div>
+            <h2 className="text-3xl lg:text-4xl font-bold leading-tight text-emerald-900 drop-shadow-sm">
+              Delivering{" "}
+              <span className="text-emerald-600 relative inline-block">
+                Trusted Pharmaceutical Solutions
 
-      {/* Background Pattern */}
-      <div className="absolute top-0 right-0 w-80 h-80 bg-blue-100/40 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-72 h-72 bg-sky-100/40 rounded-full blur-3xl"></div>
-
-      <div className="relative grid lg:grid-cols-[220px_1fr] gap-10 items-center p-10 lg:p-14">
-
-        {/* Left Side */}
-        <div className="flex flex-col items-center lg:items-start">
-          <span className="text-blue-600 uppercase tracking-[4px] text-sm font-semibold">
-            About Zibral Healthcare
-          </span>
-
-          <div className="w-16 h-[3px] bg-blue-600 rounded-full mt-4"></div>
-
-          <h3 className="mt-6 text-5xl font-bold text-gray-900">
-            5+
-          </h3>
-
-          <p className="text-gray-500 mt-2">
-            Years of Healthcare Excellence
-          </p>
+              </span>{" "}
+              For A Healthier Tomorrow
+            </h2>
+            
+            <p className="mt-6 text-lg leading-9 text-emerald-800 font-medium">
+              Zibral Healthcare is committed to enhancing healthcare outcomes through
+              high-quality pharmaceutical products, scientifically developed formulations,
+              and ethical business practices.
+            </p>
+            
+            <p className="mt-5 text-lg leading-9 text-emerald-800">
+              We focus on delivering safe, effective, and affordable medicines that
+              support patients, healthcare professionals, and communities with reliable
+              therapeutic care.
+            </p>
+            
+            <p className="mt-5 text-lg leading-9 text-emerald-800">
+              Our product portfolio is driven by strict quality standards, continuous
+              research, and innovation, ensuring consistent performance, patient safety,
+              and long-term trust.
+            </p>
+            
+            {/* Glass divider */}
+            <div className="flex items-center gap-3 mt-7">
+              <div className="h-[1px] w-12 bg-emerald-400/50 rounded-full"></div>
+              <span className="text-xs uppercase tracking-wider text-emerald-600 font-medium bg-white/30 px-2 py-0.5 rounded-full backdrop-blur-sm">sustainable care</span>
+              <div className="h-[1px] w-full max-w-[80px] bg-emerald-400/40 rounded-full"></div>
+            </div>
+          </div>
         </div>
-
-{/* Right Side */}
-<div>
-  <h2 className="text-3xl lg:text-4xl font-bold leading-tight text-gray-900">
-    Delivering{" "}
-    <span className="text-blue-600">
-      Trusted Pharmaceutical Solutions
-    </span>{" "}
-    For A Healthier Tomorrow
-  </h2>
-
-  <p className="mt-6 text-lg leading-9 text-gray-600">
-    Zibral Healthcare is committed to enhancing healthcare outcomes through
-    high-quality pharmaceutical products, scientifically developed formulations,
-    and ethical business practices.
-  </p>
-
-  <p className="mt-5 text-lg leading-9 text-gray-600">
-    We focus on delivering safe, effective, and affordable medicines that
-    support patients, healthcare professionals, and communities with reliable
-    therapeutic care.
-  </p>
-
-  <p className="mt-5 text-lg leading-9 text-gray-600">
-    Our product portfolio is driven by strict quality standards, continuous
-    research, and innovation, ensuring consistent performance, patient safety,
-    and long-term trust.
-  </p>
-</div>
-
+        
+        {/* Bottom glass reflection */}
+        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
+        
+        {/* Subtle corner glass highlights */}
+        <div className="absolute top-4 left-4 w-20 h-20 bg-white/20 rounded-full blur-xl pointer-events-none"></div>
+        <div className="absolute bottom-4 right-4 w-20 h-20 bg-white/15 rounded-full blur-xl pointer-events-none"></div>
       </div>
     </div>
-  </div>
 </section>
       <VisionMissionSection />
       <ProductsSection />
-      <section className="py-20 bg-gradient-to-b from-white to-blue-50/30">
+      <section className="py-20 bg-gradient-to-b from-white to-green-50/30">
   <div className="max-w-7xl mx-auto px-6">
 
     {/* Heading */}
     <div className="text-center mb-16">
-      <span className="inline-flex px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-medium">
+      <span className="inline-flex px-4 py-2 rounded-full bg-green-100 text-green-700 text-sm font-medium">
         Featured Products
       </span>
 
@@ -514,32 +543,38 @@ export default function Home() {
 
   </div>
 </section>
-<section className="py-20 px-6 bg-white">
+<section className="py-10 px-2 -mt-20 bg-gradient-to-b from-green-50/30 via-white to-emerald-50/20">
   <div className="max-w-6xl mx-auto">
 
-    <div className="relative overflow-hidden rounded-[32px] bg-gradient-to-br from-blue-50 via-white to-sky-50 border border-blue-100 shadow-[0_15px_50px_rgba(59,130,246,0.08)]">
+    <div className="relative overflow-hidden rounded-[32px] backdrop-blur-xl bg-white/30 bg-gradient-to-br from-green-50/40 via-white/20 to-emerald-50/30 border border-green-100/60 shadow-[0_15px_50px_rgba(34,139,34,0.08)]">
 
-      {/* Background Glow */}
-      <div className="absolute top-0 right-0 w-72 h-72 bg-blue-100/40 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-sky-100/40 rounded-full blur-3xl"></div>
+      {/* Background Glow - Lite Green */}
+      <div className="absolute top-0 right-0 w-72 h-72 bg-green-300/20 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-300/20 rounded-full blur-3xl"></div>
+      
+      {/* Subtle grass shimmer */}
+      <div className="absolute -top-40 -left-40 w-96 h-96 bg-green-400/10 rounded-full blur-3xl"></div>
 
       <div className="relative px-8 md:px-14 py-14 md:py-16">
 
-        {/* Badge */}
-        <span className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold">
-          Our Commitment
+        {/* Badge - Lite Green Glass */}
+        <span className="inline-flex items-center px-4 py-2 rounded-full bg-green-100/80 backdrop-blur-sm text-green-700 text-sm font-semibold border border-green-200/50 shadow-sm">
+          <span className="text-green-500 mr-1">✦</span> Our Commitment
+          <span className="text-green-500 ml-1">✦</span>
         </span>
 
         {/* Heading */}
         <h2 className="mt-6 text-3xl md:text-5xl font-bold text-slate-900 leading-tight max-w-4xl">
           Committed To Building A
-          <span className="text-blue-600"> Healthier Future </span>
+          <span className="text-green-600 relative inline-block mx-2">
+            Healthier Future
+          </span>
           Through Quality & Innovation
         </h2>
 
         {/* Description */}
-        <p className="mt-6 text-lg leading-8 text-slate-600 max-w-4xl">
-          At <span className="font-semibold text-blue-700">Zibral Healthcare</span>,
+        <p className="mt-6 text-lg leading-8 text-slate-700 max-w-4xl">
+          At <span className="font-semibold text-green-700">Zibral Healthcare</span>,
           we are dedicated to advancing healthcare through innovation,
           uncompromising quality, and responsible practices. We collaborate
           closely with healthcare professionals and partners to deliver trusted
@@ -547,40 +582,56 @@ export default function Home() {
           to healthier communities.
         </p>
 
-        {/* Highlights */}
+        {/* Highlights - Glass Cards */}
         <div className="grid md:grid-cols-3 gap-5 mt-10">
 
-          <div className="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm">
-            <h3 className="font-semibold text-slate-900">
-              Innovation
-            </h3>
-            <p className="text-sm text-slate-600 mt-2">
-              Developing effective healthcare solutions through continuous
-              research and scientific advancement.
-            </p>
+          {/* Innovation Card */}
+          <div className="group relative transition-all duration-300 hover:-translate-y-1">
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-green-400/40 to-emerald-400/40 rounded-2xl blur-md opacity-0 group-hover:opacity-100 transition duration-300" />
+            <div className="relative bg-white/60 backdrop-blur-md rounded-2xl p-5 border border-green-100/60 shadow-sm hover:shadow-md transition-all h-full">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-2xl">🌿</span>
+                <h3 className="font-semibold text-green-800">Innovation</h3>
+              </div>
+              <p className="text-sm text-green-700/80 leading-relaxed">
+                Developing effective healthcare solutions through continuous
+                research and scientific advancement.
+              </p>
+            </div>
           </div>
 
-          <div className="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm">
-            <h3 className="font-semibold text-slate-900">
-              Quality
-            </h3>
-            <p className="text-sm text-slate-600 mt-2">
-              Maintaining stringent standards to ensure safety, reliability,
-              and therapeutic excellence.
-            </p>
+          {/* Quality Card */}
+          <div className="group relative transition-all duration-300 hover:-translate-y-1">
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-400/40 to-green-400/40 rounded-2xl blur-md opacity-0 group-hover:opacity-100 transition duration-300" />
+            <div className="relative bg-white/60 backdrop-blur-md rounded-2xl p-5 border border-green-100/60 shadow-sm hover:shadow-md transition-all h-full">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-2xl">✅</span>
+                <h3 className="font-semibold text-green-800">Quality</h3>
+              </div>
+              <p className="text-sm text-green-700/80 leading-relaxed">
+                Maintaining stringent standards to ensure safety, reliability,
+                and therapeutic excellence.
+              </p>
+            </div>
           </div>
 
-          <div className="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm">
-            <h3 className="font-semibold text-slate-900">
-              Responsibility
-            </h3>
-            <p className="text-sm text-slate-600 mt-2">
-              Building trust through ethical practices and a commitment to
-              patient well-being.
-            </p>
+          {/* Responsibility Card */}
+          <div className="group relative transition-all duration-300 hover:-translate-y-1">
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-green-400/40 to-teal-400/40 rounded-2xl blur-md opacity-0 group-hover:opacity-100 transition duration-300" />
+            <div className="relative bg-white/60 backdrop-blur-md rounded-2xl p-5 border border-green-100/60 shadow-sm hover:shadow-md transition-all h-full">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-2xl">🤝</span>
+                <h3 className="font-semibold text-green-800">Responsibility</h3>
+              </div>
+              <p className="text-sm text-green-700/80 leading-relaxed">
+                Building trust through ethical practices and a commitment to
+                patient well-being.
+              </p>
+            </div>
           </div>
 
         </div>
+
 
       </div>
     </div>
@@ -588,98 +639,118 @@ export default function Home() {
   </div>
 </section>
 
-<section className="py-24 bg-white">
+<section className="py-16 px-3 bg-gradient-to-b from-green-50/30 via-white to-emerald-50/20">
   <div className="max-w-7xl mx-auto px-6">
 
     {/* Heading */}
-    <div className="text-center mb-16">
-      <span className="inline-flex px-4 py-2 rounded-full bg-blue-50 text-blue-700 text-sm font-medium">
-        Our Foundation
+    <div className="text-center mb-12">
+      <span className="inline-flex px-4 py-1.5 rounded-full bg-green-100/80 backdrop-blur-sm text-green-700 text-sm font-semibold border border-green-200/50">
+        ✦ Our Foundation ✦
       </span>
 
-      <h2 className="mt-5 text-4xl md:text-5xl font-bold text-slate-900">
+      <h2 className="mt-4 text-3xl md:text-4xl font-bold bg-gradient-to-r from-green-700 to-emerald-600 bg-clip-text text-[#000]">
         Core Values
       </h2>
 
-      <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
+      <div className="flex justify-center mt-3">
+        <div className="w-12 h-0.5 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full" />
+      </div>
+
+      <p className="mt-3 text-sm text-[#000] max-w-2xl mx-auto">
         The principles that guide our commitment to quality healthcare,
         innovation, and patient well-being.
       </p>
     </div>
 
     {/* Values Grid */}
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {[
         {
           title: "Quality First",
-          desc: "We never compromise on quality, safety, and compliance, ensuring reliable healthcare solutions."
+          desc: "We never compromise on quality, safety, and compliance, ensuring reliable healthcare solutions.",
+          icon: "🏆"
         },
         {
           title: "Innovation",
-          desc: "Continuous research and development drive our efforts to create better healthcare solutions."
+          desc: "Continuous research and development drive our efforts to create better healthcare solutions.",
+          icon: "💡"
         },
         {
           title: "Integrity",
-          desc: "We uphold ethical business practices and transparency in every aspect of our operations."
+          desc: "We uphold ethical business practices and transparency in every aspect of our operations.",
+          icon: "🤝"
         },
         {
           title: "Patient Care",
-          desc: "Patient well-being remains at the center of every decision and product we deliver."
+          desc: "Patient well-being remains at the center of every decision and product we deliver.",
+          icon: "❤️"
         },
         {
           title: "Customer Satisfaction",
-          desc: "Building long-term relationships through trust, service excellence, and reliability."
+          desc: "Building long-term relationships through trust, service excellence, and reliability.",
+          icon: "⭐"
         },
         {
           title: "Excellence",
-          desc: "Striving for excellence in products, processes, and performance across our organization."
+          desc: "Striving for excellence in products, processes, and performance across our organization.",
+          icon: "🎯"
         }
       ].map((item, index) => (
         <div
           key={item.title}
-          className="
-            group
-            bg-white
-            border
-            border-slate-200
-            rounded-3xl
-            p-8
+          className="group relative transition-all duration-300 hover:-translate-y-1"
+        >
+          {/* Premium Glow Glass Effect */}
+
+          
+          {/* Medium glass glow */}
+          <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-gray-800 to-gray-800 blur-sm backdrop-blur-[1px]" />
+          
+
+          
+
+          
+          {/* Original Green Card */}
+          <div className="
+            relative
+            border-green-500/60
+            border-2
+            rounded-2xl
+            p-5
             transition-all
             duration-300
-            hover:border-blue-200
-            hover:shadow-md
-          "
-        >
-          {/* Number */}
-          <div className="text-sm font-semibold text-blue-600 mb-5">
-            0{index + 1}
+            group-hover:shadow-xl
+            bg-[#008000]
+            h-full
+            flex
+            flex-col
+          ">
+            <div className="flex items-center justify-between mb-3">
+              <div className="text-xs font-semibold text-[#fff] bg-green-100/50 px-2 py-0.5 rounded-full">
+                0{index + 1}
+              </div>
+              <span className="text-xl">{item.icon}</span>
+            </div>
+
+            <h3 className="text-base font-bold text-[#fff]">
+              {item.title}
+            </h3>
+
+            <p className="mt-2 text-xs text-[#fff] leading-relaxed">
+              {item.desc}
+            </p>
+
+            <div className="mt-4 h-[2px] w-8 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full group-hover:w-12 transition-all duration-300"></div>
           </div>
-
-          {/* Title */}
-          <h3 className="text-xl font-semibold text-slate-900">
-            {item.title}
-          </h3>
-
-          {/* Description */}
-          <p className="mt-4 text-slate-600 leading-7">
-            {item.desc}
-          </p>
-
-          {/* Minimal Line */}
-          <div className="mt-6 h-[2px] w-10 bg-blue-500 rounded-full group-hover:w-16 transition-all duration-300"></div>
         </div>
       ))}
     </div>
 
   </div>
 </section>
-
-<footer className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 border-t border-slate-200">
+<footer className="relative overflow-hidden bg-[#013220] border-t border-emerald-800/30">
   
-  {/* Background Effects */}
-  <div className="absolute top-0 left-0 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl"></div>
-  <div className="absolute bottom-0 right-0 w-96 h-96 bg-slate-200/40 rounded-full blur-3xl"></div>
+
 
   <div className="relative px-8 py-16">
     {/* Main Footer Grid */}
@@ -691,45 +762,45 @@ export default function Home() {
           <Image
             src="/logo.png"
             alt="Zibral Healthcare"
-            width={70}
-            height={70}
-            className="object-contain"
+            width={130}
+            height={130}
+            className="object-contain brightness-110"
           />
 
           <div>
-            <h3 className="text-2xl font-bold text-slate-900">
+            <h3 className="text-2xl font-bold text-white">
               Zibral
             </h3>
 
-            <p className="uppercase tracking-[4px] text-xs text-blue-600">
+            <p className="uppercase tracking-[4px] text-xs text-green-400">
               Healthcare
             </p>
           </div>
         </div>
 
-        <p className="text-slate-600 leading-8">
+        <p className="text-gray-300 leading-8 text-sm">
           Delivering trusted pharmaceutical and healthcare solutions
           through innovation, quality, and excellence. We are committed
           to improving lives through reliable and affordable healthcare
           products.
         </p>
 
-        {/* Social Icons */}
+        {/* Social Icons - Dark Theme */}
         <div className="flex gap-3 mt-6">
           <a
             href="https://www.instagram.com/p/C33VcCDyGS2/?igsh=MW5kNmphcjVjaHJlcg=="
             target="_blank"
             rel="noopener noreferrer"
-            className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center hover:border-blue-500 hover:text-blue-600 transition-all duration-300"
+            className="w-10 h-10 rounded-full bg-gray-800/80 border border-gray-700 flex items-center justify-center hover:border-green-500 hover:text-green-400 transition-all duration-300 group"
           >
-            <LiaInstagram className="text-2xl" />
+            <LiaInstagram className="text-2xl text-gray-400 group-hover:text-green-400" />
           </a>
         </div>
       </div>
 
       {/* Quick Links */}
       <div>
-        <h3 className="text-lg font-semibold text-slate-900 mb-6">
+        <h3 className="text-lg font-semibold text-white mb-6">
           Quick Links
         </h3>
 
@@ -737,7 +808,7 @@ export default function Home() {
           <li>
             <Link
               href="/"
-              className="text-slate-600 hover:text-blue-600 transition-all duration-300"
+              className="text-gray-400 hover:text-green-400 transition-all duration-300"
             >
               Home
             </Link>
@@ -746,7 +817,7 @@ export default function Home() {
           <li>
             <Link
               href="/about"
-              className="text-slate-600 hover:text-blue-600 transition-all duration-300"
+              className="text-gray-400 hover:text-green-400 transition-all duration-300"
             >
               About Us
             </Link>
@@ -755,7 +826,7 @@ export default function Home() {
           <li>
             <Link
               href="/products"
-              className="text-slate-600 hover:text-blue-600 transition-all duration-300"
+              className="text-gray-400 hover:text-green-400 transition-all duration-300"
             >
               Products
             </Link>
@@ -764,7 +835,7 @@ export default function Home() {
           <li>
             <Link
               href="/contact"
-              className="text-slate-600 hover:text-blue-600 transition-all duration-300"
+              className="text-gray-400 hover:text-green-400 transition-all duration-300"
             >
               Contact Us
             </Link>
@@ -774,33 +845,33 @@ export default function Home() {
 
       {/* Products */}
       <div>
-        <h3 className="text-lg font-semibold text-slate-900 mb-6">
+        <h3 className="text-lg font-semibold text-white mb-6">
           Product Categories
         </h3>
 
-        <ul className="space-y-4 text-slate-600">
+        <ul className="space-y-4">
           <li>
-            <Link href="/products?category=Tablets" className="hover:text-blue-600 transition-all duration-300">
+            <Link href="/products?category=Tablets" className="text-gray-400 hover:text-green-400 transition-all duration-300">
               Tablets
             </Link>
           </li>
           <li>
-            <Link href="/products?category=Capsules" className="hover:text-blue-600 transition-all duration-300">
+            <Link href="/products?category=Capsules" className="text-gray-400 hover:text-green-400 transition-all duration-300">
               Capsules
             </Link>
           </li>
           <li>
-            <Link href="/products?category=Syrups" className="hover:text-blue-600 transition-all duration-300">
+            <Link href="/products?category=Syrups" className="text-gray-400 hover:text-green-400 transition-all duration-300">
               Syrups
             </Link>
           </li>
           <li>
-            <Link href="/products?category=Injectables" className="hover:text-blue-600 transition-all duration-300">
+            <Link href="/products?category=Injectables" className="text-gray-400 hover:text-green-400 transition-all duration-300">
               Injectables
             </Link>
           </li>
           <li>
-            <Link href="/products?category=Supplements" className="hover:text-blue-600 transition-all duration-300">
+            <Link href="/products?category=Supplements" className="text-gray-400 hover:text-green-400 transition-all duration-300">
               Healthcare Solutions
             </Link>
           </li>
@@ -809,35 +880,46 @@ export default function Home() {
 
       {/* Contact Info */}
       <div>
-        <h3 className="text-lg font-semibold text-slate-900 mb-6">
+        <h3 className="text-lg font-semibold text-white mb-6">
           Contact Information
         </h3>
 
-        <div className="bg-white/70 backdrop-blur-sm border border-slate-200 rounded-2xl p-5 space-y-5 shadow-sm">
+        <div className="bg-gray-800/40 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-5 space-y-5 shadow-sm">
 
           <div className="flex items-start gap-3">
-            <MdOutlineEmail className="text-2xl text-blue-600 mt-1 flex-shrink-0" />
-            <a href="mailto:info@zibralhealthcare.com" className="text-slate-600 hover:text-blue-600 transition-all duration-300">             
-        zibralhealthcare2021@gmail.com
+            <MdOutlineEmail className="text-2xl text-green-400 mt-1 flex-shrink-0" />
+            <a href="mailto:info@zibralhealthcare.com" className="text-gray-300 hover:text-green-400 transition-all duration-300 text-sm">             
+              zibralhealthcare2021@gmail.com
             </a>
           </div>
 
           <div className="flex items-start gap-3">
-            <BiPhone className="text-2xl text-blue-600 mt-1 flex-shrink-0" />
-            <a href="tel:+91XXXXXXXXX" className="text-slate-600 hover:text-blue-600 transition-all duration-300">
+            <BiPhone className="text-2xl text-green-400 mt-1 flex-shrink-0" />
+            <a href="tel:+918610810041" className="text-gray-300 hover:text-green-400 transition-all duration-300 text-sm">
               +91 86108 10041
             </a>
           </div>
 
           <div className="flex items-start gap-3">
-            <HiOutlineLocationMarker className="text-2xl text-blue-600 mt-1 flex-shrink-0" />
+            <HiOutlineLocationMarker className="text-2xl text-green-400 mt-1 flex-shrink-0" />
             <a 
-              href="https://maps.google.com/?q=Govandi+Mumbai+Maharashtra+India" 
+              href="https://maps.google.com/?q=B6+Ms+nagar+Podanur+Main+Rd+Kurichi+Pirivu+Coimbatore+Tamil+Nadu+641023" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-slate-600 hover:text-blue-600 transition-all duration-300"
+              className="text-gray-300 hover:text-green-400 transition-all duration-300 text-sm leading-6"
             >
               B6, Ms nagar, Podanur Main Rd, <br/> Kurichi Pirivu, Coimbatore, Tamil Nadu 641023
+            </a>
+          </div>
+          <div className="flex items-start gap-3">
+            <HiOutlineLocationMarker className="text-2xl text-green-400 mt-1 flex-shrink-0" />
+            <a 
+              href="https://maps.google.com/?q=Plot+No.26,Lotus+colony+H+Block,+Mumbai" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-green-400 transition-all duration-300 text-sm leading-6"
+            >
+              Plot No.26,Lotus colony <br/>H Block ,Mumbai
             </a>
           </div>
 
@@ -847,24 +929,24 @@ export default function Home() {
     </div>
 
     {/* Divider */}
-    <div className="border-t border-slate-200 mt-12 pt-6">
+    <div className="border-t border-gray-800 mt-12 pt-6">
       <div className="flex flex-col md:flex-row justify-between items-center gap-4">
 
-        <p className="text-slate-500 text-sm">
+        <p className="text-gray-500 text-sm">
           © 2026 Zibral Healthcare. All Rights Reserved.
         </p>
 
         <div className="flex gap-6 text-sm">
           <Link
             href="/privacy-policy"
-            className="text-slate-500 hover:text-blue-600 transition"
+            className="text-gray-500 hover:text-green-400 transition"
           >
             Privacy Policy
           </Link>
 
           <Link
             href="/terms-conditions"
-            className="text-slate-500 hover:text-blue-600 transition"
+            className="text-gray-500 hover:text-green-400 transition"
           >
             Terms & Conditions
           </Link>

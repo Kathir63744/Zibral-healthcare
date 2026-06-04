@@ -3,26 +3,38 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { LiaFacebook, LiaInstagram, LiaTwitter } from "react-icons/lia";
-import { BsMailbox } from "react-icons/bs";
+import { LiaInstagram } from "react-icons/lia";
 import { BiPhone } from "react-icons/bi";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { MdOutlineEmail } from "react-icons/md";
 import { FiMenu, FiX } from "react-icons/fi";
+import ContactPopup from "./ContactPopup";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const openPopup = () => {
+    setIsPopupOpen(true);
+    if (isMenuOpen) setIsMenuOpen(false);
+  };
+
+  const closePopup = () => {
+    setIsPopupOpen(false);
+  };
+
   return (
     <>
+      <ContactPopup isOpen={isPopupOpen} onClose={closePopup} />
+      
       <header className="fixed top-0 left-0 w-full z-50">
 
         {/* ================= TOP BAR - Hidden on Mobile ================= */}
-        <div className="w-full h-14 bg-gradient-to-r from-blue-500 to-blue-600 text-white hidden md:block">
+        <div className="w-full h-14 bg-gradient-to-r from-green-700 to-green-600 text-white hidden md:block">
           <div className="flex items-center justify-between h-full px-5">
 
             {/* Left Side */}
@@ -72,7 +84,7 @@ export default function Navbar() {
         </div>
 
         {/* ================= NAVBAR ================= */}
-        <nav className="h-16 md:h-20 bg-white/95 backdrop-blur-md border-b border-blue-100 shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
+        <nav className="h-16 md:h-20 bg-white/95 backdrop-blur-md border-b border-green-100 shadow-[0_4px_20px_rgba(34,139,34,0.08)]">
           <div className="flex items-center justify-between h-full px-4 md:px-10">
 
             {/* Logo Section */}
@@ -89,10 +101,10 @@ export default function Navbar() {
               </div>
 
               <div>
-                <h1 className="text-xl md:text-2xl font-bold text-blue-700 leading-none">
+                <h1 className="text-xl md:text-2xl font-bold text-green-700 leading-none">
                   Zibral
                 </h1>
-                <p className="text-[10px] md:text-xs uppercase tracking-[3px] md:tracking-[4px] text-gray-500 mt-0.5 md:mt-1">
+                <p className="text-[10px] md:text-xs uppercase tracking-[3px] md:tracking-[4px] text-green-600 mt-0.5 md:mt-1">
                   Healthcare
                 </p>
               </div>
@@ -103,150 +115,149 @@ export default function Navbar() {
               <li>
                 <Link
                   href="/"
-                  className="relative text-gray-800 hover:text-blue-600 transition group"
+                  className="relative text-gray-700 hover:text-green-600 transition group"
                 >
                   Home
-                  <span className="absolute left-0 -bottom-2 h-[2px] w-0 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                  <span className="absolute left-0 -bottom-2 h-[2px] w-0 bg-green-600 transition-all duration-300 group-hover:w-full"></span>
                 </Link>
               </li>
 
               <li>
                 <Link
                   href="/about"
-                  className="relative text-gray-800 hover:text-blue-600 transition group"
+                  className="relative text-gray-700 hover:text-green-600 transition group"
                 >
                   About
-                  <span className="absolute left-0 -bottom-2 h-[2px] w-0 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                  <span className="absolute left-0 -bottom-2 h-[2px] w-0 bg-green-600 transition-all duration-300 group-hover:w-full"></span>
                 </Link>
               </li>
 
               <li>
                 <Link
                   href="/products"
-                  className="relative text-gray-800 hover:text-blue-600 transition group"
+                  className="relative text-gray-700 hover:text-green-600 transition group"
                 >
                   Products
-                  <span className="absolute left-0 -bottom-2 h-[2px] w-0 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                  <span className="absolute left-0 -bottom-2 h-[2px] w-0 bg-green-600 transition-all duration-300 group-hover:w-full"></span>
                 </Link>
               </li>
 
               <li>
                 <Link
                   href="/contact"
-                  className="relative text-gray-800 hover:text-blue-600 transition group"
+                  className="relative text-gray-700 hover:text-green-600 transition group"
                 >
                   Contact
-                  <span className="absolute left-0 -bottom-2 h-[2px] w-0 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                  <span className="absolute left-0 -bottom-2 h-[2px] w-0 bg-green-600 transition-all duration-300 group-hover:w-full"></span>
                 </Link>
               </li>
             </ul>
 
-            {/* Desktop Right Side */}
+            {/* Desktop Right Side - Reach Us Button with Popup */}
             <div className="hidden md:flex items-center gap-4">
               <div className="hidden xl:flex flex-col items-end">
                 <span className="text-xs text-gray-500">Trusted Healthcare</span>
-                <span className="font-semibold text-blue-700">Quality Assured</span>
+                <span className="font-semibold text-green-700">Quality Assured</span>
               </div>
 
-              <Link
-                href="/contact"
-                className="px-5 lg:px-7 py-2 lg:py-3 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 text-white font-medium shadow-lg shadow-blue-200 hover:shadow-blue-300 hover:-translate-y-0.5 transition-all duration-300 text-sm lg:text-base"
+              <button
+                onClick={openPopup}
+                className="px-5 lg:px-7 py-2 lg:py-3 rounded-full bg-gradient-to-r from-green-500 to-green-600 text-white font-medium shadow-lg shadow-green-200 hover:shadow-green-300 hover:-translate-y-0.5 transition-all duration-300 text-sm lg:text-base"
               >
                 Reach Us
-              </Link>
+              </button>
             </div>
 
             {/* Mobile Menu Button */}
             <button
               onClick={toggleMenu}
-              className="md:hidden p-2 rounded-lg hover:bg-blue-50 transition-colors"
+              className="md:hidden p-2 rounded-lg hover:bg-green-50 transition-colors"
               aria-label="Toggle menu"
             >
               {isMenuOpen ? (
-                <FiX className="text-2xl text-blue-600" />
+                <FiX className="text-2xl text-green-600" />
               ) : (
-                <FiMenu className="text-2xl text-blue-600" />
+                <FiMenu className="text-2xl text-green-600" />
               )}
             </button>
 
           </div>
         </nav>
 
-        {/* Mobile Menu Dropdown */}
+        {/* Mobile Menu Dropdown - Green Theme */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white/95 backdrop-blur-md border-b border-blue-100 shadow-lg">
-            <div className="flex flex-col px-4 py-4 space-y-3">
+          <div className="md:hidden bg-white/98 backdrop-blur-md border-b border-green-100 shadow-lg">
+            <div className="flex flex-col px-5 py-5 space-y-4">
               
-              {/* Mobile Top Bar Info */}
-              <div className="flex flex-wrap items-center gap-3 pb-3 border-b border-gray-100">
+              {/* Mobile Top Bar Info - Green Theme */}
+              <div className="flex flex-wrap items-center gap-3 pb-4 border-b border-green-100">
                 <a
                   href="https://www.instagram.com/p/C33VcCDyGS2/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center"
+                  className="w-9 h-9 rounded-full bg-green-100 flex items-center justify-center hover:bg-green-200 transition"
                 >
-                  <LiaInstagram className="text-xl text-blue-600" />
+                  <LiaInstagram className="text-xl text-green-600" />
                 </a>
                 
                 <div className="flex items-center gap-2">
-                  <BiPhone className="text-blue-500 text-sm" />
-                  <a href="tel:+918610810041" className="text-sm text-gray-600">
+                  <BiPhone className="text-green-500 text-sm" />
+                  <a href="tel:+918610810041" className="text-sm text-gray-700 font-medium">
                     +91 86108 10041
                   </a>
                 </div>
                 
                 <div className="flex items-center gap-2">
-                  <MdOutlineEmail className="text-blue-500 text-sm" />
+                  <MdOutlineEmail className="text-green-500 text-sm" />
                   <span className="text-xs text-gray-600 truncate">
                     zibralhealthcare2021@gmail.com
                   </span>
                 </div>
               </div>
 
-              {/* Mobile Navigation Links */}
+              {/* Mobile Navigation Links - Green Theme */}
               <Link
                 href="/"
                 onClick={toggleMenu}
-                className="py-2 text-gray-700 hover:text-blue-600 transition font-medium"
+                className="py-2 text-gray-700 hover:text-green-600 transition font-medium text-base border-l-2 border-transparent hover:border-green-500 pl-3"
               >
                 Home
               </Link>
               <Link
                 href="/about"
                 onClick={toggleMenu}
-                className="py-2 text-gray-700 hover:text-blue-600 transition font-medium"
+                className="py-2 text-gray-700 hover:text-green-600 transition font-medium text-base border-l-2 border-transparent hover:border-green-500 pl-3"
               >
                 About
               </Link>
               <Link
                 href="/products"
                 onClick={toggleMenu}
-                className="py-2 text-gray-700 hover:text-blue-600 transition font-medium"
+                className="py-2 text-gray-700 hover:text-green-600 transition font-medium text-base border-l-2 border-transparent hover:border-green-500 pl-3"
               >
                 Products
               </Link>
               <Link
                 href="/contact"
                 onClick={toggleMenu}
-                className="py-2 text-gray-700 hover:text-blue-600 transition font-medium"
+                className="py-2 text-gray-700 hover:text-green-600 transition font-medium text-base border-l-2 border-transparent hover:border-green-500 pl-3"
               >
                 Contact
               </Link>
 
-              {/* Mobile Location */}
-              <div className="flex items-center gap-2 pt-2 border-t border-gray-100">
-                <HiOutlineLocationMarker className="text-blue-500 text-sm" />
-                <span className="text-xs text-gray-500">Coimbatore, Tamil Nadu</span>
+              {/* Mobile Location - Green Theme */}
+              <div className="flex items-center gap-2 pt-3 border-t border-green-100">
+                <HiOutlineLocationMarker className="text-green-500 text-base" />
+                <span className="text-sm text-gray-600">Coimbatore, Tamil Nadu</span>
               </div>
 
-              {/* Mobile CTA Button */}
-              <Link
-                href="/contact"
-                onClick={toggleMenu}
-                className="mt-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 text-white text-center font-medium text-sm"
+              {/* Mobile CTA Button - Opens Popup */}
+              <button
+                onClick={openPopup}
+                className="mt-3 px-5 py-2.5 rounded-full bg-gradient-to-r from-green-500 to-green-600 text-white text-center font-semibold text-sm shadow-md shadow-green-200"
               >
                 Reach Us
-              </Link>
+              </button>
             </div>
           </div>
         )}

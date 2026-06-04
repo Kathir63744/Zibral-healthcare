@@ -285,7 +285,7 @@ function ProductDetailModal({ product, isOpen, onClose }: { product: Product | n
                       transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                       style={{ transformStyle: "preserve-3d", perspective: "1000px" }}
                     >
-                      <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-3/4 h-6 bg-[#2563eb]/20 rounded-full blur-xl" />
+                      <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-3/4 h-6 bg-green-700/20 rounded-full blur-xl" />
                       <div className="relative w-full h-full rounded-2xl" style={{ transform: "rotateX(5deg) rotateY(-5deg)", boxShadow: "0 25px 50px -12px rgba(37, 99, 235, 0.25)" }}>
                         <Image src={product.image} alt={product.name} fill className="object-contain p-4 drop-shadow-2xl" />
                       </div>
@@ -294,14 +294,14 @@ function ProductDetailModal({ product, isOpen, onClose }: { product: Product | n
 
                   <div className="flex flex-col space-y-4">
                     <div>
-                      <span className="inline-block px-3 py-1 text-xs font-semibold text-[#2563eb] bg-[#dbeafe] rounded-full">{product.category}</span>
+                      <span className="inline-block px-3 py-1 text-xs font-semibold text-green-700 bg-[#dbeafe] rounded-full">{product.category}</span>
                       <h2 className="mt-3 text-2xl md:text-3xl font-bold text-gray-900">{product.name}</h2>
                       <p className="mt-1 text-sm text-gray-500 italic">{product.generic}</p>
                     </div>
 
                     <div className="space-y-2">
                       <div className="flex items-center gap-2 text-gray-600">
-                        <svg className="w-5 h-5 text-[#2563eb]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                         </svg>
                         <span>Composition: {product.composition}</span>
@@ -312,7 +312,7 @@ function ProductDetailModal({ product, isOpen, onClose }: { product: Product | n
                       <h3 className="font-semibold text-gray-900 mb-2">Therapeutic Uses</h3>
                       <div className="flex flex-wrap gap-2">
                         {product.uses.slice(0, 4).map((use, idx) => (
-                          <span key={idx} className="text-xs px-3 py-1 rounded-full bg-[#dbeafe] text-[#2563eb]">{use}</span>
+                          <span key={idx} className="text-xs px-3 py-1 rounded-full bg-[#dbeafe] text-green-700">{use}</span>
                         ))}
                       </div>
                     </div>
@@ -322,7 +322,7 @@ function ProductDetailModal({ product, isOpen, onClose }: { product: Product | n
                       <ul className="space-y-1.5">
                         {product.benefits.slice(0, 4).map((benefit, idx) => (
                           <motion.li key={idx} initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: idx * 0.1 }} className="flex items-center gap-2 text-gray-600 text-sm">
-                            <svg className="w-4 h-4 text-[#2563eb]" fill="currentColor" viewBox="0 0 20 20">
+                            <svg className="w-4 h-4 text-green-700" fill="currentColor" viewBox="0 0 20 20">
                               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                             </svg>
                             {benefit}
@@ -331,7 +331,7 @@ function ProductDetailModal({ product, isOpen, onClose }: { product: Product | n
                       </ul>
                     </div>
 
-                    <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="mt-2 px-6 py-3 bg-gradient-to-r from-[#2563eb] to-[#60a5fa] text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-full">
+                    <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="mt-2 px-6 py-3 bg-gradient-to-r from-green-700 to-[#60a5fa] text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-full">
                       Request Information →
                     </motion.button>
                   </div>
@@ -384,7 +384,7 @@ export default function ProductsPage() {
       {/* Hero Section */}
       <section className="relative pt-24 pb-12 md:pt-32 md:pb-16 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-[#1e3a8a] to-[#2563eb] bg-clip-text text-transparent">
+          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-[#1e3a8a] to-green-700 bg-clip-text text-transparent">
             Pharmaceutical Products
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }} className="mt-6 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
@@ -404,7 +404,7 @@ export default function ProductsPage() {
               onClick={() => setActiveCategory(cat)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                 activeCategory === cat
-                  ? "bg-[#2563eb] text-white shadow-md"
+                  ? "bg-green-700 text-white shadow-md"
                   : "bg-white/70 text-gray-600 hover:bg-[#dbeafe] border border-gray-100"
               }`}
             >
@@ -464,7 +464,7 @@ export default function ProductsPage() {
                   </div>
 
                   {/* BUTTON - Fixed at bottom */}
-                  <button onClick={(e) => { e.stopPropagation(); handleProductSelect(product); }} className="w-full mt-3 py-2 text-xs rounded-lg bg-blue-400 text-white hover:bg-blue-500 transition">
+                  <button onClick={(e) => { e.stopPropagation(); handleProductSelect(product); }} className="w-full mt-3 py-2 text-xs rounded-lg bg-green-700 text-white hover:bg-green-500 transition">
                     View Details
                   </button>
                 </div>
@@ -490,7 +490,7 @@ export default function ProductsPage() {
             <div className="relative w-[280px] h-[280px] sm:w-[320px] sm:h-[320px]">
               <Image src={zoomImg} alt="zoom" fill className="object-contain" />
             </div>
-            <button onClick={() => setZoomImg(null)} className="mt-4 w-full py-2 text-sm rounded-lg bg-blue-400 text-white hover:bg-blue-500 transition">Close</button>
+            <button onClick={() => setZoomImg(null)} className="mt-4 w-full py-2 text-sm rounded-lg bg-green-700 text-white hover:bg-blue-500 transition">Close</button>
           </div>
         </div>
       )}
@@ -499,88 +499,214 @@ export default function ProductsPage() {
       <ProductDetailModal product={selectedProduct} isOpen={isModalOpen} onClose={closeModal} />
 
       {/* Footer */}
-      <footer className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 border-t border-slate-200">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-slate-200/40 rounded-full blur-3xl"></div>
+<footer className="relative overflow-hidden bg-[#013220] border-t border-emerald-800/30">
+  
 
-        <div className="relative px-8 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-            {/* Company Info */}
-            <div>
-              <div className="flex items-center gap-3 mb-5">
-                <Image src="/logo.png" alt="Zibral Healthcare" width={70} height={70} className="object-contain" />
-                <div>
-                  <h3 className="text-2xl font-bold text-slate-900">Zibral</h3>
-                  <p className="uppercase tracking-[4px] text-xs text-blue-600">Healthcare</p>
-                </div>
-              </div>
-              <p className="text-slate-600 leading-8">
-                Delivering trusted pharmaceutical and healthcare solutions through innovation, quality, and excellence.
-              </p>
-              <div className="flex gap-3 mt-6">
-                <a href="https://www.instagram.com/p/C33VcCDyGS2/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center hover:border-blue-500 hover:text-blue-600 transition-all duration-300">
-                  <LiaInstagram className="text-2xl" />
-                </a>
-              </div>
-            </div>
 
-            {/* Quick Links */}
-            <div>
-              <h3 className="text-lg font-semibold text-slate-900 mb-6">Quick Links</h3>
-              <ul className="space-y-4">
-                <li><Link href="/" className="text-slate-600 hover:text-blue-600 transition">Home</Link></li>
-                <li><Link href="/about" className="text-slate-600 hover:text-blue-600 transition">About Us</Link></li>
-                <li><Link href="/products" className="text-slate-600 hover:text-blue-600 transition">Products</Link></li>
-                <li><Link href="/contact" className="text-slate-600 hover:text-blue-600 transition">Contact Us</Link></li>
-              </ul>
-            </div>
+  <div className="relative px-8 py-16">
+    {/* Main Footer Grid */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
 
-            {/* Product Categories */}
-            <div>
-              <h3 className="text-lg font-semibold text-slate-900 mb-6">Product Categories</h3>
-              <ul className="space-y-4 text-slate-600">
-                <li><Link href="/products?category=Tablets" className="hover:text-blue-600 transition">Tablets</Link></li>
-                <li><Link href="/products?category=Capsules" className="hover:text-blue-600 transition">Capsules</Link></li>
-                <li><Link href="/products?category=Syrups" className="hover:text-blue-600 transition">Syrups</Link></li>
-                <li><Link href="/products?category=Injectables" className="hover:text-blue-600 transition">Injectables</Link></li>
-                <li><Link href="/products?category=Supplements" className="hover:text-blue-600 transition">Healthcare Solutions</Link></li>
-              </ul>
-            </div>
+      {/* Company Info */}
+      <div>
+        <div className="flex items-center gap-3 mb-5">
+          <Image
+            src="/logo.png"
+            alt="Zibral Healthcare"
+            width={130}
+            height={130}
+            className="object-contain brightness-110"
+          />
 
-            {/* Contact Info */}
-            <div>
-              <h3 className="text-lg font-semibold text-slate-900 mb-6">Contact Information</h3>
-              <div className="bg-white/70 backdrop-blur-sm border border-slate-200 rounded-2xl p-5 space-y-5 shadow-sm">
-                <div className="flex items-start gap-3">
-                  <MdOutlineEmail className="text-2xl text-blue-600 mt-1 flex-shrink-0" />
-                  <a href="mailto:zibralhealthcare2021@gmail.com" className="text-slate-600 hover:text-blue-600 transition text-sm break-all">zibralhealthcare2021@gmail.com</a>
-                </div>
-                <div className="flex items-start gap-3">
-                  <BiPhone className="text-2xl text-blue-600 mt-1 flex-shrink-0" />
-                  <a href="tel:+918610810041" className="text-slate-600 hover:text-blue-600 transition">+91 86108 10041</a>
-                </div>
-                <div className="flex items-start gap-3">
-                  <HiOutlineLocationMarker className="text-2xl text-blue-600 mt-1 flex-shrink-0" />
-                  <a href="https://maps.google.com/?q=B6+Ms+nagar+Podanur+Main+Rd+Kurichi+Pirivu+Coimbatore+Tamil+Nadu+641023" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-blue-600 transition text-sm">
-                    B6, Ms nagar, Podanur Main Rd, <br /> Kurichi Pirivu, Coimbatore, Tamil Nadu 641023
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div>
+            <h3 className="text-2xl font-bold text-white">
+              Zibral
+            </h3>
 
-          {/* Divider */}
-          <div className="border-t border-slate-200 mt-12 pt-6">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <p className="text-slate-500 text-sm">© 2026 Zibral Healthcare. All Rights Reserved.</p>
-              <div className="flex gap-6 text-sm">
-                <Link href="/privacy-policy" className="text-slate-500 hover:text-blue-600 transition">Privacy Policy</Link>
-                <Link href="/terms-conditions" className="text-slate-500 hover:text-blue-600 transition">Terms & Conditions</Link>
-              </div>
-            </div>
+            <p className="uppercase tracking-[4px] text-xs text-green-400">
+              Healthcare
+            </p>
           </div>
         </div>
-      </footer>
+
+        <p className="text-gray-300 leading-8 text-sm">
+          Delivering trusted pharmaceutical and healthcare solutions
+          through innovation, quality, and excellence. We are committed
+          to improving lives through reliable and affordable healthcare
+          products.
+        </p>
+
+        {/* Social Icons - Dark Theme */}
+        <div className="flex gap-3 mt-6">
+          <a
+            href="https://www.instagram.com/p/C33VcCDyGS2/?igsh=MW5kNmphcjVjaHJlcg=="
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-10 h-10 rounded-full bg-gray-800/80 border border-gray-700 flex items-center justify-center hover:border-green-500 hover:text-green-400 transition-all duration-300 group"
+          >
+            <LiaInstagram className="text-2xl text-gray-400 group-hover:text-green-400" />
+          </a>
+        </div>
+      </div>
+
+      {/* Quick Links */}
+      <div>
+        <h3 className="text-lg font-semibold text-white mb-6">
+          Quick Links
+        </h3>
+
+        <ul className="space-y-4">
+          <li>
+            <Link
+              href="/"
+              className="text-gray-400 hover:text-green-400 transition-all duration-300"
+            >
+              Home
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              href="/about"
+              className="text-gray-400 hover:text-green-400 transition-all duration-300"
+            >
+              About Us
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              href="/products"
+              className="text-gray-400 hover:text-green-400 transition-all duration-300"
+            >
+              Products
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              href="/contact"
+              className="text-gray-400 hover:text-green-400 transition-all duration-300"
+            >
+              Contact Us
+            </Link>
+          </li>
+        </ul>
+      </div>
+
+      {/* Products */}
+      <div>
+        <h3 className="text-lg font-semibold text-white mb-6">
+          Product Categories
+        </h3>
+
+        <ul className="space-y-4">
+          <li>
+            <Link href="/products?category=Tablets" className="text-gray-400 hover:text-green-400 transition-all duration-300">
+              Tablets
+            </Link>
+          </li>
+          <li>
+            <Link href="/products?category=Capsules" className="text-gray-400 hover:text-green-400 transition-all duration-300">
+              Capsules
+            </Link>
+          </li>
+          <li>
+            <Link href="/products?category=Syrups" className="text-gray-400 hover:text-green-400 transition-all duration-300">
+              Syrups
+            </Link>
+          </li>
+          <li>
+            <Link href="/products?category=Injectables" className="text-gray-400 hover:text-green-400 transition-all duration-300">
+              Injectables
+            </Link>
+          </li>
+          <li>
+            <Link href="/products?category=Supplements" className="text-gray-400 hover:text-green-400 transition-all duration-300">
+              Healthcare Solutions
+            </Link>
+          </li>
+        </ul>
+      </div>
+
+      {/* Contact Info */}
+      <div>
+        <h3 className="text-lg font-semibold text-white mb-6">
+          Contact Information
+        </h3>
+
+        <div className="bg-gray-800/40 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-5 space-y-5 shadow-sm">
+
+          <div className="flex items-start gap-3">
+            <MdOutlineEmail className="text-2xl text-green-400 mt-1 flex-shrink-0" />
+            <a href="mailto:info@zibralhealthcare.com" className="text-gray-300 hover:text-green-400 transition-all duration-300 text-sm">             
+              zibralhealthcare2021@gmail.com
+            </a>
+          </div>
+
+          <div className="flex items-start gap-3">
+            <BiPhone className="text-2xl text-green-400 mt-1 flex-shrink-0" />
+            <a href="tel:+918610810041" className="text-gray-300 hover:text-green-400 transition-all duration-300 text-sm">
+              +91 86108 10041
+            </a>
+          </div>
+
+          <div className="flex items-start gap-3">
+            <HiOutlineLocationMarker className="text-2xl text-green-400 mt-1 flex-shrink-0" />
+            <a 
+              href="https://maps.google.com/?q=B6+Ms+nagar+Podanur+Main+Rd+Kurichi+Pirivu+Coimbatore+Tamil+Nadu+641023" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-green-400 transition-all duration-300 text-sm leading-6"
+            >
+              B6, Ms nagar, Podanur Main Rd, <br/> Kurichi Pirivu, Coimbatore, Tamil Nadu 641023
+            </a>
+          </div>
+          <div className="flex items-start gap-3">
+            <HiOutlineLocationMarker className="text-2xl text-green-400 mt-1 flex-shrink-0" />
+            <a 
+              href="https://maps.google.com/?q=Plot+No.26,Lotus+colony+H+Block,+Mumbai" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-green-400 transition-all duration-300 text-sm leading-6"
+            >
+              Plot No.26,Lotus colony <br/>H Block ,Mumbai
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    {/* Divider */}
+    <div className="border-t border-gray-800 mt-12 pt-6">
+      <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+
+        <p className="text-gray-500 text-sm">
+          © 2026 Zibral Healthcare. All Rights Reserved.
+        </p>
+
+        <div className="flex gap-6 text-sm">
+          <Link
+            href="/privacy-policy"
+            className="text-gray-500 hover:text-green-400 transition"
+          >
+            Privacy Policy
+          </Link>
+
+          <Link
+            href="/terms-conditions"
+            className="text-gray-500 hover:text-green-400 transition"
+          >
+            Terms & Conditions
+          </Link>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</footer>
     </main>
   );
 }
