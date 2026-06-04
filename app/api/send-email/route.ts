@@ -1,13 +1,14 @@
 // app/api/send-email/route.ts
 import { NextResponse } from 'next/server';
-import { Resend } from 'resend';
+import nodemailer from 'nodemailer';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+export const dynamic = 'force-dynamic';
 
 export async function POST(request: Request) {
   try {
     const { name, email, subject, message } = await request.json();
 
+    // Validate required fields
     if (!name || !email || !subject || !message) {
       return NextResponse.json(
         { error: 'All fields are required' },
@@ -15,75 +16,62 @@ export async function POST(request: Request) {
       );
     }
 
-    const { data, error } = await resend.emails.send({
-      from: 'Zibral Healthcare <onboarding@resend.dev>',
-      to: ['zibralhealthcare2021@gmail.com'], // ← PRIMARY: Healthcare email
-      subject: `Contact Form: ${subject}`,
-      html: `
-        <!DOCTYPE html>
-        <html>
-        <head>
-          <style>
-            body { font-family: Arial, sans-serif; line-height: 1.6; color: #000000; }
-            .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-            .header { background: linear-gradient(135deg, #3acb46, #2d8835); color: white; padding: 20px; text-align: center; border-radius: 10px 10px 0 0; }
-            .content { background: #f8fafc; padding: 20px; border-radius: 0 0 10px 10px; }
-            .field { margin-bottom: 15px; }
-            .label { font-weight: bold; color: #2feb25; }
-            .message-box { background: white; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; margin-top: 10px; }
-          </style>
-        </head>
-        <body>
-          <div class="container">
-            <div class="header">
-              <h2>New Contact Form Submission</h2>
-              <p>Zibral Healthcare</p>
-            </div>
-            <div class="content">
-              <div class="field">
-                <span class="label">📝 Name:</span>
-                <p>${name}</p>
-              </div>
-              <div class="field">
-                <span class="label">📧 Customer Email:</span>
-                <p>${email}</p>
-              </div>
-              <div class="field">
-                <span class="label">📌 Subject:</span>
-                <p>${subject}</p>
-              </div>
-              <div class="field">
-                <span class="label">💬 Message:</span>
-                <div class="message-box">
-                  <p>${message.replace(/\n/g, '<br/>')}</p>
-                </div>
-              </div>
-              <hr />
-              <p style="font-size: 12px; color: #000000;">Reply to customer at: ${email}</p>
-            </div>
-          </div>
-        </body>
-        </html>
-      `,
-    });
-
-    if (error) {
-      console.error('Resend error:', error);
+    // For testing without email configuration, log the data
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+      console.log('Email would be sent:', { name, email, subject, message });
+      
+      // Return success in development even without email config
+      if (process.env.NODE_ENV === 'development') {
+        return NextResponse.json({ 
+          success: true, 
+          message: 'Message received (email disabled in development)' 
+        });
+      }
+      
       return NextResponse.json(
-        { error: 'Failed to send email. Please try again.' },
+        { error: 'Email service is not configured' },
         { status: 500 }
       );
     }
 
-    return NextResponse.json(
-      { message: 'Email sent successfully!' },
-      { status: 200 }
-    );
+    // Create transporter
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
+    });
+
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: 'zibralhealthcare2021@gmail.com',
+      subject: `Contact Form: ${subject}`,
+      html: `
+        <div style="font-family: Arial, sans-serif; padding: 20px;">
+          <h2 style="color: #2e7d32;">New Enquiry Form</h2>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Subject:</strong> ${subject}</p>
+          <p><strong>Message:</strong></p>
+          <p style="background: #f5f5f5; padding: 10px; border-radius: 5px;">${message}</p>
+          <hr />
+          <p style="color: #666; font-size: 12px;">Sent from Zibral Healthcare Website</p>
+        </div>
+      `,
+    };
+
+    await transporter.sendMail(mailOptions);
+
+    return NextResponse.json({ 
+      success: true, 
+      message: 'Email sent successfully' 
+    });
     
   } catch (error) {
     console.error('Error sending email:', error);
     return NextResponse.json(
-      { error: 'Failed to send email' },
+      { error: 'Failed to send message. Please try again.' },
       { status: 500 }
     );
   }
