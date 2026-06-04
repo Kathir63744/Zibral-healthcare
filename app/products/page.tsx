@@ -74,11 +74,11 @@ const products: Product[] = [
   },
   {
     id: 5,
-    name: "/ZEROBRAL-P - 1.png",
+    name: "ZEROBRAL-P - 1.png",
     generic: "Aceclofenac + Paracetamol",
     category: "Pain Relief",
     composition: "Aceclofenac 100 mg + Paracetamol 325 mg",
-    image: "/Zerobral-P.png",
+    image: "/ZEROBRAL-P - 1.png",
     uses: ["Pain", "Fever", "Inflammation"],
     benefits: ["Fast pain relief", "Dual mechanism action", "Strong anti-inflammatory effect"],
   },
