@@ -123,109 +123,45 @@ export default function AboutPage() {
 </section>
 
 {/* Stats Section - Premium Dark Metallic Glass */}
-<section className="py-20 bg-gradient-to-br from-gray-950 via-green-950 to-gray-950">
-  <div className="max-w-7xl mx-auto px-6">
+<section className="py-12 sm:py-20 bg-gradient-to-br from-gray-950 via-green-950 to-gray-950">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
-    <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
       
-      <div className="group relative">
-        {/* Outer glow */}
-        <div className="absolute -inset-0.5 bg-gradient-to-r from-green-500/30 to-emerald-500/30 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition duration-500" />
-        
-        {/* Main card */}
-        <div className="relative overflow-hidden bg-gradient-to-br from-green-900/40 to-green-950/60 backdrop-blur-xl rounded-2xl p-6 text-center border border-green-500/20 shadow-2xl hover:shadow-green-500/10 transition-all duration-300 hover:-translate-y-1">
+      {[
+        { icon: "/c3.png", value: "5+", label: "Years Experience", color: "green", alt: "Years Experience" },
+        { icon: "/c22.png", value: "4", label: "States", color: "emerald", alt: "States" },
+        { icon: "/c33.png", value: "100+", label: "Products", color: "green", alt: "Products" },
+        { icon: "/c4.png", value: "Certified", label: "Good Manufacturing Practice", color: "emerald", alt: "GMP Certified" }
+      ].map((item, index) => (
+        <div key={index} className="group relative h-full">
+          <div className={`absolute -inset-0.5 bg-gradient-to-r from-${item.color}-500/30 to-${item.color === 'green' ? 'emerald' : 'green'}-500/30 rounded-xl sm:rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition duration-500`} />
           
-          {/* Animated shine overlay */}
-          <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
-          
-          {/* Radial gradient glow */}
-          <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 via-transparent to-emerald-500/10"></div>
-          
-          <div className="relative z-10">
-            <div className="flex justify-center mb-4">
-              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-green-800/60 to-emerald-900/60 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-xl border border-green-500/40 shadow-green-500/20">
-                <Image src="/c3.png" alt="Years Experience" width={56} height={56} className="object-contain brightness-125 drop-shadow-lg" />
+          <div className="relative overflow-hidden bg-gradient-to-br from-green-900/40 to-green-950/60 backdrop-blur-xl rounded-xl sm:rounded-2xl p-3 sm:p-6 text-center border border-green-500/20 shadow-2xl hover:shadow-green-500/10 transition-all duration-300 hover:-translate-y-1 h-full flex flex-col items-center justify-between">
+            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 via-transparent to-emerald-500/10"></div>
+            
+            <div className="relative z-10 w-full flex flex-col items-center">
+              <div className="flex justify-center mb-2 sm:mb-4">
+                <div className="w-12 h-12 sm:w-20 sm:h-20 rounded-xl sm:rounded-2xl bg-gradient-to-br from-green-800/60 to-emerald-900/60 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-xl border border-green-500/40 shadow-green-500/20">
+                  <Image src={item.icon} alt={item.alt} width={32} height={32} className="object-contain brightness-125 drop-shadow-lg sm:w-14 sm:h-14" />
+                </div>
               </div>
-            </div>
-            <h3 className="text-4xl lg:text-4xl font-bold bg-gradient-to-r from-green-300 to-emerald-400 bg-clip-text text-transparent">5+</h3>
-            <p className="mt-2 text-gray-300 font-medium text-md">Years Experience</p>
-            <div className="mt-3 flex justify-center gap-1">
-              <div className="w-1 h-1 rounded-full bg-green-400"></div>
-              <div className="w-1 h-1 rounded-full bg-green-400"></div>
-              <div className="w-1 h-1 rounded-full bg-green-400"></div>
+              <h3 className={`text-xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-${item.color}-300 to-${item.color === 'green' ? 'emerald' : 'green'}-400 bg-clip-text text-transparent`}>
+                {item.value}
+              </h3>
+              <p className="mt-1 sm:mt-2 text-gray-300 font-medium text-[10px] sm:text-sm md:text-base text-center">
+                {item.label}
+              </p>
+              <div className="mt-2 sm:mt-3 flex justify-center gap-1">
+                <div className="w-1 h-1 rounded-full bg-green-400"></div>
+                <div className="w-1 h-1 rounded-full bg-green-400"></div>
+                <div className="w-1 h-1 rounded-full bg-green-400"></div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="group relative">
-        <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-500/30 to-green-500/30 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition duration-500" />
-        <div className="relative overflow-hidden bg-gradient-to-br from-emerald-900/40 to-green-950/60 backdrop-blur-xl rounded-2xl p-6 text-center border border-emerald-500/20 shadow-2xl hover:shadow-emerald-500/10 transition-all duration-300 hover:-translate-y-1">
-          <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
-          <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 via-transparent to-green-500/10"></div>
-          
-          <div className="relative z-10">
-            <div className="flex justify-center mb-4">
-              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-800/60 to-green-900/60 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-xl border border-emerald-500/40 shadow-emerald-500/20">
-                <Image src="/c22.png" alt="States" width={56} height={56} className="object-contain brightness-125 drop-shadow-lg" />
-              </div>
-            </div>
-            <h3 className="text-4xl lg:text-4xl font-bold bg-gradient-to-r from-emerald-300 to-green-400 bg-clip-text text-transparent">4</h3>
-            <p className="mt-2 text-gray-300 font-medium text-md">States</p>
-            <div className="mt-3 flex justify-center gap-1">
-              <div className="w-1 h-1 rounded-full bg-emerald-400"></div>
-              <div className="w-1 h-1 rounded-full bg-emerald-400"></div>
-              <div className="w-1 h-1 rounded-full bg-emerald-400"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="group relative">
-        <div className="absolute -inset-0.5 bg-gradient-to-r from-green-500/30 to-emerald-500/30 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition duration-500" />
-        <div className="relative overflow-hidden bg-gradient-to-br from-green-900/40 to-emerald-950/60 backdrop-blur-xl rounded-2xl p-6 text-center border border-green-500/20 shadow-2xl hover:shadow-green-500/10 transition-all duration-300 hover:-translate-y-1">
-          <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
-          <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 via-transparent to-emerald-500/10"></div>
-          
-          <div className="relative z-10">
-            <div className="flex justify-center mb-4">
-              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-green-800/60 to-emerald-900/60 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-xl border border-green-500/40 shadow-green-500/20">
-                <Image src="/c33.png" alt="Products" width={56} height={56} className="object-contain brightness-125 drop-shadow-lg" />
-              </div>
-            </div>
-            <h3 className="text-4xl lg:text-4xl font-bold bg-gradient-to-r from-green-300 to-emerald-400 bg-clip-text text-transparent">100+</h3>
-            <p className="mt-2 text-gray-300 font-medium text-md">Products</p>
-            <div className="mt-3 flex justify-center gap-1">
-              <div className="w-1 h-1 rounded-full bg-green-400"></div>
-              <div className="w-1 h-1 rounded-full bg-green-400"></div>
-              <div className="w-1 h-1 rounded-full bg-green-400"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="group relative">
-        <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-500/30 to-green-500/30 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition duration-500" />
-        <div className="relative overflow-hidden bg-gradient-to-br from-emerald-900/40 to-green-950/60 backdrop-blur-xl rounded-2xl p-6 text-center border border-emerald-500/20 shadow-2xl hover:shadow-emerald-500/10 transition-all duration-300 hover:-translate-y-1">
-          <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
-          <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 via-transparent to-green-500/10"></div>
-          
-          <div className="relative z-10">
-            <div className="flex justify-center mb-4">
-              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-800/60 to-green-900/60 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-xl border border-emerald-500/40 shadow-emerald-500/20">
-                <Image src="/c4.png" alt="GMP Certified" width={56} height={56} className="object-contain brightness-125 drop-shadow-lg" />
-              </div>
-            </div>
-            <h3 className="text-4xl lg:text-4xl font-bold bg-gradient-to-r from-emerald-300 to-green-400 bg-clip-text text-transparent select-none">Certified</h3>
-            <p className="mt-2 text-gray-300 font-medium text-md">Good Manufacturing Practice</p>
-            <div className="mt-3 flex justify-center gap-1">
-              <div className="w-1 h-1 rounded-full bg-emerald-400"></div>
-              <div className="w-1 h-1 rounded-full bg-emerald-400"></div>
-              <div className="w-1 h-1 rounded-full bg-emerald-400"></div>
-            </div>
-          </div>
-        </div>
-      </div>
+      ))}
 
     </div>
 
@@ -535,6 +471,7 @@ export default function AboutPage() {
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-green-400 transition-all duration-300 text-sm leading-6"
             >
+              <h2 className="text-white">Register Office</h2>
               B6, Ms nagar, Podanur Main Rd, <br/> Kurichi Pirivu, Coimbatore, Tamil Nadu 641023
             </a>
           </div>

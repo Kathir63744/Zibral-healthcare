@@ -657,6 +657,7 @@ export default function ProductsPage() {
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-green-400 transition-all duration-300 text-sm leading-6"
             >
+              <h2 className="text-white">Register Office</h2>
               B6, Ms nagar, Podanur Main Rd, <br/> Kurichi Pirivu, Coimbatore, Tamil Nadu 641023
             </a>
           </div>

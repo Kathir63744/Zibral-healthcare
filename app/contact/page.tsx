@@ -82,7 +82,7 @@ export default function ContactPage() {
   };
 
   // Google Maps embed URL
-  const mapEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.319560387921!2d76.98214697480635!3d10.99825588918929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859af2f15a45d%3A0x2e6b5f0b5e5c5e5e!2sPodanur%2C%20Coimbatore%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin";
+  const mapEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.911017538012!2d76.96804850000001!3d10.970088900000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859809a932fe3%3A0x1becc5c1a3eb7308!2sCity%20Centre%20Lodge!5e0!3m2!1sen!2sin!4v1780638693251!5m2!1sen!2sin";
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-green-50/30 via-white to-emerald-50/20">
@@ -247,11 +247,11 @@ export default function ContactPage() {
       {/* Contact Form */}
       <div
         ref={formRef}
-        className={`relative bg-green-900 rounded-2xl p-6 md:p-8 border border-green-700 shadow-lg transition-all duration-500 ${
+        className={`relative bg-green-200 rounded-2xl p-6 md:p-8 border border-green-700 shadow-lg transition-all duration-500 ${
           isHighlighted ? "ring-4 ring-green-500 ring-offset-2 ring-offset-green-900 scale-[1.01]" : ""
         }`}
       >
-        <h2 className="text-2xl font-bold text-white mb-6">Send us a Message</h2>
+        <h2 className="text-2xl font-bold text-black mb-6">Send us a Message</h2>
         
         {isSubmitted && (
           <motion.div
@@ -276,7 +276,7 @@ export default function ContactPage() {
         <form onSubmit={handleSubmit} className="space-y-5">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="name" className="block text-sm font-medium text-gray-900 mb-2">
                 Full Name *
               </label>
               <input
@@ -286,12 +286,12 @@ export default function ContactPage() {
                 required
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-xl border border-green-700 bg-green-800/50 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all"
+                className="w-full px-4 py-3 rounded-xl border border-green-700 bg-green-100/50 text-black placeholder-gray-900 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all"
                 placeholder="John Doe"
               />
             </div>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="email" className="block text-sm font-medium text-gray-900 mb-2">
                 Email Address *
               </label>
               <input
@@ -301,14 +301,14 @@ export default function ContactPage() {
                 required
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-xl border border-green-700 bg-green-800/50 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all"
+                className="w-full px-4 py-3 rounded-xl border border-green-700 bg-green-100/50 text-black placeholder-gray-900 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all"
                 placeholder="john@example.com"
               />
             </div>
           </div>
 
           <div>
-            <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
+            <label htmlFor="subject" className="block text-sm font-medium text-gray-900 mb-2">
               Subject *
             </label>
             <select
@@ -317,19 +317,19 @@ export default function ContactPage() {
               required
               value={formData.subject}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-xl border border-green-700 bg-green-800/50 text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all"
+              className="w-full px-4 py-3 rounded-xl border border-green-700 bg-green-100/50 text-black focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all"
             >
-              <option value="" className="bg-green-900">Select a subject</option>
-              <option value="General Inquiry" className="bg-green-900">General Inquiry</option>
-              <option value="Product Information" className="bg-green-900">Product Information</option>
-              <option value="Order Support" className="bg-green-900">Order Support</option>
-              <option value="Partnership" className="bg-green-900">Partnership Opportunity</option>
-              <option value="Technical Support" className="bg-green-900">Technical Support</option>
+              <option value="" className="bg-green-200">Select a subject</option>
+              <option value="General Inquiry" className="bg-green-200">General Inquiry</option>
+              <option value="Product Information" className="bg-green-200">Product Information</option>
+              <option value="Order Support" className="bg-green-200">Order Support</option>
+              <option value="Partnership" className="bg-green-200">Partnership Opportunity</option>
+              <option value="Technical Support" className="bg-green-200">Technical Support</option>
             </select>
           </div>
 
           <div>
-            <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+            <label htmlFor="message" className="block text-sm font-medium text-gray-900 mb-2">
               Message *
             </label>
             <textarea
@@ -339,7 +339,7 @@ export default function ContactPage() {
               rows={5}
               value={formData.message}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-xl border border-green-700 bg-green-800/50 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all resize-none"
+              className="w-full px-4 py-3 rounded-xl border border-green-700 bg-green-100/50 text-black placeholder-gray-900 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all resize-none"
               placeholder="Please provide details about your inquiry..."
             />
           </div>
@@ -559,6 +559,7 @@ export default function ContactPage() {
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-green-400 transition-all duration-300 text-sm leading-6"
             >
+              <h2 className="text-white">Register Office</h2>
               B6, Ms nagar, Podanur Main Rd, <br/> Kurichi Pirivu, Coimbatore, Tamil Nadu 641023
             </a>
           </div>
@@ -570,7 +571,7 @@ export default function ContactPage() {
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-green-400 transition-all duration-300 text-sm leading-6"
             >
-              Plot No.26,Lotus colony <br/>H Block ,Govandi Mumbai -400043
+              Plot No.26,Lotus colony <br/>H Block ,Mumbai
             </a>
           </div>
 

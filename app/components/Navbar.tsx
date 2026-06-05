@@ -87,24 +87,24 @@ export default function Navbar() {
         <nav className="h-16 md:h-20 bg-white/95 backdrop-blur-md border-b border-green-100 shadow-[0_4px_20px_rgba(34,139,34,0.08)]">
           <div className="flex items-center justify-between h-full px-4 md:px-10">
 
-            {/* Logo Section */}
+            {/* Logo Section - LARGER on mobile */}
             <Link href="/" className="flex items-center gap-2 md:gap-3">
               <div className="relative">
                 <Image
                   src="/logoo.png"
                   alt="Zibral Healthcare"
-                  width={45}
-                  height={40}
-                  className="object-contain md:w-[60px] md:h-[55px]"
+                  width={60}
+                  height={55}
+                  className="object-contain md:w-[75px] md:h-[68px] w-[80px] h-[70px]"
                   priority
                 />
               </div>
 
               <div>
-                <h1 className="text-xl md:text-2xl font-bold text-green-700 leading-none">
+                <h1 className="text-2xl md:text-2xl font-bold text-green-700 leading-none">
                   Zibral
                 </h1>
-                <p className="text-[10px] md:text-xs uppercase tracking-[3px] md:tracking-[4px] text-green-600 mt-0.5 md:mt-1">
+                <p className="text-[12px] md:text-xs uppercase tracking-[3px] md:tracking-[4px] text-green-600 mt-0.5 md:mt-1">
                   Healthcare
                 </p>
               </div>

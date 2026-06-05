@@ -255,10 +255,6 @@ export default function Home() {
           </div>
 
           <div className="rounded-xl text-slate-800 border p-3">
-             Dermatologically Tested
-          </div>
-
-          <div className="rounded-xl text-slate-800 border p-3">
              Bioactives
           </div>
 
@@ -279,75 +275,91 @@ export default function Home() {
   </div>
 </section>
 {/* CRAMPLIN */}
-<div className="grid lg:grid-cols-2 gap-16 items-center mb-32">
+<div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center mb-16 md:mb-24 lg:mb-32">
 
   {/* LEFT CONTENT */}
-  <div>
+  <div className="order-2 lg:order-1">
 
-    <span className="px-4 py-2 rounded-full bg-orange-100 text-orange-700 text-sm font-medium">
+    <span className="inline-block px-3 py-1 md:px-4 md:py-2 rounded-full bg-orange-100 text-orange-700 text-xs md:text-sm font-medium">
       Muscle • Nerve • Cardiovascular Health
     </span>
 
-    <h2 className="text-5xl font-bold text-slate-900 mt-5">
+    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mt-4 md:mt-5">
       CRAMPLIN
     </h2>
 
-    <p className="text-xl text-slate-600 mt-2">
+    <p className="text-base sm:text-lg md:text-xl text-slate-600 mt-2 leading-relaxed">
       Magnesium Bisglycinate + L-Carnitine + Methylcobalamin + Folic Acid +
       Vitamin D3 + Tocotrienols + Zinc
     </p>
 
-    <p className="mt-5 text-slate-600 leading-8">
+    <p className="mt-4 md:mt-5 text-sm sm:text-base text-slate-600 leading-relaxed md:leading-8">
       Advanced nutritional support formulated to promote muscle strength,
       nerve regeneration, energy production, and cardiovascular wellness.
     </p>
 
-    {/* Benefits */}
-    <div className="grid md:grid-cols-2 gap-3 mt-8">
+    {/* Benefits - Responsive Grid */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 mt-6 md:mt-8">
 
-      <div className="p-4 rounded-2xl text-slate-800 border border-gray-900">
-        Supports nerve regeneration
+      <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl text-slate-800 border border-gray-200 text-sm sm:text-base">
+        ✓ Supports nerve regeneration
       </div>
 
-      <div className="p-4 rounded-2xl text-slate-800 border border-gray-900">
-        Reduces muscle cramps & spasms
+      <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl text-slate-800 border border-gray-200 text-sm sm:text-base">
+        ✓ Reduces muscle cramps & spasms
       </div>
 
-      <div className="p-4 rounded-2xl text-slate-800 border border-gray-900">
-        Improves muscle strength
+      <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl text-slate-800 border border-gray-200 text-sm sm:text-base">
+        ✓ Improves muscle strength
       </div>
 
-      <div className="p-4 rounded-2xl text-slate-800 border border-gray-900">
-        Supports cardiovascular wellness
+      <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl text-slate-800 border border-gray-200 text-sm sm:text-base">
+        ✓ Supports cardiovascular wellness
       </div>
 
-      <div className="p-4 rounded-2xl text-slate-800 border border-gray-900">
-        Maintains Vitamin D & Magnesium levels
+      <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl text-slate-800 border border-gray-200 text-sm sm:text-base">
+        ✓ Maintains Vitamin D & Magnesium levels
       </div>
 
-      <div className="p-4 rounded-2xl text-slate-800 border border-gray-900">
-        Antioxidant protection
+      <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl text-slate-800 border border-gray-200 text-sm sm:text-base">
+        ✓ Antioxidant protection
       </div>
 
     </div>
 
-    {/* Indications */}
-    <div className="mt-10">
+    {/* Indications - Responsive */}
+    <div className="mt-8 md:mt-10">
 
-      <h4 className="font-semibold text-slate-900 mb-4">
+      <h4 className="font-semibold text-slate-900 mb-3 md:mb-4 text-base md:text-lg">
         Key Indications
       </h4>
 
-      <div className="grid grid-cols-2 gap-3 text-sm text-slate-600">
+      <div className="grid grid-cols-2 gap-2 sm:gap-3 text-xs sm:text-sm text-slate-600">
 
-        <div>• Muscle cramps</div>
-        <div>• Nocturnal leg cramps</div>
-        <div>• Diabetic neuropathy</div>
-        <div>• Tingling & numbness</div>
-        <div>• Chronic fatigue</div>
-        <div>• Muscle weakness</div>
-        <div>• Cardiovascular support</div>
-        <div>• Type 2 Diabetes support</div>
+        <div className="flex items-center gap-2">
+          <span className="text-orange-500">•</span> Muscle cramps
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-orange-500">•</span> Nocturnal leg cramps
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-orange-500">•</span> Diabetic neuropathy
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-orange-500">•</span> Tingling & numbness
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-orange-500">•</span> Chronic fatigue
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-orange-500">•</span> Muscle weakness
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-orange-500">•</span> Cardiovascular support
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-orange-500">•</span> Type 2 Diabetes support
+        </div>
 
       </div>
 
@@ -355,73 +367,76 @@ export default function Home() {
 
   </div>
 
-  {/* RIGHT SHOWCASE */}
-  <div className="relative">
+  {/* RIGHT SHOWCASE - Responsive */}
+  <div className="relative order-1 lg:order-2">
 
-    <div className="absolute inset-0 bg-orange-100 rounded-[40px] blur-3xl opacity-40"></div>
+    <div className="absolute inset-0 bg-orange-100 rounded-[30px] sm:rounded-[40px] blur-2xl sm:blur-3xl opacity-40"></div>
 
-    <div className="relative bg-white rounded-[32px] border border-slate-100 shadow-sm p-8">
+    <div className="relative bg-white rounded-2xl sm:rounded-[32px] border border-slate-100 shadow-sm p-4 sm:p-6 md:p-8">
 
-      <img
-        src="/CRAMPLIN.jpg"
-        alt="CRAMPLIN"
-        className="w-full object-contain"
-      />
+      {/* Product Image */}
+      <div className="relative w-full max-w-md mx-auto">
+        <img
+          src="/CRAMPLIN.jpg"
+          alt="CRAMPLIN"
+          className="w-full h-auto object-contain"
+        />
+      </div>
 
-      {/* Highlight Images */}
-      <div className="grid grid-cols-3 gap-4 mt-8">
+      {/* Highlight Images - Responsive Grid */}
+      <div className="grid grid-cols-3 gap-3 sm:gap-4 mt-6 sm:mt-8">
 
         <div className="text-center">
-          <div className="w-24 h-24 rounded-full overflow-hidden mx-auto border">
+          <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full overflow-hidden mx-auto border-2 border-orange-100">
             <img
               src="/muscle.png"
               className="w-full h-full object-cover"
-              alt=""
+              alt="Muscle Strength"
             />
           </div>
-          <p className="text-xs text-slate-600 mt-2">Muscle Strength</p>
+          <p className="text-[10px] sm:text-xs text-slate-600 mt-1 sm:mt-2">Muscle Strength</p>
         </div>
 
         <div className="text-center">
-          <div className="w-24 h-24 rounded-full overflow-hidden mx-auto border">
+          <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full overflow-hidden mx-auto border-2 border-orange-100">
             <img
               src="/nerve.png"
               className="w-full h-full object-cover"
-              alt=""
+              alt="Nerve Health"
             />
           </div>
-          <p className="text-xs text-slate-600 mt-2">Nerve Health</p>
+          <p className="text-[10px] sm:text-xs text-slate-600 mt-1 sm:mt-2">Nerve Health</p>
         </div>
 
         <div className="text-center">
-          <div className="w-24 h-24 rounded-full overflow-hidden mx-auto border">
+          <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full overflow-hidden mx-auto border-2 border-orange-100">
             <img
               src="/heart.png"
               className="w-full h-full object-cover"
-              alt=""
+              alt="Cardiovascular"
             />
           </div>
-          <p className="text-xs text-slate-600 mt-2">Cardiovascular</p>
+          <p className="text-[10px] sm:text-xs text-slate-600 mt-1 sm:mt-2">Cardiovascular</p>
         </div>
 
       </div>
 
-      {/* Ingredients */}
-      <div className="grid grid-cols-4 gap-3 mt-8">
+      {/* Ingredients - Responsive Grid */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 mt-6 sm:mt-8">
 
-        <div className="rounded-xl text-slate-800 bg-slate-50 p-3 text-center text-xs">
+        <div className="rounded-xl text-slate-800 bg-slate-50 p-2 sm:p-3 text-center text-[11px] sm:text-xs font-medium">
           Magnesium
         </div>
 
-        <div className="rounded-xl text-slate-800 bg-slate-50 p-3 text-center text-xs">
+        <div className="rounded-xl text-slate-800 bg-slate-50 p-2 sm:p-3 text-center text-[11px] sm:text-xs font-medium">
           L-Carnitine
         </div>
 
-        <div className="rounded-xl text-slate-800 bg-slate-50 p-3 text-center text-xs">
+        <div className="rounded-xl text-slate-800 bg-slate-50 p-2 sm:p-3 text-center text-[11px] sm:text-xs font-medium">
           Vitamin D3
         </div>
 
-        <div className="rounded-xl text-slate-800 bg-slate-50 p-3 text-center text-xs">
+        <div className="rounded-xl text-slate-800 bg-slate-50 p-2 sm:p-3 text-center text-[11px] sm:text-xs font-medium">
           Zinc
         </div>
 
@@ -908,6 +923,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-green-400 transition-all duration-300 text-sm leading-6"
             >
+              <h2 className="text-white">Register Office</h2>
               B6, Ms nagar, Podanur Main Rd, <br/> Kurichi Pirivu, Coimbatore, Tamil Nadu 641023
             </a>
           </div>
