@@ -200,7 +200,7 @@ export default function AboutPage() {
             </div>
             <h3 className="text-xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-emerald-300 to-green-400 bg-clip-text text-transparent">Certified</h3>
             <p className="mt-1 sm:mt-2 text-gray-300 font-medium text-[11px] sm:text-sm md:text-base whitespace-nowrap sm:whitespace-normal">
-              Good Manufacturing Practice
+              Good Manufacturing <br/> Practice (GMP)
             </p>
           </div>
         </div>
