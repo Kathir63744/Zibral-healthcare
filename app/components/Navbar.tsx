@@ -42,7 +42,7 @@ export default function Navbar() {
               <span className="text-sm font-medium">Connect With Us</span>
               
               <a
-                href="https://www.instagram.com/zibral_healthcare_2021?igsh=YzVxM3prZzBxMHl1"
+                href="https://www.instagram.com/zibral_healthcare_2021/?utm_source=ig_web_button_share_sheet"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300"

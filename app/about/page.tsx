@@ -397,9 +397,9 @@ export default function AboutPage() {
             href="https://www.instagram.com/zibral_healthcare_2021?igsh=YzVxM3prZzBxMHl1"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-10 h-10 rounded-full bg-gray-800/80 border border-gray-700 flex items-center justify-center hover:border-green-500 hover:text-green-400 transition-all duration-300 group"
+            className="w-20 h-20 rounded-full bg-gray-800/80 border border-gray-700 flex items-center justify-center hover:border-green-500 hover:text-green-400 transition-all duration-300 group"
           >
-            <LiaInstagram className="text-2xl text-gray-400 group-hover:text-green-400" />
+            <LiaInstagram className="text-4xl text-gray-400 group-hover:text-green-400" />
           </a>
         </div>
       </div>
@@ -509,7 +509,7 @@ export default function AboutPage() {
           <div className="flex items-start gap-3">
             <HiOutlineLocationMarker className="text-2xl text-green-400 mt-1 flex-shrink-0" />
             <a 
-              href="https://maps.google.com/?q=B6+Ms+nagar+Podanur+Main+Rd+Kurichi+Pirivu+Coimbatore+Tamil+Nadu+641023" 
+              href="https://www.instagram.com/zibral_healthcare_2021/?utm_source=ig_web_button_share_sheet" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-green-400 transition-all duration-300 text-sm leading-6"
@@ -544,18 +544,13 @@ export default function AboutPage() {
         </p>
 
         <div className="flex gap-6 text-sm">
-          <Link
-            href="/privacy-policy"
-            className="text-gray-500 hover:text-green-400 transition"
-          >
-            Privacy Policy
-          </Link>
+         
 
           <Link
-            href="/terms-conditions"
+            href="https://blackstoneinfomatics.com/"
             className="text-gray-500 hover:text-green-400 transition"
           >
-            Terms & Conditions
+            Powered By BlackStone Informatics
           </Link>
         </div>
 

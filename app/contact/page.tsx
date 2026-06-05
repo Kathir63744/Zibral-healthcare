@@ -439,12 +439,12 @@ export default function ContactPage() {
         {/* Social Icons - Dark Theme */}
         <div className="flex gap-3 mt-6">
           <a
-            href="https://www.instagram.com/zibral_healthcare_2021?igsh=YzVxM3prZzBxMHl1"
+            href="https://www.instagram.com/zibral_healthcare_2021/?utm_source=ig_web_button_share_sheet"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-10 h-10 rounded-full bg-gray-800/80 border border-gray-700 flex items-center justify-center hover:border-green-500 hover:text-green-400 transition-all duration-300 group"
+            className="w-20 h-20 rounded-full bg-gray-800/80 border border-gray-700 flex items-center justify-center hover:border-green-500 hover:text-green-400 transition-all duration-300 group"
           >
-            <LiaInstagram className="text-2xl text-gray-400 group-hover:text-green-400" />
+            <LiaInstagram className="text-4xl text-gray-400 group-hover:text-green-400" />
           </a>
         </div>
       </div>
@@ -554,7 +554,7 @@ export default function ContactPage() {
           <div className="flex items-start gap-3">
             <HiOutlineLocationMarker className="text-2xl text-green-400 mt-1 flex-shrink-0" />
             <a 
-              href="https://maps.google.com/?q=B6+Ms+nagar+Podanur+Main+Rd+Kurichi+Pirivu+Coimbatore+Tamil+Nadu+641023" 
+              href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.911017538012!2d76.96804850000001!3d10.970088900000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859809a932fe3%3A0x1becc5c1a3eb7308!2sCity%20Centre%20Lodge!5e0!3m2!1sen!2sin!4v1780638693251!5m2!1sen!2sin" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-green-400 transition-all duration-300 text-sm leading-6"
@@ -589,18 +589,13 @@ export default function ContactPage() {
         </p>
 
         <div className="flex gap-6 text-sm">
-          <Link
-            href="/privacy-policy"
-            className="text-gray-500 hover:text-green-400 transition"
-          >
-            Privacy Policy
-          </Link>
+         
 
           <Link
-            href="/terms-conditions"
+            href="https://blackstoneinfomatics.com/"
             className="text-gray-500 hover:text-green-400 transition"
           >
-            Terms & Conditions
+            Powered By BlackStone Informatics
           </Link>
         </div>
 
