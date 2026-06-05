@@ -123,6 +123,7 @@ export default function AboutPage() {
 </section>
 
 {/* Stats Section - Premium Dark Metallic Glass */}
+{/* Stats Section - Premium Dark Metallic Glass */}
 <section className="py-12 sm:py-20 bg-gradient-to-br from-gray-950 via-green-950 to-gray-950">
   <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
