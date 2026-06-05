@@ -12,10 +12,16 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://zibralhealthcare.in"),
   title: "Zibral Healthcare",
-  description: "Delivering quality healthcare and pharmaceutical solutions",
+  description:
+    "Zibral Healthcare delivers quality healthcare and pharmaceutical solutions.",
+
+  verification: {
+    google: "XwkgGaPkc6KTkF_-M71gjhdPH2xEpg1TgGBpMlfZRzQ",
+  },
 };
 
 export default function RootLayout({
