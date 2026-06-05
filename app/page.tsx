@@ -788,7 +788,7 @@ export default function Home() {
         {/* Social Icons - Dark Theme */}
         <div className="flex gap-3 mt-6">
           <a
-            href="https://www.instagram.com/p/C33VcCDyGS2/?igsh=MW5kNmphcjVjaHJlcg=="
+            href="https://www.instagram.com/zibral_healthcare_2021?igsh=YzVxM3prZzBxMHl1"
             target="_blank"
             rel="noopener noreferrer"
             className="w-10 h-10 rounded-full bg-gray-800/80 border border-gray-700 flex items-center justify-center hover:border-green-500 hover:text-green-400 transition-all duration-300 group"

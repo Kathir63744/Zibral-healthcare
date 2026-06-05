@@ -42,7 +42,7 @@ export default function Navbar() {
               <span className="text-sm font-medium">Connect With Us</span>
               
               <a
-                href="https://www.instagram.com/p/C33VcCDyGS2/"
+                href="https://www.instagram.com/zibral_healthcare_2021?igsh=YzVxM3prZzBxMHl1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300"
@@ -192,7 +192,7 @@ export default function Navbar() {
               {/* Mobile Top Bar Info - Green Theme */}
               <div className="flex flex-wrap items-center gap-3 pb-4 border-b border-green-100">
                 <a
-                  href="https://www.instagram.com/p/C33VcCDyGS2/"
+                  href="https://www.instagram.com/zibral_healthcare_2021?igsh=YzVxM3prZzBxMHl1"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-9 h-9 rounded-full bg-green-100 flex items-center justify-center hover:bg-green-200 transition"

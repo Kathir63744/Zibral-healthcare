@@ -74,121 +74,163 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Why Choose Zibral Healthcare - Green Theme */}
-      <section className="py-16 bg-gradient-to-b from-white to-green-50/30">
-        <div className="max-w-6xl mx-auto px-4">
+{/* Why Choose Zibral Healthcare - Deep Glass Effect */}
+<section className="py-16 bg-gradient-to-b from-green-50/20 via-white to-green-50/20">
+  <div className="max-w-6xl mx-auto px-4">
 
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-green-700 to-emerald-600 bg-clip-text text-transparent">
-              Why Choose Zibral Healthcare?
-            </h2>
-            <p className="mt-2 text-lg text-gray-500">
-              Quality-driven healthcare solutions trusted worldwide
-            </p>
-          </div>
+    <div className="text-center mb-10">
+      <div className="inline-block px-4 py-1 rounded-full bg-green-100/50 backdrop-blur-sm border border-green-200 mb-4">
+        <span className="text-green-600 text-sm font-medium">✦ Why Choose Us ✦</span>
+      </div>
+      <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-green-700 to-emerald-600 bg-clip-text text-transparent">
+        Why Choose Zibral Healthcare?
+      </h2>
+      <p className="mt-2 text-lg text-gray-500">
+        Quality-driven healthcare solutions trusted worldwide
+      </p>
+    </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            
-            {[
-              { title: "Quality-driven", icon: "✓" },
-              { title: "Scientifically Developed", icon: "🔬" },
-              { title: "Patient-centric Approach", icon: "❤️" },
-              { title: "Ethical & Transparent", icon: "🤝" },
-              { title: "Reliable Supply Chain", icon: "🚚" },
-              { title: "Continuous Innovation", icon: "💡" }
-            ].map((item) => (
-              <div 
-                key={item.title} 
-                className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/70 backdrop-blur-sm border border-green-100 hover:border-green-300 hover:bg-white transition-all duration-200"
-              >
-                <span className="text-green-600 text-md">{item.icon}</span>
-                <span className="text-lg md:text-lg text-gray-700 font-medium">{item.title}</span>
-              </div>
-            ))}
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* Stats Section - Green Theme */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="rounded-[32px] border border-green-100 bg-gradient-to-br from-white to-green-50/40 p-8 lg:p-12">
-
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-
-              <div className="text-center group">
-                <div className="flex justify-center mb-4">
-                  <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-sm">
-                    <Image
-                      src="/c3.png"
-                      alt="Years Experience"
-                      width={56}
-                      height={56}
-                      className="object-contain"
-                    />
-                  </div>
-                </div>
-                <h3 className="text-4xl lg:text-4xl font-bold text-green-600">5+</h3>
-                <p className="mt-2 text-gray-500 font-medium text-md">Years Experience</p>
-              </div>
-
-              <div className="text-center group lg:border-l lg:border-green-100">
-                <div className="flex justify-center mb-4">
-                  <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-sm">
-                    <Image
-                      src="/c22.png"
-                      alt="States"
-                      width={56}
-                      height={56}
-                      className="object-contain"
-                    />
-                  </div>
-                </div>
-                <h3 className="text-4xl lg:text-4xl font-bold text-green-600">4</h3>
-                <p className="mt-2 text-gray-500 font-medium text-md">States</p>
-              </div>
-
-              <div className="text-center group lg:border-l lg:border-green-100">
-                <div className="flex justify-center mb-4">
-                  <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-sm">
-                    <Image
-                      src="/c33.png"
-                      alt="Products"
-                      width={56}
-                      height={56}
-                      className="object-contain"
-                    />
-                  </div>
-                </div>
-                <h3 className="text-4xl lg:text-4xl font-bold text-green-600">100+</h3>
-                <p className="mt-2 text-gray-500 font-medium text-md">Products</p>
-              </div>
-
-              <div className="text-center group lg:border-l lg:border-green-100">
-                <div className="flex justify-center mb-4">
-                  <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-sm">
-                    <Image
-                      src="/c4.png"
-                      alt="GMP Certified"
-                      width={56}
-                      height={56}
-                      className="object-contain"
-                    />
-                  </div>
-                </div>
-                <h3 className="text-4xl lg:text-4xl font-bold text-green-600 select-none">Certified</h3>
-                <p className="mt-2 text-gray-500 font-medium text-md">Good Manufacturing Practice</p>
-              </div>
-
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      
+      {[
+        { title: "Quality-driven", icon: "✓", bg: "from-green-500/10 to-emerald-500/10" },
+        { title: "Scientifically Developed", icon: "🔬", bg: "from-emerald-500/10 to-green-500/10" },
+        { title: "Patient-centric Approach", icon: "❤️", bg: "from-green-500/10 to-emerald-500/10" },
+        { title: "Ethical & Transparent", icon: "🤝", bg: "from-emerald-500/10 to-green-500/10" },
+        { title: "Reliable Supply Chain", icon: "🚚", bg: "from-green-500/10 to-emerald-500/10" },
+        { title: "Continuous Innovation", icon: "💡", bg: "from-emerald-500/10 to-green-500/10" }
+      ].map((item) => (
+        <div
+          key={item.title}
+          className="group relative"
+        >
+          {/* Glass glow on hover */}
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-green-400/40 to-emerald-500/40 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition duration-500" />
+          
+          {/* Glass card */}
+          <div className={`relative flex items-center gap-3 px-4 py-3 rounded-xl bg-gradient-to-r ${item.bg} backdrop-blur-md border border-green-200/40 shadow-md hover:shadow-lg transition-all duration-300`}>
+            <div className="w-8 h-8 rounded-full bg-green-100/50 flex items-center justify-center">
+              <span className="text-green-600 text-sm">{item.icon}</span>
             </div>
-
+            <span className="text-base md:text-lg text-gray-700 font-medium">{item.title}</span>
           </div>
-
         </div>
-      </section>
+      ))}
+
+    </div>
+
+  </div>
+</section>
+
+{/* Stats Section - Premium Dark Metallic Glass */}
+<section className="py-20 bg-gradient-to-br from-gray-950 via-green-950 to-gray-950">
+  <div className="max-w-7xl mx-auto px-6">
+
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <div className="group relative">
+        {/* Outer glow */}
+        <div className="absolute -inset-0.5 bg-gradient-to-r from-green-500/30 to-emerald-500/30 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition duration-500" />
+        
+        {/* Main card */}
+        <div className="relative overflow-hidden bg-gradient-to-br from-green-900/40 to-green-950/60 backdrop-blur-xl rounded-2xl p-6 text-center border border-green-500/20 shadow-2xl hover:shadow-green-500/10 transition-all duration-300 hover:-translate-y-1">
+          
+          {/* Animated shine overlay */}
+          <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
+          
+          {/* Radial gradient glow */}
+          <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 via-transparent to-emerald-500/10"></div>
+          
+          <div className="relative z-10">
+            <div className="flex justify-center mb-4">
+              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-green-800/60 to-emerald-900/60 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-xl border border-green-500/40 shadow-green-500/20">
+                <Image src="/c3.png" alt="Years Experience" width={56} height={56} className="object-contain brightness-125 drop-shadow-lg" />
+              </div>
+            </div>
+            <h3 className="text-4xl lg:text-4xl font-bold bg-gradient-to-r from-green-300 to-emerald-400 bg-clip-text text-transparent">5+</h3>
+            <p className="mt-2 text-gray-300 font-medium text-md">Years Experience</p>
+            <div className="mt-3 flex justify-center gap-1">
+              <div className="w-1 h-1 rounded-full bg-green-400"></div>
+              <div className="w-1 h-1 rounded-full bg-green-400"></div>
+              <div className="w-1 h-1 rounded-full bg-green-400"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="group relative">
+        <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-500/30 to-green-500/30 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition duration-500" />
+        <div className="relative overflow-hidden bg-gradient-to-br from-emerald-900/40 to-green-950/60 backdrop-blur-xl rounded-2xl p-6 text-center border border-emerald-500/20 shadow-2xl hover:shadow-emerald-500/10 transition-all duration-300 hover:-translate-y-1">
+          <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 via-transparent to-green-500/10"></div>
+          
+          <div className="relative z-10">
+            <div className="flex justify-center mb-4">
+              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-800/60 to-green-900/60 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-xl border border-emerald-500/40 shadow-emerald-500/20">
+                <Image src="/c22.png" alt="States" width={56} height={56} className="object-contain brightness-125 drop-shadow-lg" />
+              </div>
+            </div>
+            <h3 className="text-4xl lg:text-4xl font-bold bg-gradient-to-r from-emerald-300 to-green-400 bg-clip-text text-transparent">4</h3>
+            <p className="mt-2 text-gray-300 font-medium text-md">States</p>
+            <div className="mt-3 flex justify-center gap-1">
+              <div className="w-1 h-1 rounded-full bg-emerald-400"></div>
+              <div className="w-1 h-1 rounded-full bg-emerald-400"></div>
+              <div className="w-1 h-1 rounded-full bg-emerald-400"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="group relative">
+        <div className="absolute -inset-0.5 bg-gradient-to-r from-green-500/30 to-emerald-500/30 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition duration-500" />
+        <div className="relative overflow-hidden bg-gradient-to-br from-green-900/40 to-emerald-950/60 backdrop-blur-xl rounded-2xl p-6 text-center border border-green-500/20 shadow-2xl hover:shadow-green-500/10 transition-all duration-300 hover:-translate-y-1">
+          <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 via-transparent to-emerald-500/10"></div>
+          
+          <div className="relative z-10">
+            <div className="flex justify-center mb-4">
+              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-green-800/60 to-emerald-900/60 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-xl border border-green-500/40 shadow-green-500/20">
+                <Image src="/c33.png" alt="Products" width={56} height={56} className="object-contain brightness-125 drop-shadow-lg" />
+              </div>
+            </div>
+            <h3 className="text-4xl lg:text-4xl font-bold bg-gradient-to-r from-green-300 to-emerald-400 bg-clip-text text-transparent">100+</h3>
+            <p className="mt-2 text-gray-300 font-medium text-md">Products</p>
+            <div className="mt-3 flex justify-center gap-1">
+              <div className="w-1 h-1 rounded-full bg-green-400"></div>
+              <div className="w-1 h-1 rounded-full bg-green-400"></div>
+              <div className="w-1 h-1 rounded-full bg-green-400"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="group relative">
+        <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-500/30 to-green-500/30 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition duration-500" />
+        <div className="relative overflow-hidden bg-gradient-to-br from-emerald-900/40 to-green-950/60 backdrop-blur-xl rounded-2xl p-6 text-center border border-emerald-500/20 shadow-2xl hover:shadow-emerald-500/10 transition-all duration-300 hover:-translate-y-1">
+          <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 via-transparent to-green-500/10"></div>
+          
+          <div className="relative z-10">
+            <div className="flex justify-center mb-4">
+              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-800/60 to-green-900/60 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-xl border border-emerald-500/40 shadow-emerald-500/20">
+                <Image src="/c4.png" alt="GMP Certified" width={56} height={56} className="object-contain brightness-125 drop-shadow-lg" />
+              </div>
+            </div>
+            <h3 className="text-4xl lg:text-4xl font-bold bg-gradient-to-r from-emerald-300 to-green-400 bg-clip-text text-transparent select-none">Certified</h3>
+            <p className="mt-2 text-gray-300 font-medium text-md">Good Manufacturing Practice</p>
+            <div className="mt-3 flex justify-center gap-1">
+              <div className="w-1 h-1 rounded-full bg-emerald-400"></div>
+              <div className="w-1 h-1 rounded-full bg-emerald-400"></div>
+              <div className="w-1 h-1 rounded-full bg-emerald-400"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
 {/* WHO WE ARE - Green Theme */}
 <section className="py-16 md:py-20 lg:py-24">
@@ -241,95 +283,96 @@ export default function AboutPage() {
     </div>
   </div>
 </section>
+{/* WHAT WE DO - Dark Glass Cards with Visible Dark BG */}
+<section className="py-24 bg-gradient-to-b from-white to-green-50/30">
+  <div className="max-w-7xl mx-auto px-6">
 
-      {/* WHAT WE DO - Green Theme */}
-      <section className="py-24 bg-gradient-to-b from-white to-green-50/30">
-        <div className="max-w-7xl mx-auto px-6">
+    {/* Section Header - Original */}
+    <div className="text-center mb-16">
+      <span className="inline-flex px-4 py-2 rounded-full bg-green-100 text-green-700 text-sm font-semibold">
+        Our Expertise
+      </span>
 
-          <div className="text-center mb-16">
-            <span className="inline-flex px-4 py-2 rounded-full bg-green-100 text-green-700 text-sm font-semibold">
-              Our Expertise
-            </span>
+      <h2 className="mt-5 text-4xl md:text-5xl font-bold bg-gradient-to-r from-green-700 to-emerald-600 bg-clip-text text-transparent">
+        What We Do
+      </h2>
 
-            <h2 className="mt-5 text-4xl md:text-5xl font-bold bg-gradient-to-r from-green-700 to-emerald-600 bg-clip-text text-transparent">
-              What We Do
-            </h2>
+      <p className="mt-4 max-w-2xl mx-auto text-gray-600 text-lg">
+        We combine innovation, quality, and healthcare expertise to develop
+        trusted pharmaceutical solutions that improve patient outcomes.
+      </p>
+    </div>
 
-            <p className="mt-4 max-w-2xl mx-auto text-gray-600 text-lg">
-              We combine innovation, quality, and healthcare expertise to develop
-              trusted pharmaceutical solutions that improve patient outcomes.
-            </p>
+    {/* Cards Grid - Dark Glass with Visible Dark BG */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
+
+      {[
+        {
+          title: "Research & Development",
+          icon: "🧪",
+          desc: "Developing innovative formulations through scientific research and continuous product advancement."
+        },
+        {
+          title: "Manufacturing Excellence",
+          icon: "🏭",
+          desc: "Maintaining world-class production standards with precision, consistency, and compliance."
+        },
+        {
+          title: "Quality Assurance",
+          icon: "🛡️",
+          desc: "Ensuring every product meets stringent quality, safety, and regulatory requirements."
+        },
+        {
+          title: "Healthcare Distribution",
+          icon: "🌍",
+          desc: "Delivering trusted healthcare products efficiently through a strong distribution network."
+        }
+      ].map((item) => (
+        <div
+          key={item.title}
+          className="group relative transition-all duration-300 hover:-translate-y-2"
+        >
+          {/* Neon glow border on hover */}
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-green-500/50 to-emerald-500/50 rounded-[30px] blur-xl opacity-0 group-hover:opacity-100 transition duration-500" />
+          
+          {/* Dark Glass Card - Visible Dark Background */}
+          <div className="relative overflow-hidden rounded-[30px] bg-gradient-to-br from-gray-900 to-green-950 backdrop-blur-md p-8 border border-green-500/40 shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col h-full min-h-[320px]">
+            
+            {/* Glass shine overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent pointer-events-none rounded-[30px]" />
+            
+            {/* Animated shine on hover */}
+            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none"></div>
+            
+            {/* Radial gradient glow */}
+            <div className="absolute top-0 right-0 w-40 h-40 bg-green-500/15 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
+            
+            {/* Icon Container - Dark Glass */}
+            <div className="w-16 h-16 rounded-2xl bg-gray-800/80 backdrop-blur-sm flex items-center justify-center text-3xl mb-6 flex-shrink-0 border border-green-500/40 shadow-lg group-hover:scale-110 transition-transform duration-300">
+              {item.icon}
+            </div>
+
+            {/* Content */}
+            <div className="flex-grow relative z-10">
+              <h3 className="text-xl font-bold text-white">
+                {item.title}
+              </h3>
+
+              <p className="mt-4 text-gray-300 leading-7">
+                {item.desc}
+              </p>
+            </div>
+
+            {/* Bottom Accent Line */}
+            <div className="mt-6 h-1 w-12 rounded-full bg-gradient-to-r from-green-400 to-emerald-500 group-hover:w-20 transition-all duration-300"></div>
           </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
-
-            {[
-              {
-                title: "Research & Development",
-                icon: "🧪",
-                desc: "Developing innovative formulations through scientific research and continuous product advancement."
-              },
-              {
-                title: "Manufacturing Excellence",
-                icon: "🏭",
-                desc: "Maintaining world-class production standards with precision, consistency, and compliance."
-              },
-              {
-                title: "Quality Assurance",
-                icon: "🛡️",
-                desc: "Ensuring every product meets stringent quality, safety, and regulatory requirements."
-              },
-              {
-                title: "Healthcare Distribution",
-                icon: "🌍",
-                desc: "Delivering trusted healthcare products efficiently through a strong distribution network."
-              }
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="
-                  group
-                  relative
-                  overflow-hidden
-                  rounded-[30px]
-                  bg-white
-                  p-8
-                  border border-green-100
-                  shadow-sm
-                  hover:shadow-xl
-                  hover:-translate-y-2
-                  transition-all
-                  duration-300
-                  flex
-                  flex-col
-                  h-full
-                  min-h-[320px]
-                "
-              >
-                <div className="absolute top-0 right-0 w-24 h-24 bg-green-100 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition"></div>
-
-                <div className="w-16 h-16 rounded-2xl bg-green-50 flex items-center justify-center text-3xl mb-6 flex-shrink-0">
-                  {item.icon}
-                </div>
-
-                <div className="flex-grow">
-                  <h3 className="text-xl font-bold text-gray-900">
-                    {item.title}
-                  </h3>
-
-                  <p className="mt-4 text-gray-600 leading-7">
-                    {item.desc}
-                  </p>
-                </div>
-
-                <div className="mt-6 h-1 w-12 rounded-full bg-green-500 group-hover:w-20 transition-all duration-300"></div>
-              </div>
-            ))}
-
-          </div>
-
         </div>
-      </section>
+      ))}
+
+    </div>
+
+  </div>
+</section>
 
 
 <footer className="relative overflow-hidden bg-[#013220] border-t border-emerald-800/30">
@@ -372,7 +415,7 @@ export default function AboutPage() {
         {/* Social Icons - Dark Theme */}
         <div className="flex gap-3 mt-6">
           <a
-            href="https://www.instagram.com/p/C33VcCDyGS2/?igsh=MW5kNmphcjVjaHJlcg=="
+            href="https://www.instagram.com/zibral_healthcare_2021?igsh=YzVxM3prZzBxMHl1"
             target="_blank"
             rel="noopener noreferrer"
             className="w-10 h-10 rounded-full bg-gray-800/80 border border-gray-700 flex items-center justify-center hover:border-green-500 hover:text-green-400 transition-all duration-300 group"
