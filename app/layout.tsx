@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://zibralhealthcare.in"),
   title: "Zibral Healthcare",
   description: "Delivering quality healthcare and pharmaceutical solutions",
 };
