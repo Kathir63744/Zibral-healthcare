@@ -13,6 +13,7 @@ import { HiOutlineLocationMarker } from "react-icons/hi";
 import { MdOutlineEmail } from "react-icons/md";
 import Image from "next/image";
 import ProductsSection from "./components/ProductsSection";
+import { Metadata } from "next";
 
 const products = [
   {
@@ -56,6 +57,12 @@ const products = [
     uses: ["Cough", "Cold", "Allergic Rhinitis"],
   },
 ];
+
+export const metadata: Metadata = {
+  title: "Pharmaceutical Company in Tamil Nadu | Zibral Healthcare",
+  description:
+    "Zibral Healthcare is a trusted pharmaceutical company in Tamil Nadu offering quality medicines, healthcare products, and innovative healthcare solutions.",
+};
 
 export default function Home() {
   return (
