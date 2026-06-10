@@ -91,7 +91,7 @@ export default function Navbar() {
             <Link href="/" className="flex items-center gap-2 md:gap-3">
               <div className="relative">
                 <Image
-                  src="/logoo.png"
+                  src="/logo1.png"
                   alt="Zibral Healthcare"
                   width={60}
                   height={55}

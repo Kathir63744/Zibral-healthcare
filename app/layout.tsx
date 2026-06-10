@@ -15,9 +15,15 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://zibralhealthcare.in"),
+
   title: "Zibral Healthcare",
+
   description:
     "Zibral Healthcare delivers quality healthcare and pharmaceutical solutions.",
+
+  icons: {
+    icon: "/logo1.png",
+  },
 
   verification: {
     google: "XwkgGaPkc6KTkF_-M71gjhdPH2xEpg1TgGBpMlfZRzQ",
