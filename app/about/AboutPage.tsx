@@ -360,59 +360,26 @@ export default function AboutPage() {
 </section>
 
 
-<footer className="relative overflow-hidden bg-[#013220] border-t border-emerald-800/30">
-  
+<footer className="bg-[#013220] border-t border-emerald-800/20">
+  <div className="max-w-[1600px] mx-auto px-8 lg:px-12 py-12">
 
+    {/* Main Grid */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[180px_220px_260px_1fr] gap-12 items-start">
 
-  <div className="relative px-8 py-16">
-    {/* Main Footer Grid */}
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-
-      {/* Company Info */}
-      <div>
-        <div className="flex items-center gap-3 mb-5">
-          <Image
-            src="/logo.png"
-            alt="Zibral Healthcare"
-            width={130}
-            height={130}
-            className="object-contain brightness-110"
-          />
-
-          <div>
-            <h3 className="text-2xl font-bold text-white">
-              Zibral
-            </h3>
-
-            <p className="uppercase tracking-[4px] text-xs text-green-400">
-              Healthcare
-            </p>
-          </div>
-        </div>
-
-        <p className="text-gray-300 leading-8 text-sm">
-          Delivering trusted pharmaceutical and healthcare solutions
-          through innovation, quality, and excellence. We are committed
-          to improving lives through reliable and affordable healthcare
-          products.
-        </p>
-
-        {/* Social Icons - Dark Theme */}
-        <div className="flex gap-3 mt-6">
-          <a
-            href="https://www.instagram.com/zibral_healthcare_2021?igsh=YzVxM3prZzBxMHl1"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-20 h-20 rounded-full bg-gray-800/80 border border-gray-700 flex items-center justify-center hover:border-green-500 hover:text-green-400 transition-all duration-300 group"
-          >
-            <LiaInstagram className="text-4xl text-gray-400 group-hover:text-green-400" />
-          </a>
-        </div>
+      {/* Logo */}
+      <div className="pt-2">
+        <Image
+          src="/footer-logo.png"
+          alt="Zibral Healthcare"
+          width={140}
+          height={140}
+          className="object-contain"
+        />
       </div>
 
       {/* Quick Links */}
       <div>
-        <h3 className="text-lg font-semibold text-white mb-6">
+        <h3 className="text-white font-semibold text-lg mb-6">
           Quick Links
         </h3>
 
@@ -420,7 +387,7 @@ export default function AboutPage() {
           <li>
             <Link
               href="/"
-              className="text-gray-400 hover:text-green-400 transition-all duration-300"
+              className="text-gray-400 text-sm hover:text-green-400 transition"
             >
               Home
             </Link>
@@ -429,7 +396,7 @@ export default function AboutPage() {
           <li>
             <Link
               href="/about"
-              className="text-gray-400 hover:text-green-400 transition-all duration-300"
+              className="text-gray-400 text-sm hover:text-green-400 transition"
             >
               About Us
             </Link>
@@ -438,7 +405,7 @@ export default function AboutPage() {
           <li>
             <Link
               href="/products"
-              className="text-gray-400 hover:text-green-400 transition-all duration-300"
+              className="text-gray-400 text-sm hover:text-green-400 transition"
             >
               Products
             </Link>
@@ -447,7 +414,7 @@ export default function AboutPage() {
           <li>
             <Link
               href="/contact"
-              className="text-gray-400 hover:text-green-400 transition-all duration-300"
+              className="text-gray-400 text-sm hover:text-green-400 transition"
             >
               Contact Us
             </Link>
@@ -455,113 +422,190 @@ export default function AboutPage() {
         </ul>
       </div>
 
-      {/* Products */}
+      {/* Product Categories */}
       <div>
-        <h3 className="text-lg font-semibold text-white mb-6">
+        <h3 className="text-white font-semibold text-lg mb-6">
           Product Categories
         </h3>
 
         <ul className="space-y-4">
           <li>
-            <Link href="/products?category=Tablets" className="text-gray-400 hover:text-green-400 transition-all duration-300">
+            <Link
+              href="/products?category=Tablets"
+              className="text-gray-400 text-sm hover:text-green-400 transition"
+            >
               Tablets
             </Link>
           </li>
+
           <li>
-            <Link href="/products?category=Capsules" className="text-gray-400 hover:text-green-400 transition-all duration-300">
+            <Link
+              href="/products?category=Capsules"
+              className="text-gray-400 text-sm hover:text-green-400 transition"
+            >
               Capsules
             </Link>
           </li>
+
           <li>
-            <Link href="/products?category=Syrups" className="text-gray-400 hover:text-green-400 transition-all duration-300">
+            <Link
+              href="/products?category=Syrups"
+              className="text-gray-400 text-sm hover:text-green-400 transition"
+            >
               Syrups
             </Link>
           </li>
+
           <li>
-            <Link href="/products?category=Injectables" className="text-gray-400 hover:text-green-400 transition-all duration-300">
+            <Link
+              href="/products?category=Injectables"
+              className="text-gray-400 text-sm hover:text-green-400 transition"
+            >
               Injectables
             </Link>
           </li>
+
           <li>
-            <Link href="/products?category=Supplements" className="text-gray-400 hover:text-green-400 transition-all duration-300">
+            <Link
+              href="/products?category=Supplements"
+              className="text-gray-400 text-sm hover:text-green-400 transition"
+            >
               Healthcare Solutions
             </Link>
           </li>
         </ul>
       </div>
 
-      {/* Contact Info */}
+      {/* Contact Information */}
       <div>
-        <h3 className="text-lg font-semibold text-white mb-6">
+        <h3 className="text-white font-semibold text-lg mb-6">
           Contact Information
         </h3>
 
-        <div className="bg-gray-800/40 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-5 space-y-5 shadow-sm">
+        <div className="bg-[#0c4033] border border-emerald-700/20 rounded-2xl p-4">
 
-          <div className="flex items-start gap-3">
-            <MdOutlineEmail className="text-2xl text-green-400 mt-1 flex-shrink-0" />
-            <a href="mailto:info@zibralhealthcare.com" className="text-gray-300 hover:text-green-400 transition-all duration-300 text-sm">             
-              zibralhealthcare2021@gmail.com
-            </a>
-          </div>
+          {/* Top Row */}
+          <div className="flex justify-between items-start gap-4">
 
-          <div className="flex items-start gap-3">
-            <BiPhone className="text-2xl text-green-400 mt-1 flex-shrink-0" />
-            <a href="tel:+918610810041" className="text-gray-300 hover:text-green-400 transition-all duration-300 text-sm">
-              +91 86108 10041
-            </a>
-          </div>
+            <div className="space-y-3">
 
-          <div className="flex items-start gap-3">
-            <HiOutlineLocationMarker className="text-2xl text-green-400 mt-1 flex-shrink-0" />
-            <a 
-              href="https://www.instagram.com/zibral_healthcare_2021/?utm_source=ig_web_button_share_sheet" 
-              target="_blank" 
+              <div className="flex items-center gap-3">
+                <MdOutlineEmail className="text-green-400 text-lg flex-shrink-0" />
+                <a
+                  href="mailto:zibralhealthcare2021@gmail.com"
+                  className="text-gray-300 text-xs hover:text-green-400 transition"
+                >
+                  zibralhealthcare2021@gmail.com
+                </a>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <BiPhone className="text-green-400 text-lg flex-shrink-0" />
+                <a
+                  href="tel:+918610810041"
+                  className="text-gray-300 text-xs hover:text-green-400 transition"
+                >
+                  +91 86108 10041
+                </a>
+              </div>
+
+            </div>
+
+            {/* Instagram */}
+            <a
+              href="https://www.instagram.com/zibral_healthcare_2021/"
+              target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-300 hover:text-green-400 transition-all duration-300 text-sm leading-6"
+              className="flex flex-col items-center"
             >
-              <h2 className="text-white">Register Office</h2>
-              B6, Ms nagar, Podanur Main Rd, <br/> Kurichi Pirivu, Coimbatore, Tamil Nadu 641023
+              <img
+                src="/insta1.png"
+                alt="Instagram"
+                className="w-10 h-10 object-contain"
+              />
+
+              <span className="text-white text-xs font-medium mt-1">
+                Connect Us
+              </span>
             </a>
-          </div>
-          <div className="flex items-start gap-3">
-            <HiOutlineLocationMarker className="text-2xl text-green-400 mt-1 flex-shrink-0" />
-            <a 
-              href="https://maps.google.com/?q=Plot+No.26,Lotus+colony+H+Block,+Mumbai" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-gray-300 hover:text-green-400 transition-all duration-300 text-sm leading-6"
-            >
-              Plot No.26,Lotus colony <br/>H Block ,Mumbai
-            </a>
+
           </div>
 
+          {/* Address Cards */}
+          <div className="grid md:grid-cols-2 gap-3 mt-4">
+
+            {/* Office 1 */}
+            <a
+              href="https://maps.google.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-black rounded-xl p-3 border border-transparent hover:border-green-500 transition"
+            >
+              <div className="flex gap-2">
+                <HiOutlineLocationMarker className="text-green-400 text-lg mt-1 flex-shrink-0" />
+
+                <div className="text-gray-300 text-xs leading-5">
+                  <h4 className="text-white font-medium mb-1">
+                    Register Office
+                  </h4>
+
+                  B6, Ms Nagar,
+                  Podanur Main Rd,
+                  Kurichi Pirivu,
+                  Coimbatore,
+                  Tamil Nadu 641023
+                </div>
+              </div>
+            </a>
+
+            {/* Office 2 */}
+            <a
+              href="https://maps.google.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-black rounded-xl p-3 border border-transparent hover:border-green-500 transition"
+            >
+              <div className="flex gap-2">
+                <HiOutlineLocationMarker className="text-green-400 text-lg mt-1 flex-shrink-0" />
+
+                <div className="text-gray-300 text-xs leading-5">
+                  <h4 className="text-white font-medium mb-1">
+                    Branch Office
+                  </h4>
+
+                  Plot No.26,
+                  Lotus Colony,
+                  H Block,
+                  Mumbai
+                </div>
+              </div>
+            </a>
+
+          </div>
         </div>
       </div>
 
     </div>
 
-    {/* Divider */}
-    <div className="border-t border-gray-800 mt-12 pt-6">
-      <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+    {/* Bottom Bar */}
+    <div className="border-t border-emerald-800/30 mt-10 pt-5">
+      <div className="flex flex-col md:flex-row justify-between items-center gap-3">
 
-        <p className="text-gray-500 text-sm">
+        <p className="text-[#7e918b] text-xs">
           © 2026 Zibral Healthcare. All Rights Reserved.
         </p>
 
-        <div className="flex gap-6 text-sm">
-         
-
-          <Link
-            href="https://blackstoneinfomatics.com/"
-            className="text-gray-500 hover:text-green-400 transition"
-          >
-            Powered By BlackStone Informatics
-          </Link>
-        </div>
+        <Link
+          href="https://blackstoneinfomatics.com/"
+          target="_blank"
+          className="text-[#7e918b] text-xs hover:text-green-400 transition"
+        >
+          Powered By BlackStone Informatics
+        </Link>
 
       </div>
     </div>
+
   </div>
 </footer>
     </main>

@@ -42,13 +42,17 @@ export default function Navbar() {
               <span className="text-sm font-medium">Connect With Us</span>
               
               <a
-                href="https://www.instagram.com/zibral_healthcare_2021/?utm_source=ig_web_button_share_sheet"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300"
-              >
-                <LiaInstagram className="text-xl" />
-              </a>
+  href="https://www.instagram.com/zibral_healthcare_2021/?utm_source=ig_web_button_share_sheet"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300"
+>
+  <img
+    src="/insta1.png"
+    alt="Instagram"
+    className="w-7 h-7 object-contain"
+  />
+</a>
 
               <div className="w-[2px] h-6 bg-white/50 mx-2"></div>
 
@@ -88,27 +92,16 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-full px-4 md:px-10">
 
             {/* Logo Section - LARGER on mobile */}
-            <Link href="/" className="flex items-center gap-2 md:gap-3">
-              <div className="relative">
-                <Image
-                  src="/logo1.png"
-                  alt="Zibral Healthcare"
-                  width={60}
-                  height={55}
-                  className="object-contain md:w-[75px] md:h-[68px] w-[80px] h-[70px]"
-                  priority
-                />
-              </div>
-
-              <div>
-                <h1 className="text-2xl md:text-2xl font-bold text-green-700 leading-none">
-                  Zibral
-                </h1>
-                <p className="text-[12px] md:text-xs uppercase tracking-[3px] md:tracking-[4px] text-green-600 mt-0.5 md:mt-1">
-                  Healthcare
-                </p>
-              </div>
-            </Link>
+<Link href="/" className="flex -ml-7 ">
+  <Image
+    src="/header logo.png"
+    alt="Zibral Healthcare"
+    width={270}
+    height={50}
+    priority
+    className="h-[70px] w-[140px] sm:w-[140px] md:w-[170px] lg:w-[200px] object-contain"
+  />
+</Link>
 
             {/* Desktop Menu */}
             <ul className="hidden md:flex items-center gap-8 lg:gap-12 font-medium">
