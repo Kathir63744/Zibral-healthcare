@@ -42,17 +42,17 @@ export default function Navbar() {
               <span className="text-sm font-medium">Connect With Us</span>
               
               <a
-  href="https://www.instagram.com/zibral_healthcare_2021/?utm_source=ig_web_button_share_sheet"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300"
->
-  <img
-    src="/insta1.png"
-    alt="Instagram"
-    className="w-7 h-7 object-contain"
-  />
-</a>
+                href="https://www.instagram.com/zibral_healthcare_2021/?utm_source=ig_web_button_share_sheet"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300"
+              >
+                <img
+                  src="/insta1.png"
+                  alt="Instagram"
+                  className="w-7 h-7 object-contain"
+                />
+              </a>
 
               <div className="w-[2px] h-6 bg-white/50 mx-2"></div>
 
@@ -90,64 +90,66 @@ export default function Navbar() {
         {/* ================= NAVBAR ================= */}
         <nav className="h-16 md:h-20 bg-white/95 backdrop-blur-md border-b border-green-100 shadow-[0_4px_20px_rgba(34,139,34,0.08)]">
           <div className="flex items-center justify-between h-full px-4 md:px-10">
+            
+            {/* Logo Section - Left */}
+            <Link href="/" className="flex-shrink-0">
+              <Image
+                src="/header logo.png"
+                alt="Zibral Healthcare"
+                width={220}
+                height={60}
+                priority
+                className="h-[55px] w-auto md:h-[65px] lg:h-[70px] object-contain"
+              />
+            </Link>
 
-            {/* Logo Section - LARGER on mobile */}
-<Link href="/" className="flex -ml-7 ">
-  <Image
-    src="/header logo.png"
-    alt="Zibral Healthcare"
-    width={270}
-    height={50}
-    priority
-    className="h-[70px] w-[140px] sm:w-[140px] md:w-[170px] lg:w-[200px] object-contain"
-  />
-</Link>
+            {/* Desktop Menu - Centered using absolute positioning */}
+            <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2">
+              <ul className="flex items-center gap-8 lg:gap-12 font-medium">
+                <li>
+                  <Link
+                    href="/"
+                    className="relative text-gray-700 hover:text-green-600 transition group"
+                  >
+                    Home
+                    <span className="absolute left-0 -bottom-2 h-[2px] w-0 bg-green-600 transition-all duration-300 group-hover:w-full"></span>
+                  </Link>
+                </li>
 
-            {/* Desktop Menu */}
-            <ul className="hidden md:flex items-center gap-8 lg:gap-12 font-medium">
-              <li>
-                <Link
-                  href="/"
-                  className="relative text-gray-700 hover:text-green-600 transition group"
-                >
-                  Home
-                  <span className="absolute left-0 -bottom-2 h-[2px] w-0 bg-green-600 transition-all duration-300 group-hover:w-full"></span>
-                </Link>
-              </li>
+                <li>
+                  <Link
+                    href="/about"
+                    className="relative text-gray-700 hover:text-green-600 transition group"
+                  >
+                    About
+                    <span className="absolute left-0 -bottom-2 h-[2px] w-0 bg-green-600 transition-all duration-300 group-hover:w-full"></span>
+                  </Link>
+                </li>
 
-              <li>
-                <Link
-                  href="/about"
-                  className="relative text-gray-700 hover:text-green-600 transition group"
-                >
-                  About
-                  <span className="absolute left-0 -bottom-2 h-[2px] w-0 bg-green-600 transition-all duration-300 group-hover:w-full"></span>
-                </Link>
-              </li>
+                <li>
+                  <Link
+                    href="/products"
+                    className="relative text-gray-700 hover:text-green-600 transition group"
+                  >
+                    Products
+                    <span className="absolute left-0 -bottom-2 h-[2px] w-0 bg-green-600 transition-all duration-300 group-hover:w-full"></span>
+                  </Link>
+                </li>
 
-              <li>
-                <Link
-                  href="/products"
-                  className="relative text-gray-700 hover:text-green-600 transition group"
-                >
-                  Products
-                  <span className="absolute left-0 -bottom-2 h-[2px] w-0 bg-green-600 transition-all duration-300 group-hover:w-full"></span>
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  href="/contact"
-                  className="relative text-gray-700 hover:text-green-600 transition group"
-                >
-                  Contact
-                  <span className="absolute left-0 -bottom-2 h-[2px] w-0 bg-green-600 transition-all duration-300 group-hover:w-full"></span>
-                </Link>
-              </li>
-            </ul>
+                <li>
+                  <Link
+                    href="/contact"
+                    className="relative text-gray-700 hover:text-green-600 transition group"
+                  >
+                    Contact
+                    <span className="absolute left-0 -bottom-2 h-[2px] w-0 bg-green-600 transition-all duration-300 group-hover:w-full"></span>
+                  </Link>
+                </li>
+              </ul>
+            </div>
 
             {/* Desktop Right Side - Reach Us Button with Popup */}
-            <div className="hidden md:flex items-center gap-4">
+            <div className="hidden md:flex items-center gap-4 flex-shrink-0 ml-auto">
               <div className="hidden xl:flex flex-col items-end">
                 <span className="text-xs text-gray-500">Trusted Healthcare</span>
                 <span className="font-semibold text-green-700">Quality Assured</span>
