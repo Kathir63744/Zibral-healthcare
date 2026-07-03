@@ -1,6 +1,7 @@
+// app/products/ProductPage.tsx
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Navbar from "../components/Navbar";
@@ -8,251 +9,111 @@ import Link from "next/link";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { BiPhone } from "react-icons/bi";
 import { MdOutlineEmail } from "react-icons/md";
-import { LiaFacebook, LiaInstagram } from "react-icons/lia";
+import { products, categories, Product, createSlug } from "../../lib/products";
 
-// ============================================================================
-// TYPES
-// ============================================================================
-
-export const metadata = {
-  title: "Pharmaceutical Products in Tamil Nadu | Zibral Healthcare",
-  description:
-    "Explore Zibral Healthcare's pharmaceutical products including antibiotics, cough syrups, digestive care, nutritional supplements, and healthcare solutions.",
-};
-
-interface Product {
-  id: number;
-  name: string;
-  generic: string;
-  category: string;
-  composition: string;
-  image: string;
-  uses: string[];
-  dosage?: string;
-  benefits: string[];
-}
-
-// ============================================================================
-// PRODUCT DATA (20 products)
-// ============================================================================
-
-const products: Product[] = [
-  {
-    id: 1,
-    name: "AZIBRAL-500",
-    generic: "Azithromycin Tablets IP 500 mg",
-    category: "Antibiotic",
-    composition: "Azithromycin 500 mg",
-    image: "/Azibral-500 - 1.png",
-    uses: ["Tonsillitis", "Sinusitis", "Pharyngitis"],
-    dosage: "5-day therapy as per ICMR–IDSA guidelines",
-    benefits: ["Short course therapy", "High tissue penetration", "Low drug interactions"],
-  },
-  {
-    id: 2,
-    name: "COFCYILIX-D",
-    generic: "Dextromethorphan + Phenylephrine + Chlorpheniramine",
-    category: "Cough & Cold",
-    composition: "Dextromethorphan HBr 15 mg + Phenylephrine HCl 5 mg + Chlorpheniramine 2 mg",
-    image: "/Cofcyilix-D.png",
-    uses: ["Dry cough", "Allergic cough", "Cold"],
-    benefits: ["Reduces cough frequency", "Relieves nasal congestion", "Dries secretions"],
-  },
-  {
-    id: 3,
-    name: "COFCYILIX-LS",
-    generic: "Ambroxol + Levosalbutamol + Guaiphenesin",
-    category: "Productive Cough",
-    composition: "Ambroxol 30 mg + Levosalbutamol 1 mg + Guaiphenesin 50 mg",
-    image: "/Cofcyilix-LS.png",
-    uses: ["Productive cough", "Wheezing"],
-    benefits: ["Expels mucus", "Improves airflow", "Relieves bronchospasm"],
-  },
-  {
-    id: 4,
-    name: "LINIBRAL-600",
-    generic: "Linezolid Tablets IP 600 mg",
-    category: "Antibiotic (MRSA)",
-    composition: "Linezolid 600 mg",
-    image: "/Linibral-600.png",
-    uses: ["MRSA infections", "Diabetic foot ulcer"],
-    benefits: ["High tissue penetration", "100% bioavailability", "IV to oral switch therapy"],
-  },
-  {
-    id: 5,
-    name: "ZEROBRAL-P - 1.png",
-    generic: "Aceclofenac + Paracetamol",
-    category: "Pain Relief",
-    composition: "Aceclofenac 100 mg + Paracetamol 325 mg",
-    image: "/ZEROBRAL-P - 1.png",
-    uses: ["Pain", "Fever", "Inflammation"],
-    benefits: ["Fast pain relief", "Dual mechanism action", "Strong anti-inflammatory effect"],
-  },
-  {
-    id: 6,
-    name: "ZEROBRAL-SP",
-    generic: "Aceclofenac + Paracetamol + Serratiopeptidase",
-    category: "Pain & Inflammation",
-    composition: "Aceclofenac 100mg + Paracetamol 325mg + Serratiopeptidase 15mg",
-    image: "/ZEROBRAL-SP.png",
-    uses: ["Tonsillitis", "Sinusitis", "Pharyngitis", "Trauma", "Swelling"],
-    benefits: ["Aceclofenac: Reduces pain severity", "Serratiopeptidase: Preferred over Trypsin"],
-  },
-  {
-    id: 7,
-    name: "CALOBRAL LOTION",
-    generic: "Calamine + Allantoin + Vitamin-E + Aloe Vera",
-    category: "Topical",
-    composition: "Calamine 10% + Allantoin 0.5% + Vitamin-E 0.5%",
-    image: "/calobral-lotion.png",
-    uses: ["Insect Bite", "Diaper rashes", "Viral Infections", "Summer Associated Dermatitis", "Urticaria"],
-    benefits: ["Calamine: Antipruritic", "Allantoin: Protects dry skin", "Vitamin E: Antioxidant", "Aloe Vera: Moisturizes"],
-  },
-  {
-    id: 8,
-    name: "MONTIBRAL-LC",
-    generic: "Montelukast Sodium + Levocetirizine Hydrochloride",
-    category: "Anti-Allergic",
-    composition: "Montelukast Sodium 10 mg + Levocetirizine Hydrochloride 5 mg",
-    image: "/Montibral-LC.png",
-    uses: ["Seasonal Allergic Rhinitis", "Chronic Idiopathic Urticaria", "Prophylaxis & Chronic Treatment of ASTHMA", "Persistent Allergic Rhinitis"],
-    benefits: ["Gold Standard Anti-Leukotriene", "Reduces Bronchoconstriction", "Relieves distressing symptoms"],
-  },
-  {
-    id: 9,
-    name: "ZIBCLAV 625",
-    generic: "Amoxycillin + Potassium Clavulanate",
-    category: "Antibiotic",
-    composition: "Amoxycillin 500 mg & Potassium Clavulanate 125 mg",
-    image: "/ZIBCLAV 625.jpg",
-    uses: ["Recurrent Tonsillitis", "Recurrent Sinusitis", "Tonsillo-Pharyngitis", "Dental Infection", "SSTI's"],
-    benefits: ["Active against wide range of bacteria", "Excellent clinical results", "Broad-Spectrum protection"],
-  },
-  {
-    id: 10,
-    name: "ZIBCLAV-457",
-    generic: "Amoxycillin + Potassium Clavulanate",
-    category: "Syrups",
-    composition: "Amoxycillin 400 mg & Potassium Clavulanate 57 mg",
-    image: "/ZIBCLAV 457.jpg",
-    uses: ["Recurrent Tonsillitis", "Recurrent Sinusitis", "Tonsillo-Pharyngitis", "Dental Infection"],
-    dosage: "For paediatric use",
-    benefits: ["Active against bacteria", "Excellent clinical results", "Orange flavour for children"],
-  },
-  {
-    id: 11,
-    name: "PPZOLE/40",
-    generic: "Pantoprazole",
-    category: "Tablets",
-    composition: "Pantoprazole 40 mg",
-    image: "/Pantoprazole 40 mg Tablet.png",
-    uses: ["GERD", "Peptic Ulcer", "Zollinger Ellison Syndrome", "NSAID Induced Ulcer"],
-    benefits: ["Superior anti-secretory activity", "Most effective in preventing stress ulcers", "No drug interference"],
-  },
-  {
-    id: 12,
-    name: "URIBRAL-B6",
-    generic: "Potassium Citrate + Magnesium Citrate + Pyridoxal 5-Phosphate + Cranberry + D-Mannose",
-    category: "Syrups",
-    composition: "Potassium Citrate 1100 mg, Magnesium Citrate 375 mg, Pyridoxal 5-Phosphate 20 mg, Cranberry 200 mg, D-Mannose 300 mg",
-    image: "/URIBRAL-B6 syrup.png",
-    uses: ["Urinary Tract Infections", "Recurrent UTI Prophylaxis", "UTIs during Pregnancy", "Kidney Stones"],
-    benefits: ["P-5-P: Active Vitamin B6", "Cranberry: Makes urine acidic", "D-Mannose: Inhibits E-coli adhesion"],
-  },
-  {
-    id: 13,
-    name: "Q-BRAL DHA",
-    generic: "(6s)-5-Methyltetrahydrofolic Acid + Vit B6 + Vit B12",
-    category: "Supplements",
-    composition: "(6s)-5-Methyltetrahydrofolic Acid with Vitamin B6 & B12",
-    image: "/BRALDHA-5-Methyltetrahydrofolic Acid.png",
-    dosage: "One Tablet daily",
-    uses: ["Adults & Elderly", "Infants & Children", "Pre-concept & Fertility", "Pregnancy & Lactation"],
-    benefits: ["Only folate that crosses blood-brain barrier", "99% purity", "Improves fertility", "Lowers risk of birth defects"],
-  },
-  {
-    id: 14,
-    name: "BABYMA",
-    generic: "Baby Bathing Bar",
-    category: "Topical",
-    composition: "Kokum Butter, Shea Butter, Olive Oil, Jojoba Oil & Vitamin E",
-    image: "/babyma - 1.jpg",
-    uses: ["Newborn's sensitive skin", "Eczema prone skin", "Daily baby bathing"],
-    benefits: ["pH 5.5", "100% Natural cleanser", "Dermatologically Tested", "Paraben & Silicone Free", "Tear Free"],
-  },
-  {
-    id: 15,
-    name: "CRAMPLIN",
-    generic: "Magnesium Biglycinate + L-Carnitine + Methylcobalamin + Folic Acid + Vitamin D3 + Tocotrienol + Zinc",
-    category: "Supplements",
-    composition: "Magnesium Biglycinate 300mg, L-Carnitine 500mg, Methylcobalamin 1500mcg, Folic Acid 1.5mg, Vitamin D3 1000IU, Tocotrienol 100mg & Zinc 37.5mg",
-    image: "/CRAMPLIN.jpg",
-    uses: ["Cholesterol Management", "Liver Health", "Brain Health", "Cardiovascular Health", "Bone Health"],
-    benefits: ["Tocotrienol E: Superior Vitamin E", "Magnesium for muscle function", "Vitamin D3 for bone density"],
-  },
-  {
-    id: 16,
-    name: "ZIPHALA",
-    generic: "Lactulose + FOS + Wheat Dextrin + Polydextrose",
-    category: "Syrups",
-    composition: "Lactulose 10G, FOS 2.5G, Wheat Dextrin 3.5G, Polydextrose 2.1G",
-    image: "/Ziphalac oral solution.jpg",
-    uses: ["Constipation", "Irregular bowel movements", "Gut health", "Bloating"],
-    benefits: ["Lactulose: Osmotic laxative", "Wheat Dextrin: Improves regularity", "FOS: Prebiotic", "Gluten Free"],
-  },
-  {
-    id: 17,
-    name: "NEFRO DEAL",
-    generic: "NAC + Taurine + Ubiquinol + Pyridoxamine",
-    category: "Supplements",
-    composition: "NAC 300mg, Taurine 500mg, Ubiquinol 100mg, Pyridoxamine 75mg",
-    image: "/nefrodeal.png",
-    uses: ["Diabetic Kidney Protection", "Diabetic Neuropathy", "Oxidative Stress", "Cardio-Renal Support"],
-    benefits: ["NAC: Reduces kidney oxidative stress", "Taurine: Kidney cell protection", "Ubiquinol: Mitochondrial health"],
-  },
-  {
-    id: 18,
-    name: "ZIZINC",
-    generic: "Zinc Gluconate Oral Solution",
-    category: "Syrups",
-    composition: "Zinc Gluconate (20 mg elemental Zinc per 5 ml)",
-    image: "/zinzic.png",
-    dosage: "Above 1 Year: 5 ml/day",
-    uses: ["Diarrhoea", "Immunity", "Respiratory Tract Infection", "Common Cold"],
-    benefits: ["Improves innate & adaptive immunity", "Facilitates absorption of fluids", "Powerful antioxidant"],
-  },
-  {
-    id: 19,
-    name: "NEMCOFLEX",
-    generic: "Natural Eggshell Membrane + Collagen + Glucosamine + Chondroitin + MSM + Curcumin + Boswellia + Vitamins",
-    category: "Supplements",
-    composition: "Natural Eggshell Membrane 300mg, Collagen Type 2 50mg, Hyaluronic Acid 25mg, Glucosamine 500mg, Chondroitin 500mg, MSM 500mg, Curcumin 150mg, Boswellia 150mg, Vitamin C 500mg, Vitamin D3 1000IU",
-    image: "/nemcoflex.png",
-    uses: ["Joint Health", "Osteoarthritis", "Cartilage Degeneration", "Joint Pain"],
-    benefits: ["Restore Cartilage", "Rebuild Joint Matrix", "Reduce Inflammation", "Natural Anti-Inflammatory"],
-  },
-  {
-    id: 20,
-    name: "Q-BRAL DHA",
-    generic: "(6s)-5-Methyltetrahydrofolic Acid + Methylcobalamin + Pyridoxal 5'-Phosphate + DHA",
-    category: "Supplements",
-    composition: "(6s)-5-Methyltetrahydrofolic Acid (4th Gen Folate), Methylcobalamin, Pyridoxal 5'-Phosphate & DHA",
-    image: "/Q-BRAL DHA.png",
-    uses: ["Pregnancy", "Lactation", "Fetal Brain Development", "Maternal Health"],
-    benefits: ["4th Generation Folic Acid", "Ready-to-use folate", "DHA for brain development", "Active B12 & B6"],
-  },
-];
-
-// Categories for filtering
-const categories = ["All", "Antibiotic", "Cough & Cold", "Productive Cough", "Antibiotic (MRSA)", "Pain Relief", "Pain & Inflammation", "Topical", "Anti-Allergic", "Syrups", "Supplements", "Tablets"];
 
 // ============================================================================
 // PRODUCT DETAIL MODAL COMPONENT
 // ============================================================================
 
-function ProductDetailModal({ product, isOpen, onClose }: { product: Product | null; isOpen: boolean; onClose: () => void }) {
+function ProductDetailModal({ 
+  product, 
+  isOpen, 
+  onClose,
+  isFullPage = false 
+}: { 
+  product: Product | null; 
+  isOpen: boolean; 
+  onClose: () => void;
+  isFullPage?: boolean;
+}) {
   if (!product) return null;
 
+  // If full page mode, render as full page instead of modal
+  if (isFullPage) {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-[#eff6ff] via-white to-[#eff6ff]">
+        <Navbar />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <Link 
+            href="/products" 
+            className="inline-flex items-center gap-2 text-green-700 hover:text-green-500 mb-6 transition-colors"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            Back to Products
+          </Link>
+          <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 md:p-8">
+              <div className="relative flex items-center justify-center p-6 bg-gradient-to-br from-[#eff6ff] to-[#dbeafe] rounded-2xl">
+                <motion.div
+                  className="relative w-56 h-56 md:w-64 md:h-64"
+                  animate={{ y: [0, -10, 0], rotateX: [0, 5, 0], rotateY: [0, -5, 0] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                  style={{ transformStyle: "preserve-3d", perspective: "1000px" }}
+                >
+                  <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-3/4 h-6 bg-green-700/20 rounded-full blur-xl" />
+                  <div className="relative w-full h-full rounded-2xl" style={{ transform: "rotateX(5deg) rotateY(-5deg)", boxShadow: "0 25px 50px -12px rgba(37, 99, 235, 0.25)" }}>
+                    <Image src={product.image} alt={product.name} fill className="object-contain p-4 drop-shadow-2xl" />
+                  </div>
+                </motion.div>
+              </div>
+
+              <div className="flex flex-col space-y-4">
+                <div>
+                  <span className="inline-block px-3 py-1 text-xs font-semibold text-green-700 bg-[#dbeafe] rounded-full">{product.category}</span>
+                  <h2 className="mt-3 text-2xl md:text-3xl font-bold text-gray-900">{product.name}</h2>
+                  <p className="mt-1 text-sm text-gray-500 italic">{product.generic}</p>
+                </div>
+
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2 text-gray-600">
+                    <svg className="w-5 h-5 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                    </svg>
+                    <span>Composition: {product.composition}</span>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="font-semibold text-gray-900 mb-2">Therapeutic Uses</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {product.uses.map((use, idx) => (
+                      <span key={idx} className="text-xs px-3 py-1 rounded-full bg-[#dbeafe] text-green-700">{use}</span>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="font-semibold text-gray-900 mb-2">Key Benefits</h3>
+                  <ul className="space-y-1.5">
+                    {product.benefits.map((benefit, idx) => (
+                      <motion.li key={idx} initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: idx * 0.1 }} className="flex items-center gap-2 text-gray-600 text-sm">
+                        <svg className="w-4 h-4 text-green-700" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                        {benefit}
+                      </motion.li>
+                    ))}
+                  </ul>
+                </div>
+
+                {product.dosage && (
+                  <div className="mt-2 p-3 bg-[#dbeafe] rounded-lg">
+                    <h4 className="text-sm font-semibold text-gray-900">Dosage</h4>
+                    <p className="text-sm text-gray-600">{product.dosage}</p>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Original modal view
   return (
     <AnimatePresence>
       {isOpen && (
@@ -337,7 +198,12 @@ function ProductDetailModal({ product, isOpen, onClose }: { product: Product | n
                       </ul>
                     </div>
 
-
+                    {product.dosage && (
+                      <div className="mt-2 p-3 bg-[#dbeafe] rounded-lg">
+                        <h4 className="text-sm font-semibold text-gray-900">Dosage</h4>
+                        <p className="text-sm text-gray-600">{product.dosage}</p>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -353,11 +219,24 @@ function ProductDetailModal({ product, isOpen, onClose }: { product: Product | n
 // MAIN COMPONENT
 // ============================================================================
 
-export default function ProductsPage() {
+interface ProductsPageProps {
+  selectedProduct?: Product | null;
+  isFullPage?: boolean;
+}
+
+export default function ProductsPage({ selectedProduct: propSelectedProduct, isFullPage = false }: ProductsPageProps = {}) {
   const [activeCategory, setActiveCategory] = useState("All");
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(propSelectedProduct || null);
+  const [isModalOpen, setIsModalOpen] = useState(!!propSelectedProduct);
   const [zoomImg, setZoomImg] = useState<string | null>(null);
+
+  // Update when propSelectedProduct changes (for full page mode)
+  useEffect(() => {
+    if (propSelectedProduct) {
+      setSelectedProduct(propSelectedProduct);
+      setIsModalOpen(true);
+    }
+  }, [propSelectedProduct]);
 
   const filteredProducts = products.filter((product) => {
     const matchesCategory = activeCategory === "All" || product.category === activeCategory;
@@ -367,12 +246,36 @@ export default function ProductsPage() {
   const handleProductSelect = (product: Product) => {
     setSelectedProduct(product);
     setIsModalOpen(true);
+    // Update URL with product name slug instead of ID
+    if (typeof window !== 'undefined') {
+      const slug = createSlug(product.name);
+      window.history.pushState({}, '', `/products/${slug}`);
+    }
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
     setTimeout(() => setSelectedProduct(null), 300);
+    // If in full page mode, navigate back to products
+    if (isFullPage && typeof window !== 'undefined') {
+      window.history.pushState({}, '', '/products');
+    }
   };
+
+  // If isFullPage and no selectedProduct, show not found
+  if (isFullPage && !selectedProduct) {
+    return (
+      <main className="min-h-screen bg-gradient-to-b from-[#eff6ff] via-white to-[#eff6ff]">
+        <Navbar />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+          <h1 className="text-2xl font-bold text-gray-700">Product not found</h1>
+          <Link href="/products" className="mt-4 inline-block text-green-700 hover:text-green-500">
+            Back to Products
+          </Link>
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-[#eff6ff] via-white to-[#eff6ff]">
@@ -397,95 +300,100 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      {/* Category Filter Section - Centered */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
-        <div className="flex flex-wrap justify-center gap-2">
-          {categories.map((cat) => (
-            <motion.button
-              key={cat}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
-                activeCategory === cat
-                  ? "bg-green-700 text-white shadow-md"
-                  : "bg-white/70 text-gray-600 hover:bg-[#dbeafe] border border-gray-100"
-              }`}
-            >
-              {cat}
-            </motion.button>
-          ))}
-        </div>
-      </section>
+      {/* Show category filter and product grid only if not in full page mode */}
+      {!isFullPage && (
+        <>
+          {/* Category Filter Section - Centered */}
+          <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+            <div className="flex flex-wrap justify-center gap-2">
+              {categories.map((cat) => (
+                <motion.button
+                  key={cat}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => setActiveCategory(cat)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                    activeCategory === cat
+                      ? "bg-green-700 text-white shadow-md"
+                      : "bg-white/70 text-gray-600 hover:bg-[#dbeafe] border border-gray-100"
+                  }`}
+                >
+                  {cat}
+                </motion.button>
+              ))}
+            </div>
+          </section>
 
-      {/* Products Grid - Fixed height cards for perfect alignment */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-          <AnimatePresence>
-            {filteredProducts.map((product) => (
-              <motion.div
-                key={product.id}
-                layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.2 }}
-                whileHover={{ y: -8 }}
-                className="cursor-pointer rounded-2xl transition-all duration-300 bg-white shadow-sm hover:shadow-xl group overflow-hidden flex flex-col h-full"
-              >
-                {/* IMAGE - Fixed height */}
-                <div className="relative h-44 bg-slate-50 cursor-pointer flex-shrink-0" onClick={(e) => { e.stopPropagation(); setZoomImg(product.image); }}>
-                  <Image src={product.image} alt={product.name} fill className="object-contain p-3 hover:scale-105 transition" />
-                  <span className="absolute top-2 left-2 text-[10px] bg-white/90 text-slate-600 px-2 py-1 rounded-full shadow-sm">
-                    {product.category}
-                  </span>
-                </div>
-
-                {/* CONTENT - Fixed structure with flex-grow */}
-                <div className="p-3 flex flex-col flex-grow" onClick={() => handleProductSelect(product)}>
-                  <h3 className="text-sm font-bold text-slate-900 line-clamp-2 min-h-[40px]">
-                    {product.name}
-                  </h3>
-                  <p className="text-[11px] text-slate-500 line-clamp-2 min-h-[32px] mt-1">
-                    {product.generic}
-                  </p>
-                  <p className="text-[10px] text-slate-400 line-clamp-2 min-h-[32px] mt-1">
-                    {product.composition}
-                  </p>
-
-                  {/* Uses - Fixed height tags */}
-                  <div className="flex flex-wrap gap-1 mt-2 min-h-[48px]">
-                    {product.uses.slice(0, 2).map((u, i) => (
-                      <span key={i} className="text-[10px] px-2 py-[2px] rounded-full  text-slate-600">
-                        {u.length > 18 ? u.substring(0, 15) + "..." : u}
+          {/* Products Grid - Fixed height cards for perfect alignment */}
+          <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+              <AnimatePresence>
+                {filteredProducts.map((product) => (
+                  <motion.div
+                    key={product.id}
+                    layout
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    transition={{ duration: 0.2 }}
+                    whileHover={{ y: -8 }}
+                    className="cursor-pointer rounded-2xl transition-all duration-300 bg-white shadow-sm hover:shadow-xl group overflow-hidden flex flex-col h-full"
+                  >
+                    {/* IMAGE - Fixed height */}
+                    <div className="relative h-44 bg-slate-50 cursor-pointer flex-shrink-0" onClick={(e) => { e.stopPropagation(); setZoomImg(product.image); }}>
+                      <Image src={product.image} alt={product.name} fill className="object-contain p-3 hover:scale-105 transition" />
+                      <span className="absolute top-2 left-2 text-[10px] bg-white/90 text-slate-600 px-2 py-1 rounded-full shadow-sm">
+                        {product.category}
                       </span>
-                    ))}
-                    {product.uses.length > 2 && (
-                      <span className="text-[10px] px-2 py-[2px] rounded-full  text-slate-600">
-                        +{product.uses.length - 2}
-                      </span>
-                    )}
-                  </div>
+                    </div>
 
-                  {/* BUTTON - Fixed at bottom */}
-                  <button onClick={(e) => { e.stopPropagation(); handleProductSelect(product); }} className="w-full mt-3 py-2 text-xs rounded-lg bg-green-700 text-white hover:bg-green-500 transition">
-                    View Details
-                  </button>
-                </div>
+                    {/* CONTENT - Fixed structure with flex-grow */}
+                    <div className="p-3 flex flex-col flex-grow" onClick={() => handleProductSelect(product)}>
+                      <h3 className="text-sm font-bold text-slate-900 line-clamp-2 min-h-[40px]">
+                        {product.name}
+                      </h3>
+                      <p className="text-[11px] text-slate-500 line-clamp-2 min-h-[32px] mt-1">
+                        {product.generic}
+                      </p>
+                      <p className="text-[10px] text-slate-400 line-clamp-2 min-h-[32px] mt-1">
+                        {product.composition}
+                      </p>
+
+                      {/* Uses - Fixed height tags */}
+                      <div className="flex flex-wrap gap-1 mt-2 min-h-[48px]">
+                        {product.uses.slice(0, 2).map((u, i) => (
+                          <span key={i} className="text-[10px] px-2 py-[2px] rounded-full  text-slate-600">
+                            {u.length > 18 ? u.substring(0, 15) + "..." : u}
+                          </span>
+                        ))}
+                        {product.uses.length > 2 && (
+                          <span className="text-[10px] px-2 py-[2px] rounded-full  text-slate-600">
+                            +{product.uses.length - 2}
+                          </span>
+                        )}
+                      </div>
+
+                      {/* BUTTON - Fixed at bottom */}
+                      <button onClick={(e) => { e.stopPropagation(); handleProductSelect(product); }} className="w-full mt-3 py-2 text-xs rounded-lg bg-green-700 text-white hover:bg-green-500 transition">
+                        View Details
+                      </button>
+                    </div>
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+            </div>
+
+            {/* Empty State */}
+            {filteredProducts.length === 0 && (
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center py-20">
+                <div className="text-gray-400 text-6xl mb-4">🔍</div>
+                <h3 className="text-xl font-semibold text-gray-700">No products found</h3>
+                <p className="text-gray-500 mt-2">Try selecting a different category</p>
               </motion.div>
-            ))}
-          </AnimatePresence>
-        </div>
-
-        {/* Empty State */}
-        {filteredProducts.length === 0 && (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center py-20">
-            <div className="text-gray-400 text-6xl mb-4">🔍</div>
-            <h3 className="text-xl font-semibold text-gray-700">No products found</h3>
-            <p className="text-gray-500 mt-2">Try selecting a different category</p>
-          </motion.div>
-        )}
-      </section>
+            )}
+          </section>
+        </>
+      )}
 
       {/* Image Zoom Modal */}
       {zoomImg && (
@@ -499,10 +407,17 @@ export default function ProductsPage() {
         </div>
       )}
 
-      {/* Product Detail Modal */}
-      <ProductDetailModal product={selectedProduct} isOpen={isModalOpen} onClose={closeModal} />
+      {/* Product Detail Modal - only show if not in full page mode */}
+      {!isFullPage && (
+        <ProductDetailModal product={selectedProduct} isOpen={isModalOpen} onClose={closeModal} />
+      )}
 
-      {/* Footer - Already responsive, keeping as is */}
+      {/* If in full page mode, show the full page product detail */}
+      {isFullPage && selectedProduct && (
+        <ProductDetailModal product={selectedProduct} isOpen={true} onClose={closeModal} isFullPage={true} />
+      )}
+
+      {/* Footer */}
       <footer className="bg-[#013220] border-t border-emerald-800/20">
         <div className="max-w-[1600px] mx-auto px-4 md:px-8 lg:px-12 py-8 md:py-12">
           {/* Main Grid - Responsive */}

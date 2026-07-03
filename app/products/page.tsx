@@ -1,6 +1,6 @@
+// app/products/page.tsx
 import type { Metadata } from "next";
 import ProductsPage from "./ProductPage";
-
 
 export const metadata: Metadata = {
   title: "Pharmaceutical Products in Tamil Nadu | Zibral Healthcare",
