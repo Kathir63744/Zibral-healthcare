@@ -1,0 +1,1459 @@
+import { LiaFacebook, LiaInstagram, LiaTwitter } from "react-icons/lia";
+
+import HeroBanner from "./components/HeroBanners";
+import { BsMailbox } from "react-icons/bs";
+import { BiPhone } from "react-icons/bi";
+import { Mail, Mailbox, MailX } from "lucide";
+import ProductShapeSection from "./components/ProductShapeSection";
+import VisionMissionSection from "./components/VisionMissionSection";
+
+import Navbar from "./components/Navbar";
+import Link from "next/link";
+import { HiOutlineLocationMarker } from "react-icons/hi";
+import { MdOutlineEmail } from "react-icons/md";
+import Image from "next/image";
+import ProductsSection from "./components/ProductsSection";
+import { Metadata } from "next";
+
+const products = [
+  {
+    img: "/c22.png",
+    name: "AZIBRAL-500",
+    generic: "Azithromycin Tablets IP 500 mg",
+    category: "Antibiotic",
+    strength: "500 mg",
+    uses: ["Tonsillitis", "Sinusitis", "Pharyngitis"],
+  },
+  {
+    img: "/products/amoxibral-625.png",
+    name: "AMOXIBRAL-625",
+    generic: "Amoxicillin & Clavulanate Tablets",
+    category: "Antibiotic",
+    strength: "625 mg",
+    uses: ["Respiratory Infection", "ENT Infection", "Dental Infection"],
+  },
+  {
+    img: "/products/pantobral-40.png",
+    name: "PANTOBRAL-40",
+    generic: "Pantoprazole Gastro Resistant Tablets",
+    category: "Gastro Care",
+    strength: "40 mg",
+    uses: ["Acidity", "GERD", "Stomach Ulcer"],
+  },
+  {
+    img: "/products/dolobral-sp.png",
+    name: "DOLOBRAL-SP",
+    generic: "Aceclofenac, Paracetamol & Serratiopeptidase",
+    category: "Pain Management",
+    strength: "SP",
+    uses: ["Joint Pain", "Inflammation", "Muscle Pain"],
+  },
+  {
+    img: "/products/cetrabral-ls.png",
+    name: "CETRABRAL-LS",
+    generic: "Levocetirizine & Ambroxol Syrup",
+    category: "Respiratory Care",
+    strength: "100 ml",
+    uses: ["Cough", "Cold", "Allergic Rhinitis"],
+  },
+];
+
+export const metadata: Metadata = {
+  title: "Pharmaceutical Company in Tamil Nadu | Zibral Healthcare",
+  description:
+    "Zibral Healthcare is a trusted pharmaceutical company in Tamil Nadu offering quality medicines, healthcare products, and innovative healthcare solutions.",
+};
+
+export default function Home() {
+  return (
+    <div className="flex flex-col min-h-screen bg-white font-sans dark:bg-white">
+      <Navbar />
+      <HeroBanner />
+      <section className="py-16 px-6">
+  <div className="max-w-6xl mx-auto">
+      {/* Glass morphism card with lite green tint */}
+      <div className="relative overflow-hidden rounded-[40px] backdrop-blur-xl bg-white/30 bg-gradient-to-br from-green-50/40 via-emerald-50/30 to-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.08)] border border-white/50 transition-all duration-300 hover:shadow-[0_20px_45px_-12px_rgba(34,139,34,0.2)]">
+        
+        {/* Subtle green glass overlay - adds depth without losing transparency */}
+        <div className="absolute inset-0 bg-gradient-to-br from-green-400/5 via-emerald-300/5 to-transparent pointer-events-none"></div>
+        
+        {/* Soft glow effect - light green ambient */}
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-green-300/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-emerald-300/20 rounded-full blur-3xl pointer-events-none"></div>
+        
+        {/* Light reflection / glass shine */}
+        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/60 to-transparent"></div>
+        
+        {/* Content Container */}
+        <div className="relative z-10 grid lg:grid-cols-[220px_1fr] gap-10 items-center p-10 lg:p-14">
+          
+          {/* Left Side - Stats & Badge */}
+          <div className="flex flex-col items-center lg:items-start">
+            <span className="text-emerald-700 uppercase tracking-[4px] text-sm font-semibold bg-white/50 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm border border-white/40">
+              About Zibral Healthcare
+            </span>
+            
+            <div className="w-16 h-[3px] bg-gradient-to-r from-emerald-500 to-green-400 rounded-full mt-4 shadow-sm"></div>
+            
+            <h3 className="mt-6 text-5xl lg:text-6xl font-bold text-emerald-800 drop-shadow-sm">
+              5+
+            </h3>
+            
+            <p className="text-emerald-700 mt-2 font-medium">
+              Years of Healthcare Excellence
+            </p>
+            
+            {/* Decorative glass accent */}
+            <div className="mt-5 hidden lg:block opacity-40">
+              <svg width="40" height="30" viewBox="0 0 40 30" fill="none">
+                <path d="M8 24 L16 8 L24 24 M28 20 L34 6 L40 20" stroke="#2D6A4F" strokeWidth="1.2" strokeLinecap="round" strokeDasharray="2 3"/>
+              </svg>
+            </div>
+          </div>
+          
+          {/* Right Side - Main Content */}
+          <div>
+            <h2 className="text-3xl lg:text-4xl font-bold leading-tight text-emerald-900 drop-shadow-sm">
+              Delivering{" "}
+              <span className="text-emerald-600 relative inline-block">
+                Trusted Pharmaceutical Solutions
+
+              </span>{" "}
+              For A Healthier Tomorrow
+            </h2>
+            
+            <p className="mt-6 text-lg leading-9 text-emerald-800 font-medium">
+              Zibral Healthcare is committed to enhancing healthcare outcomes through
+              high-quality pharmaceutical products, scientifically developed formulations,
+              and ethical business practices.
+            </p>
+            
+            <p className="mt-5 text-lg leading-9 text-emerald-800">
+              We focus on delivering safe, effective, and affordable medicines that
+              support patients, healthcare professionals, and communities with reliable
+              therapeutic care.
+            </p>
+            
+            <p className="mt-5 text-lg leading-9 text-emerald-800">
+              Our product portfolio is driven by strict quality standards, continuous
+              research, and innovation, ensuring consistent performance, patient safety,
+              and long-term trust.
+            </p>
+            
+            {/* Glass divider */}
+            <div className="flex items-center gap-3 mt-7">
+              <div className="h-[1px] w-12 bg-emerald-400/50 rounded-full"></div>
+              <span className="text-xs uppercase tracking-wider text-emerald-600 font-medium bg-white/30 px-2 py-0.5 rounded-full backdrop-blur-sm">sustainable care</span>
+              <div className="h-[1px] w-full max-w-[80px] bg-emerald-400/40 rounded-full"></div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Bottom glass reflection */}
+        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
+        
+        {/* Subtle corner glass highlights */}
+        <div className="absolute top-4 left-4 w-20 h-20 bg-white/20 rounded-full blur-xl pointer-events-none"></div>
+        <div className="absolute bottom-4 right-4 w-20 h-20 bg-white/15 rounded-full blur-xl pointer-events-none"></div>
+      </div>
+    </div>
+</section>
+      <VisionMissionSection />
+      <ProductsSection />
+      <section className="py-20 bg-gradient-to-b from-white to-green-50/30">
+  <div className="max-w-7xl mx-auto px-6">
+
+    {/* Heading */}
+    <div className="text-center mb-16">
+      <span className="inline-flex px-4 py-2 rounded-full bg-green-100 text-green-700 text-sm font-medium">
+        Featured Products
+      </span>
+
+      <h2 className="mt-5 text-4xl md:text-5xl font-bold text-slate-900">
+        Our Best Products
+      </h2>
+
+      <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
+        Trusted formulations developed to deliver effective therapeutic outcomes
+        and support better patient care.
+      </p>
+    </div>
+
+
+
+<section className="py-24 bg-white">
+{/* URIBRAL-B6 */}
+<div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center mb-16 md:mb-24 lg:mb-32">
+
+  {/* LEFT CONTENT */}
+  <div className="order-2 lg:order-1">
+
+    <span className="inline-block px-3 py-1 md:px-4 md:py-2 rounded-full bg-green-100 text-green-700 text-xs md:text-sm font-medium">
+      Urinary Tract Health • Natural Protection
+    </span>
+
+    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mt-4 md:mt-5">
+      URIBRAL-B6
+    </h2>
+
+    <p className="text-base sm:text-lg md:text-xl text-slate-600 mt-2 leading-relaxed">
+      Potassium Citrate + Magnesium Citrate + Pyridoxal 5 Phosphate +
+      Cranberry + D-Mannose Syrup
+    </p>
+
+    <p className="mt-4 md:mt-5 text-sm sm:text-base text-slate-600 leading-relaxed md:leading-8">
+      Advanced urinary tract health formulation designed to help prevent
+      recurrent urinary tract infections, support healthy urinary flow,
+      reduce bacterial adhesion, promote kidney wellness, and reduce the
+      risk of stone formation naturally.
+    </p>
+
+    {/* Benefits */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6 md:mt-8">
+
+      <div className="p-4 rounded-2xl border border-gray-200 bg-white shadow-sm">
+        ✓ Helps prevent recurrent UTIs naturally
+      </div>
+
+      <div className="p-4 rounded-2xl border border-gray-200 bg-white shadow-sm">
+        ✓ Supports healthy urinary pH & flow
+      </div>
+
+      <div className="p-4 rounded-2xl border border-gray-200 bg-white shadow-sm">
+        ✓ Helps reduce bacterial adhesion
+      </div>
+
+      <div className="p-4 rounded-2xl border border-gray-200 bg-white shadow-sm">
+        ✓ Supports kidney health & function
+      </div>
+
+      <div className="p-4 rounded-2xl border border-gray-200 bg-white shadow-sm">
+        ✓ Helps reduce kidney stone formation
+      </div>
+
+      <div className="p-4 rounded-2xl border border-gray-200 bg-white shadow-sm">
+        ✓ Sugar Free & Mix Fruit Flavour
+      </div>
+
+    </div>
+
+    {/* Key Indications */}
+    <div className="mt-8 md:mt-10">
+
+      <h4 className="font-semibold text-slate-900 mb-4 text-base md:text-lg">
+        Key Indications
+      </h4>
+
+      <div className="grid grid-cols-2 gap-3 text-xs sm:text-sm text-slate-600">
+
+        <div className="flex items-center gap-2">
+          <span className="text-green-500">•</span>
+          Recurrent UTIs
+        </div>
+
+        <div className="flex items-center gap-2">
+          <span className="text-green-500">•</span>
+          Dysuria & Burning Micturition
+        </div>
+
+        <div className="flex items-center gap-2">
+          <span className="text-green-500">•</span>
+          Bacteriuria
+        </div>
+
+        <div className="flex items-center gap-2">
+          <span className="text-green-500">•</span>
+          UTIs During Pregnancy
+        </div>
+
+        <div className="flex items-center gap-2">
+          <span className="text-green-500">•</span>
+          Kidney Stones
+        </div>
+
+        <div className="flex items-center gap-2">
+          <span className="text-green-500">•</span>
+          Neurogenic Bladder
+        </div>
+
+        <div className="flex items-center gap-2">
+          <span className="text-green-500">•</span>
+          Renal Calculi
+        </div>
+
+        <div className="flex items-center gap-2">
+          <span className="text-green-500">•</span>
+          Post Catheterization Care
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  {/* RIGHT SIDE */}
+  <div className="relative order-1 lg:order-2">
+
+    {/* Background Glow */}
+    <div className="absolute inset-0 bg-green-100 rounded-[40px] blur-3xl opacity-40"></div>
+
+    <div className="relative bg-white rounded-[32px] border border-slate-100 shadow-xl p-4 sm:p-6 md:p-8">
+
+      {/* Product Image */}
+      <div className="relative w-full max-w-md mx-auto">
+        <img
+          src="/uribral-poster.jpeg"
+          alt="URIBRAL-B6"
+          className="w-[820px] h-[500px] object-contain"
+        />
+      </div>
+
+      {/* Highlights */}
+      <div className="grid grid-cols-3 gap-4 mt-8">
+
+        <div className="text-center">
+
+          <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden mx-auto border-2 border-red-100">
+            <img
+              src="/uribral1.png"
+              alt="Cranberry Extract"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          <p className="text-xs text-slate-600 mt-2">
+            Cranberry Extract
+          </p>
+
+        </div>
+
+        <div className="text-center">
+
+          <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden mx-auto border-2 border-green-100">
+            <img
+              src="/uribral2.png"
+              alt="Urinary Support"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          <p className="text-xs text-slate-600 mt-2">
+            Urinary Support
+          </p>
+
+        </div>
+
+        <div className="text-center">
+
+          <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden mx-auto border-2 border-blue-100">
+            <img
+              src="/uribral3.png"
+              alt="Kidney Health"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          <p className="text-xs text-slate-600 mt-2">
+            Kidney Health
+          </p>
+
+        </div>
+
+      </div>
+
+      {/* Ingredients */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8">
+
+        <div className="rounded-xl bg-slate-50 p-3 text-center text-xs font-medium text-slate-700">
+          Potassium Citrate
+        </div>
+
+        <div className="rounded-xl bg-slate-50 p-3 text-center text-xs font-medium text-slate-700">
+          Magnesium Citrate
+        </div>
+
+        <div className="rounded-xl bg-slate-50 p-3 text-center text-xs font-medium text-slate-700">
+          D-Mannose
+        </div>
+
+        <div className="rounded-xl bg-slate-50 p-3 text-center text-xs font-medium text-slate-700">
+          Cranberry
+        </div>
+
+      </div>
+
+      {/* Safety Badge */}
+      <div className="mt-8 bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-5 text-center border border-slate-100">
+
+        <h4 className="font-bold text-slate-800">
+          Complete Care. Natural Defense.
+        </h4>
+
+        <p className="text-sm text-slate-600 mt-2">
+          Supports urinary tract health, helps reduce recurrence of UTIs,
+          promotes kidney wellness, and maintains healthy urinary flow
+          naturally.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+{/* LINIBRAL-600 */}
+<div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center mb-16 md:mb-24 lg:mb-32">
+
+  {/* LEFT CONTENT */}
+  <div className="order-2 lg:order-1">
+
+    <span className="inline-block px-3 py-1 md:px-4 md:py-2 rounded-full bg-blue-100 text-blue-700 text-xs md:text-sm font-medium">
+      Chronic Wounds • DFIs • SSTIs • MRSA Infections
+    </span>
+
+    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mt-4 md:mt-5">
+      LINIBRAL-600
+    </h2>
+
+    <p className="text-base sm:text-lg md:text-xl text-slate-600 mt-2 leading-relaxed">
+      Linezolid Tablets IP 600 mg
+    </p>
+
+    <p className="mt-4 md:mt-5 text-sm sm:text-base text-slate-600 leading-relaxed md:leading-8">
+      Advanced Linezolid therapy for the management of serious
+      Gram-positive bacterial infections including MRSA, diabetic
+      foot infections, chronic wounds, skin & soft tissue infections,
+      and lower respiratory tract infections. Provides superior
+      tissue penetration and higher clinical cure rates.
+    </p>
+
+    {/* Benefits */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6 md:mt-8">
+
+      <div className="p-4 rounded-2xl border border-gray-200 bg-white shadow-sm">
+        ✓ Broad-spectrum Gram-positive coverage
+      </div>
+
+      <div className="p-4 rounded-2xl border border-gray-200 bg-white shadow-sm">
+        ✓ Effective against MRSA & VRE
+      </div>
+
+      <div className="p-4 rounded-2xl border border-gray-200 bg-white shadow-sm">
+        ✓ Higher clinical cure rates
+      </div>
+
+      <div className="p-4 rounded-2xl border border-gray-200 bg-white shadow-sm">
+        ✓ Excellent tissue penetration
+      </div>
+
+      <div className="p-4 rounded-2xl border border-gray-200 bg-white shadow-sm">
+        ✓ Oral switch advantage
+      </div>
+
+      <div className="p-4 rounded-2xl border border-gray-200 bg-white shadow-sm">
+        ✓ Well tolerated therapy
+      </div>
+
+    </div>
+
+    {/* Key Indications */}
+    <div className="mt-8 md:mt-10">
+
+      <h4 className="font-semibold text-slate-900 mb-4 text-base md:text-lg">
+        Key Indications
+      </h4>
+
+      <div className="grid grid-cols-2 gap-3 text-xs sm:text-sm text-slate-600">
+
+        <div className="flex items-center gap-2">
+          <span className="text-blue-500">•</span>
+          Diabetic Foot Infections
+        </div>
+
+        <div className="flex items-center gap-2">
+          <span className="text-blue-500">•</span>
+          Skin & Soft Tissue Infections
+        </div>
+
+        <div className="flex items-center gap-2">
+          <span className="text-blue-500">•</span>
+          Hospital Acquired Pneumonia
+        </div>
+
+        <div className="flex items-center gap-2">
+          <span className="text-blue-500">•</span>
+          MRSA Pneumonia
+        </div>
+
+        <div className="flex items-center gap-2">
+          <span className="text-blue-500">•</span>
+          Lower Respiratory Tract Infections
+        </div>
+
+        <div className="flex items-center gap-2">
+          <span className="text-blue-500">•</span>
+          Chronic Wounds & Ulcers
+        </div>
+
+        <div className="flex items-center gap-2">
+          <span className="text-blue-500">•</span>
+          Complicated Skin Infections
+        </div>
+
+        <div className="flex items-center gap-2">
+          <span className="text-blue-500">•</span>
+          Resistant Gram-positive Infections
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  {/* RIGHT SIDE */}
+  <div className="relative order-1 lg:order-2">
+
+    {/* Background Glow */}
+    <div className="absolute inset-0 bg-blue-100 rounded-[40px] blur-3xl opacity-40"></div>
+
+    <div className="relative bg-white rounded-[32px] border border-slate-100 shadow-xl p-4 sm:p-6 md:p-8">
+
+      {/* Product Image */}
+      <div className="relative w-full max-w-md mx-auto">
+        <img
+          src="/linibral600-poster.jpeg"
+          alt="LINIBRAL-600"
+          className="w-full h-auto object-contain"
+        />
+      </div>
+
+      {/* Highlights */}
+      <div className="grid grid-cols-3 gap-4 mt-8">
+
+        <div className="text-center">
+
+          <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden mx-auto border-2 border-red-100">
+            <img
+              src="/lini1.png"
+              alt="MRSA Protection"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          <p className="text-xs text-slate-600 mt-2">
+            MRSA Protection
+          </p>
+
+        </div>
+
+        <div className="text-center">
+
+          <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden mx-auto border-2 border-blue-100">
+            <img
+              src="/lini2.png"
+              alt="Deep Healing"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          <p className="text-xs text-slate-600 mt-2">
+            Deep Healing
+          </p>
+
+        </div>
+
+        <div className="text-center">
+
+          <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden mx-auto border-2 border-green-100">
+            <img
+              src="/lini3.png"
+              alt="Lung Protection"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          <p className="text-xs text-slate-600 mt-2">
+            Lung Protection
+          </p>
+
+        </div>
+
+      </div>
+
+      {/* Feature Cards */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8">
+
+        <div className="rounded-xl bg-slate-50 p-3 text-center text-xs font-medium text-slate-700">
+          Linezolid 600 mg
+        </div>
+
+        <div className="rounded-xl bg-slate-50 p-3 text-center text-xs font-medium text-slate-700">
+          MRSA Active
+        </div>
+
+        <div className="rounded-xl bg-slate-50 p-3 text-center text-xs font-medium text-slate-700">
+          Deep Tissue
+        </div>
+
+        <div className="rounded-xl bg-slate-50 p-3 text-center text-xs font-medium text-slate-700">
+          Oral Therapy
+        </div>
+
+      </div>
+
+      {/* Safety Badge */}
+      <div className="mt-8 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-5 text-center border border-slate-100">
+
+        <h4 className="font-bold text-slate-800">
+          Powerful Coverage. Deep Healing.
+        </h4>
+
+        <p className="text-sm text-slate-600 mt-2">
+          Trusted Linezolid therapy for MRSA infections, diabetic foot
+          infections, chronic wounds, SSTIs, and respiratory infections
+          with proven clinical outcomes.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+{/* CRAMPLIN */}
+<div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center mb-16 md:mb-24 lg:mb-32">
+
+  {/* LEFT CONTENT */}
+  <div className="order-2 lg:order-1">
+
+    <span className="inline-block px-3 py-1 md:px-4 md:py-2 rounded-full bg-orange-100 text-orange-700 text-xs md:text-sm font-medium">
+      Muscle • Nerve • Cardiovascular Health
+    </span>
+
+    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mt-4 md:mt-5">
+      CRAMPLIN
+    </h2>
+
+    <p className="text-base sm:text-lg md:text-xl text-slate-600 mt-2 leading-relaxed">
+      Magnesium Bisglycinate + L-Carnitine + Methylcobalamin + Folic Acid +
+      Vitamin D3 + Tocotrienols + Zinc
+    </p>
+
+    <p className="mt-4 md:mt-5 text-sm sm:text-base text-slate-600 leading-relaxed md:leading-8">
+      Advanced nutritional support formulated to promote muscle strength,
+      nerve regeneration, energy production, and cardiovascular wellness.
+    </p>
+
+    {/* Benefits - Responsive Grid */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 mt-6 md:mt-8">
+
+      <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl text-slate-800 border border-gray-200 text-sm sm:text-base">
+        ✓ Supports nerve regeneration
+      </div>
+
+      <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl text-slate-800 border border-gray-200 text-sm sm:text-base">
+        ✓ Reduces muscle cramps & spasms
+      </div>
+
+      <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl text-slate-800 border border-gray-200 text-sm sm:text-base">
+        ✓ Improves muscle strength
+      </div>
+
+      <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl text-slate-800 border border-gray-200 text-sm sm:text-base">
+        ✓ Supports cardiovascular wellness
+      </div>
+
+      <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl text-slate-800 border border-gray-200 text-sm sm:text-base">
+        ✓ Maintains Vitamin D & Magnesium levels
+      </div>
+
+      <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl text-slate-800 border border-gray-200 text-sm sm:text-base">
+        ✓ Antioxidant protection
+      </div>
+
+    </div>
+
+    {/* Indications - Responsive */}
+    <div className="mt-8 md:mt-10">
+
+      <h4 className="font-semibold text-slate-900 mb-3 md:mb-4 text-base md:text-lg">
+        Key Indications
+      </h4>
+
+      <div className="grid grid-cols-2 gap-2 sm:gap-3 text-xs sm:text-sm text-slate-600">
+
+        <div className="flex items-center gap-2">
+          <span className="text-orange-500">•</span> Muscle cramps
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-orange-500">•</span> Nocturnal leg cramps
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-orange-500">•</span> Diabetic neuropathy
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-orange-500">•</span> Tingling & numbness
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-orange-500">•</span> Chronic fatigue
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-orange-500">•</span> Muscle weakness
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-orange-500">•</span> Cardiovascular support
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-orange-500">•</span> Type 2 Diabetes support
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  {/* RIGHT SHOWCASE - Responsive */}
+  <div className="relative order-1 lg:order-2">
+
+    <div className="absolute inset-0 bg-orange-100 rounded-[30px] sm:rounded-[40px] blur-2xl sm:blur-3xl opacity-40"></div>
+
+    <div className="relative bg-white rounded-2xl sm:rounded-[32px] border border-slate-100 shadow-sm p-4 sm:p-6 md:p-8">
+
+      {/* Product Image */}
+      <div className="relative w-full max-w-md mx-auto">
+        <img
+          src="/cramplin-poster.jpeg"
+          alt="CRAMPLIN"
+          className="w-full h-auto object-contain"
+        />
+      </div>
+
+      {/* Highlight Images - Responsive Grid */}
+      <div className="grid grid-cols-3 gap-3 sm:gap-4 mt-6 sm:mt-8">
+
+        <div className="text-center">
+          <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full overflow-hidden mx-auto border-2 border-orange-100">
+            <img
+              src="/muscle.png"
+              className="w-full h-full object-cover"
+              alt="Muscle Strength"
+            />
+          </div>
+          <p className="text-[10px] sm:text-xs text-slate-600 mt-1 sm:mt-2">Muscle Strength</p>
+        </div>
+
+        <div className="text-center">
+          <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full overflow-hidden mx-auto border-2 border-orange-100">
+            <img
+              src="/nerve.png"
+              className="w-full h-full object-cover"
+              alt="Nerve Health"
+            />
+          </div>
+          <p className="text-[10px] sm:text-xs text-slate-600 mt-1 sm:mt-2">Nerve Health</p>
+        </div>
+
+        <div className="text-center">
+          <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full overflow-hidden mx-auto border-2 border-orange-100">
+            <img
+              src="/heart.png"
+              className="w-full h-full object-cover"
+              alt="Cardiovascular"
+            />
+          </div>
+          <p className="text-[10px] sm:text-xs text-slate-600 mt-1 sm:mt-2">Cardiovascular</p>
+        </div>
+
+      </div>
+
+      {/* Ingredients - Responsive Grid */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 mt-6 sm:mt-8">
+
+        <div className="rounded-xl text-slate-800 bg-slate-50 p-2 sm:p-3 text-center text-[11px] sm:text-xs font-medium">
+          Magnesium
+        </div>
+
+        <div className="rounded-xl text-slate-800 bg-slate-50 p-2 sm:p-3 text-center text-[11px] sm:text-xs font-medium">
+          L-Carnitine
+        </div>
+
+        <div className="rounded-xl text-slate-800 bg-slate-50 p-2 sm:p-3 text-center text-[11px] sm:text-xs font-medium">
+          Vitamin D3
+        </div>
+
+        <div className="rounded-xl text-slate-800 bg-slate-50 p-2 sm:p-3 text-center text-[11px] sm:text-xs font-medium">
+          Zinc
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+{/* ZIBCLAV 457 */}
+<div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center mb-16 md:mb-24 lg:mb-32">
+
+  {/* LEFT CONTENT */}
+  <div className="order-2 lg:order-1">
+
+    <span className="inline-block px-3 py-1 md:px-4 md:py-2 rounded-full bg-blue-100 text-blue-700 text-xs md:text-sm font-medium">
+      Broad Spectrum Antibiotic • Pediatric Care
+    </span>
+
+    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mt-4 md:mt-5">
+      ZIBCLAV 457
+    </h2>
+
+    <p className="text-base sm:text-lg md:text-xl text-slate-600 mt-2 leading-relaxed">
+      Amoxycillin 400 mg + Potassium Clavulanate 57 mg Dry Syrup
+    </p>
+
+    <p className="mt-4 md:mt-5 text-sm sm:text-base text-slate-600 leading-relaxed md:leading-8">
+      Advanced broad-spectrum antibiotic formulation designed for effective
+      management of bacterial infections in children. Ensures rapid symptom
+      relief, improved compliance with orange flavour, and trusted efficacy
+      against resistant bacterial strains.
+    </p>
+
+    {/* Benefits */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6 md:mt-8">
+
+      <div className="p-4 rounded-2xl border border-gray-200 bg-white shadow-sm">
+        ✓ Broad-spectrum antibacterial coverage
+      </div>
+
+      <div className="p-4 rounded-2xl border border-gray-200 bg-white shadow-sm">
+        ✓ Effective against Beta-lactamase producing organisms
+      </div>
+
+      <div className="p-4 rounded-2xl border border-gray-200 bg-white shadow-sm">
+        ✓ Rapid relief from infection symptoms
+      </div>
+
+      <div className="p-4 rounded-2xl border border-gray-200 bg-white shadow-sm">
+        ✓ Better taste for improved compliance
+      </div>
+
+      <div className="p-4 rounded-2xl border border-gray-200 bg-white shadow-sm">
+        ✓ Pediatric-friendly dosage form
+      </div>
+
+      <div className="p-4 rounded-2xl border border-gray-200 bg-white shadow-sm">
+        ✓ Trusted Amoxycillin + Clavulanate combination
+      </div>
+
+    </div>
+
+    {/* Key Indications */}
+    <div className="mt-8 md:mt-10">
+
+      <h4 className="font-semibold text-slate-900 mb-4 text-base md:text-lg">
+        Key Indications
+      </h4>
+
+      <div className="grid grid-cols-2 gap-3 text-xs sm:text-sm text-slate-600">
+
+        <div className="flex items-center gap-2">
+          <span className="text-blue-500">•</span>
+          Acute Otitis Media
+        </div>
+
+        <div className="flex items-center gap-2">
+          <span className="text-blue-500">•</span>
+          Tonsillitis & Pharyngitis
+        </div>
+
+        <div className="flex items-center gap-2">
+          <span className="text-blue-500">•</span>
+          Acute Bacterial Sinusitis
+        </div>
+
+        <div className="flex items-center gap-2">
+          <span className="text-blue-500">•</span>
+          Lower Respiratory Infections
+        </div>
+
+        <div className="flex items-center gap-2">
+          <span className="text-blue-500">•</span>
+          Dental Infections
+        </div>
+
+        <div className="flex items-center gap-2">
+          <span className="text-blue-500">•</span>
+          Skin & Soft Tissue Infections
+        </div>
+
+        <div className="flex items-center gap-2">
+          <span className="text-blue-500">•</span>
+          Urinary Tract Infections
+        </div>
+
+        <div className="flex items-center gap-2">
+          <span className="text-blue-500">•</span>
+          Pediatric Bacterial Infections
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  {/* RIGHT SIDE */}
+  <div className="relative order-1 lg:order-2">
+
+    {/* Background Glow */}
+    <div className="absolute inset-0 bg-blue-100 rounded-[40px] blur-3xl opacity-40"></div>
+
+    <div className="relative bg-white rounded-[32px] border border-slate-100 shadow-xl p-4 sm:p-6 md:p-8">
+
+      {/* Product Image */}
+      <div className="relative w-full max-w-md mx-auto">
+        <img
+          src="/zibclav-poster.jpeg"
+          alt="ZIBCLAV 457"
+          className="w-[600px] h-[450px] object-contain"
+        />
+      </div>
+
+      {/* Highlights */}
+      <div className="grid grid-cols-3 gap-4 mt-8">
+
+        <div className="text-center">
+
+          <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden mx-auto border-2 border-orange-100">
+            <img
+              src="/zibclav1.png"
+              alt="Orange Flavour"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          <p className="text-xs text-slate-600 mt-2">
+            Orange Flavour
+          </p>
+
+        </div>
+
+        <div className="text-center">
+
+          <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden mx-auto border-2 border-blue-100">
+            <img
+              src="/zibclav2.png"
+              alt="Pediatric Care"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          <p className="text-xs text-slate-600 mt-2">
+            Pediatric Care
+          </p>
+
+        </div>
+
+        <div className="text-center">
+
+          <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden mx-auto border-2 border-green-100">
+            <img
+              src="/zibclav3.png"
+              alt="Broad Spectrum"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          <p className="text-xs text-slate-600 mt-2">
+            Broad Spectrum
+          </p>
+
+        </div>
+
+      </div>
+
+      {/* Ingredients */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8">
+
+        <div className="rounded-xl bg-slate-50 p-3 text-center text-xs font-medium text-slate-700">
+          Amoxycillin
+        </div>
+
+        <div className="rounded-xl bg-slate-50 p-3 text-center text-xs font-medium text-slate-700">
+          Clavulanate
+        </div>
+
+        <div className="rounded-xl bg-slate-50 p-3 text-center text-xs font-medium text-slate-700">
+          Orange Flavour
+        </div>
+
+        <div className="rounded-xl bg-slate-50 p-3 text-center text-xs font-medium text-slate-700">
+          Dry Syrup
+        </div>
+
+      </div>
+
+      {/* Safety Badge */}
+      <div className="mt-8 bg-gradient-to-r from-blue-50 to-green-50 rounded-2xl p-5 text-center border border-slate-100">
+
+        <h4 className="font-bold text-slate-800">
+          Safety & Efficacy
+        </h4>
+
+        <p className="text-sm text-slate-600 mt-2">
+          A powerful Amoxycillin-Clavulanate combination trusted for
+          pediatric bacterial infections.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+  </div>
+</section>
+<section className="py-12 md:py-20 bg-gradient-to-b from-slate-50 via-white to-slate-50 overflow-hidden">
+  <div className="max-w-7xl mx-auto px-4 md:px-6">
+
+    {/* Section Heading */}
+    <div className="text-center mb-10 md:mb-16">
+
+      <span className="inline-block px-4 md:px-5 py-1.5 md:py-2 rounded-full bg-green-100 text-green-700 text-xs md:text-sm font-semibold tracking-wide">
+        COMING SOON
+      </span>
+
+      <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-slate-900 mt-4 md:mt-5">
+        Our Upcoming New Products
+      </h2>
+
+      <p className="max-w-3xl mx-auto mt-3 md:mt-5 text-slate-600 leading-relaxed text-sm md:text-lg px-4">
+        Discover our upcoming healthcare innovations designed to
+        enhance patient outcomes through quality, safety and
+        advanced pharmaceutical formulations.
+      </p>
+
+    </div>
+
+    {/* Products - Responsive Grid */}
+    <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto">
+
+      {/* MULTI-BEE */}
+      <div className="group bg-white rounded-2xl md:rounded-[30px] border border-slate-100 shadow-lg hover:shadow-xl transition-all duration-300 p-4 md:p-6">
+        
+        {/* Mobile: Column layout, Desktop: Row layout */}
+        <div className="flex flex-col-reverse md:flex-row items-center gap-4 md:gap-5">
+
+          {/* Content */}
+          <div className="flex-1 text-center md:text-left">
+            
+            <span className="inline-block px-2.5 md:px-3 py-0.5 md:py-1 rounded-full bg-green-100 text-green-700 text-[10px] md:text-[11px] font-semibold uppercase">
+              Coming Soon
+            </span>
+
+            <h3 className="text-xl md:text-2xl font-bold text-slate-900 mt-2 md:mt-3">
+              MULTI-BEE
+            </h3>
+
+            <p className="text-[11px] md:text-xs text-slate-500 font-medium mt-0.5 md:mt-1">
+              MRP-213
+            </p>
+
+            <p className="text-xs md:text-sm text-slate-600 mt-2 md:mt-3 leading-5 md:leading-6">
+              Advanced Multivitamin, Multimineral, Antioxidant & L-Lysine Syrup
+              with DHA, Lycopene and Essential Nutrients for Strong Immunity,
+              Energy and Vitality.
+            </p>
+
+            <div className="flex flex-wrap gap-1.5 md:gap-2 justify-center md:justify-start mt-3 md:mt-4">
+              <span className="px-2 md:px-3 py-0.5 md:py-1 bg-green-50 text-green-700 rounded-full text-[10px] md:text-xs">
+                20+ Nutrients
+              </span>
+              <span className="px-2 md:px-3 py-0.5 md:py-1 bg-green-50 text-green-700 rounded-full text-[10px] md:text-xs">
+                DHA Support
+              </span>
+              <span className="px-2 md:px-3 py-0.5 md:py-1 bg-green-50 text-green-700 rounded-full text-[10px] md:text-xs">
+                Lycopene Antioxidant
+              </span>
+            </div>
+
+          </div>
+
+          {/* Product Image */}
+          <div className="flex-shrink-0">
+            <img
+              src="/multibee.jpeg"
+              alt="MULTI-BEE"
+              className="w-28 h-28 md:w-40 md:h-40 object-contain group-hover:scale-105 transition duration-500"
+            />
+          </div>
+
+        </div>
+
+      </div>
+
+      {/* IRON-BEE */}
+      <div className="group bg-white rounded-2xl md:rounded-[30px] border border-slate-100 shadow-lg hover:shadow-xl transition-all duration-300 p-4 md:p-6">
+        
+        <div className="flex flex-col-reverse md:flex-row items-center gap-4 md:gap-5">
+
+          {/* Content */}
+          <div className="flex-1 text-center md:text-left">
+            
+            <span className="inline-block px-2.5 md:px-3 py-0.5 md:py-1 rounded-full bg-orange-100 text-orange-700 text-[10px] md:text-[11px] font-semibold uppercase">
+              Coming Soon
+            </span>
+
+            <h3 className="text-xl md:text-2xl font-bold text-slate-900 mt-2 md:mt-3">
+              IRON-BEE
+            </h3>
+
+            <p className="text-[11px] md:text-xs text-slate-500 font-medium mt-0.5 md:mt-1">
+              MRP-213
+            </p>
+
+            <p className="text-xs md:text-sm text-slate-600 mt-2 md:mt-3 leading-5 md:leading-6">
+              Liposomal Iron, Ferric Pyrophosphate, Folic Acid,
+              Methylcobalamin, Zinc Bisglycinate, Vitamin C,
+              L-Lysine & Lactoferrin Syrup for Complete Iron
+              Replenishment and Healthy Hemoglobin Levels.
+            </p>
+
+            <div className="flex flex-wrap gap-1.5 md:gap-2 justify-center md:justify-start mt-3 md:mt-4">
+              <span className="px-2 md:px-3 py-0.5 md:py-1 bg-orange-50 text-orange-700 rounded-full text-[10px] md:text-xs">
+                Liposomal Iron
+              </span>
+              <span className="px-2 md:px-3 py-0.5 md:py-1 bg-orange-50 text-orange-700 rounded-full text-[10px] md:text-xs">
+                High Absorption
+              </span>
+              <span className="px-2 md:px-3 py-0.5 md:py-1 bg-orange-50 text-orange-700 rounded-full text-[10px] md:text-xs">
+                Hemoglobin Support
+              </span>
+            </div>
+
+          </div>
+
+          {/* Product Image */}
+          <div className="flex-shrink-0">
+            <img
+              src="/ironbee.jpeg"
+              alt="IRON-BEE"
+              className="w-28 h-28 md:w-40 md:h-40 object-contain group-hover:scale-105 transition duration-500"
+            />
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section className="py-10 px-2 -mt-8 bg-gradient-to-b from-green-50/30 via-white to-emerald-50/20">
+  <div className="max-w-6xl mx-auto">
+
+    <div className="relative overflow-hidden rounded-[32px] backdrop-blur-xl bg-white/30 bg-gradient-to-br from-green-50/40 via-white/20 to-emerald-50/30 border border-green-100/60 shadow-[0_15px_50px_rgba(34,139,34,0.08)]">
+
+      {/* Background Glow - Lite Green */}
+      <div className="absolute top-0 right-0 w-72 h-72 bg-green-300/20 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-300/20 rounded-full blur-3xl"></div>
+      
+      {/* Subtle grass shimmer */}
+      <div className="absolute -top-40 -left-40 w-96 h-96 bg-green-400/10 rounded-full blur-3xl"></div>
+
+      <div className="relative px-8 md:px-14 py-14 md:py-16">
+
+        {/* Badge - Lite Green Glass */}
+        <span className="inline-flex items-center px-4 py-2 rounded-full bg-green-100/80 backdrop-blur-sm text-green-700 text-sm font-semibold border border-green-200/50 shadow-sm">
+          <span className="text-green-500 mr-1">✦</span> Our Commitment
+          <span className="text-green-500 ml-1">✦</span>
+        </span>
+
+        {/* Heading */}
+        <h2 className="mt-6 text-3xl md:text-5xl font-bold text-slate-900 leading-tight max-w-4xl">
+          Committed To Building A
+          <span className="text-green-600 relative inline-block mx-2">
+            Healthier Future
+          </span>
+          Through Quality & Innovation
+        </h2>
+
+        {/* Description */}
+        <p className="mt-6 text-lg leading-8 text-slate-700 max-w-4xl">
+          At <span className="font-semibold text-green-700">Zibral Healthcare</span>,
+          we are dedicated to advancing healthcare through innovation,
+          uncompromising quality, and responsible practices. We collaborate
+          closely with healthcare professionals and partners to deliver trusted
+          pharmaceutical solutions that improve patient outcomes and contribute
+          to healthier communities.
+        </p>
+
+        {/* Highlights - Glass Cards */}
+        <div className="grid md:grid-cols-3 gap-5 mt-10">
+
+          {/* Innovation Card */}
+          <div className="group relative transition-all duration-300 hover:-translate-y-1">
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-green-400/40 to-emerald-400/40 rounded-2xl blur-md opacity-0 group-hover:opacity-100 transition duration-300" />
+            <div className="relative bg-white/60 backdrop-blur-md rounded-2xl p-5 border border-green-100/60 shadow-sm hover:shadow-md transition-all h-full">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-2xl">🌿</span>
+                <h3 className="font-semibold text-green-800">Innovation</h3>
+              </div>
+              <p className="text-sm text-green-700/80 leading-relaxed">
+                Developing effective healthcare solutions through continuous
+                research and scientific advancement.
+              </p>
+            </div>
+          </div>
+
+          {/* Quality Card */}
+          <div className="group relative transition-all duration-300 hover:-translate-y-1">
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-400/40 to-green-400/40 rounded-2xl blur-md opacity-0 group-hover:opacity-100 transition duration-300" />
+            <div className="relative bg-white/60 backdrop-blur-md rounded-2xl p-5 border border-green-100/60 shadow-sm hover:shadow-md transition-all h-full">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-2xl">✅</span>
+                <h3 className="font-semibold text-green-800">Quality</h3>
+              </div>
+              <p className="text-sm text-green-700/80 leading-relaxed">
+                Maintaining stringent standards to ensure safety, reliability,
+                and therapeutic excellence.
+              </p>
+            </div>
+          </div>
+
+          {/* Responsibility Card */}
+          <div className="group relative transition-all duration-300 hover:-translate-y-1">
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-green-400/40 to-teal-400/40 rounded-2xl blur-md opacity-0 group-hover:opacity-100 transition duration-300" />
+            <div className="relative bg-white/60 backdrop-blur-md rounded-2xl p-5 border border-green-100/60 shadow-sm hover:shadow-md transition-all h-full">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-2xl">🤝</span>
+                <h3 className="font-semibold text-green-800">Responsibility</h3>
+              </div>
+              <p className="text-sm text-green-700/80 leading-relaxed">
+                Building trust through ethical practices and a commitment to
+                patient well-being.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section className="py-16 px-3 bg-gradient-to-b from-green-50/30 via-white to-emerald-50/20">
+  <div className="max-w-7xl mx-auto px-6">
+
+    {/* Heading */}
+    <div className="text-center mb-12">
+      <span className="inline-flex px-4 py-1.5 rounded-full bg-green-100/80 backdrop-blur-sm text-green-700 text-sm font-semibold border border-green-200/50">
+        ✦ Our Foundation ✦
+      </span>
+
+      <h2 className="mt-4 text-3xl md:text-4xl font-bold bg-gradient-to-r from-green-700 to-emerald-600 bg-clip-text text-[#000]">
+        Core Values
+      </h2>
+
+      <div className="flex justify-center mt-3">
+        <div className="w-12 h-0.5 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full" />
+      </div>
+
+      <p className="mt-3 text-sm text-[#000] max-w-2xl mx-auto">
+        The principles that guide our commitment to quality healthcare,
+        innovation, and patient well-being.
+      </p>
+    </div>
+
+    {/* Values Grid */}
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {[
+        {
+          title: "Quality First",
+          desc: "We never compromise on quality, safety, and compliance, ensuring reliable healthcare solutions.",
+          icon: "🏆"
+        },
+        {
+          title: "Innovation",
+          desc: "Continuous research and development drive our efforts to create better healthcare solutions.",
+          icon: "💡"
+        },
+        {
+          title: "Integrity",
+          desc: "We uphold ethical business practices and transparency in every aspect of our operations.",
+          icon: "🤝"
+        },
+        {
+          title: "Patient Care",
+          desc: "Patient well-being remains at the center of every decision and product we deliver.",
+          icon: "❤️"
+        },
+        {
+          title: "Customer Satisfaction",
+          desc: "Building long-term relationships through trust, service excellence, and reliability.",
+          icon: "⭐"
+        },
+        {
+          title: "Excellence",
+          desc: "Striving for excellence in products, processes, and performance across our organization.",
+          icon: "🎯"
+        }
+      ].map((item, index) => (
+        <div
+          key={item.title}
+          className="group relative transition-all duration-300 hover:-translate-y-1"
+        >
+          {/* Card with shadow on ALL sides - visible at all times */}
+          <div className="
+            relative
+            border-green-500/60
+            border-2
+            rounded-2xl
+            p-5
+            transition-all
+            duration-300
+            bg-[#008000]
+            h-full
+            flex
+            flex-col
+            shadow-[8px_8px_15px_rgba(0,0,0,0.4)]
+          ">
+            <div className="flex items-center justify-between mb-3">
+              <div className="text-xs font-semibold text-[#fff] bg-green-100/50 px-2 py-0.5 rounded-full">
+                0{index + 1}
+              </div>
+              <span className="text-xl">{item.icon}</span>
+            </div>
+
+            <h3 className="text-base font-bold text-[#fff]">
+              {item.title}
+            </h3>
+
+            <p className="mt-2 text-xs text-[#fff] leading-relaxed">
+              {item.desc}
+            </p>
+
+            <div className="mt-4 h-[2px] w-8 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full group-hover:w-12 transition-all duration-300"></div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+      {/* Footer - Already responsive, keeping as is */}
+      <footer className="bg-[#013220] border-t border-emerald-800/20">
+        <div className="max-w-[1600px] mx-auto px-4 md:px-8 lg:px-12 py-8 md:py-12">
+          {/* Main Grid - Responsive */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[180px_220px_260px_1fr] gap-8 md:gap-12 items-start">
+            {/* Logo */}
+            <div className="pt-2 flex justify-center md:justify-start">
+              <Image
+                src="/footer-logo.png"
+                alt="Zibral Healthcare"
+                width={120}
+                height={120}
+                className="object-contain md:w-[140px] md:h-[140px]"
+              />
+            </div>
+
+            {/* Quick Links */}
+            <div className="text-center md:text-left">
+              <h3 className="text-white font-semibold text-base md:text-lg mb-4 md:mb-6">Quick Links</h3>
+              <ul className="space-y-2 md:space-y-4">
+                <li><Link href="/" className="text-gray-400 text-xs md:text-sm hover:text-green-400 transition">Home</Link></li>
+                <li><Link href="/about" className="text-gray-400 text-xs md:text-sm hover:text-green-400 transition">About Us</Link></li>
+                <li><Link href="/products" className="text-gray-400 text-xs md:text-sm hover:text-green-400 transition">Products</Link></li>
+                <li><Link href="/contact" className="text-gray-400 text-xs md:text-sm hover:text-green-400 transition">Contact Us</Link></li>
+              </ul>
+            </div>
+
+            {/* Product Categories */}
+            <div className="text-center md:text-left">
+              <h3 className="text-white font-semibold text-base md:text-lg mb-4 md:mb-6">Product Categories</h3>
+              <ul className="space-y-2 md:space-y-4">
+                <li><Link href="/products?category=Tablets" className="text-gray-400 text-xs md:text-sm hover:text-green-400 transition">Tablets</Link></li>
+                <li><Link href="/products?category=Capsules" className="text-gray-400 text-xs md:text-sm hover:text-green-400 transition">Capsules</Link></li>
+                <li><Link href="/products?category=Syrups" className="text-gray-400 text-xs md:text-sm hover:text-green-400 transition">Syrups</Link></li>
+                <li><Link href="/products?category=Injectables" className="text-gray-400 text-xs md:text-sm hover:text-green-400 transition">Injectables</Link></li>
+                <li><Link href="/products?category=Supplements" className="text-gray-400 text-xs md:text-sm hover:text-green-400 transition">Healthcare Solutions</Link></li>
+              </ul>
+            </div>
+
+            {/* Contact Information */}
+            <div>
+              <h3 className="text-white font-semibold text-base md:text-lg mb-4 md:mb-6 text-center md:text-left">Contact Information</h3>
+              <div className="bg-[#0c4033] border border-emerald-700/20 rounded-xl md:rounded-2xl p-3 md:p-4">
+                <div className="flex justify-between items-start gap-3 md:gap-4">
+                  <div className="space-y-2 md:space-y-3">
+                    <div className="flex items-center gap-2 md:gap-3">
+                      <MdOutlineEmail className="text-green-400 text-base md:text-lg flex-shrink-0" />
+                      <a href="mailto:zibralhealthcare2021@gmail.com" className="text-gray-300 text-xs hover:text-green-400 transition break-all">
+                        zibralhealthcare2021@gmail.com
+                      </a>
+                    </div>
+                    <div className="flex items-center gap-2 md:gap-3">
+                      <BiPhone className="text-green-400 text-base md:text-lg flex-shrink-0" />
+                      <a href="tel:+918610810041" className="text-gray-300 text-xs hover:text-green-400 transition">
+                        +91 86108 10041
+                      </a>
+                    </div>
+                  </div>
+                  <a href="https://www.instagram.com/zibral_healthcare_2021/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center">
+                    <img src="/insta1.png" alt="Instagram" className="w-8 h-8 md:w-10 md:h-10 object-contain" />
+                    <span className="text-white text-xs font-medium mt-1">Connect Us</span>
+                  </a>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-3 mt-3 md:mt-4">
+                  <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.911017538012!2d76.96804850000001!3d10.970088900000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859809a932fe3%3A0x1becc5c1a3eb7308!2sCity%20Centre%20Lodge!5e0!3m2!1sen!2sin!4v1780638693251!5m2!1sen!2sin" target="_blank" rel="noopener noreferrer" className="bg-black rounded-lg md:rounded-xl p-2 md:p-3 border border-transparent hover:border-green-500 transition">
+                    <div className="flex gap-2">
+                      <HiOutlineLocationMarker className="text-green-400 text-base md:text-lg mt-0.5 flex-shrink-0" />
+                      <div className="text-gray-300 text-xs leading-4 md:leading-5">
+                        <h4 className="text-white font-medium mb-0.5 md:mb-1 text-xs md:text-sm">Register Office</h4>
+                        B6, Ms Nagar, Podanur Main Rd, Kurichi Pirivu, Coimbatore, Tamil Nadu 641023
+                      </div>
+                    </div>
+                  </a>
+                  <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30169.95814358246!2d72.89751488490506!3d19.05297297228209!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6143538ad4b%3A0xf34f6cb0ef37b97e!2sShop%20no%201557%2C%20H%20&#39;Block%2C%20Plot%20no%20%3A26%2C%20Abdul%20Hamid%20Marg%2C%20Govandi%20Slums%2C%20Govandi%20West%2C%20Lotus%20Colony%2C%20Govandi%20East%2C%20Mumbai%2C%20Maharashtra%20400043!5e0!3m2!1sen!2sin!4v1781248563366!5m2!1sen!2sin" target="_blank" rel="noopener noreferrer" className="bg-black rounded-lg md:rounded-xl p-2 md:p-3 border border-transparent hover:border-green-500 transition">
+                    <div className="flex gap-2">
+                      <HiOutlineLocationMarker className="text-green-400 text-base md:text-lg mt-0.5 flex-shrink-0" />
+                      <div className="text-gray-300 text-xs leading-4 md:leading-5">
+                        <h4 className="text-white font-medium mb-0.5 md:mb-1 text-xs md:text-sm">Branch Office</h4>
+                        Plot No.26, Lotus Colony, H Block, Govandi, Mumbai - 400043
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="border-t border-emerald-800/30 mt-6 md:mt-10 pt-4 md:pt-5">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-2 md:gap-3">
+              <p className="text-[#7e918b] text-xs">© 2026 Zibral Healthcare. All Rights Reserved.</p>
+              <Link href="https://blackstoneinfomatics.com/" target="_blank" className="text-[#7e918b] text-xs hover:text-green-400 transition">
+                Powered By BlackStone Informatics
+              </Link>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
