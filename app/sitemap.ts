@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { MetadataRoute } from 'next'
 import { products, createSlug } from '@/lib/products'
 
@@ -42,4 +43,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
   
   // Combine static and dynamic routes
   return [...staticRoutes, ...productRoutes]
+=======
+import { MetadataRoute } from "next";
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  return [
+    {
+      url: "https://www.zibralhealthcare.in/",
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 1,
+    },
+    {
+      url: "https://www.zibralhealthcare.in/about",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: "https://www.zibralhealthcare.in/contact",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+  ];
+>>>>>>> 78751701393522bb202a87a172c2261c9d03a350
 }
